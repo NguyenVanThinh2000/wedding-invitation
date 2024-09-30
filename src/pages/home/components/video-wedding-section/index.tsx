@@ -10,8 +10,6 @@ import styles from './video-wedding-section.module.scss'
 
 const VideoWeddingSection = () => {
   const containerRef = useRef(null)
-  const titleRef = useRef(null)
-  const descriptionRef = useRef(null)
   const videoRef = useRef(null)
 
   const triggerOptions = {
@@ -23,14 +21,6 @@ const VideoWeddingSection = () => {
 
   useGSAP(
     () => {
-      // gsap.from(titleRef.current, {
-      //   opacity: 0,
-      //   scrollTrigger: triggerOptions,
-      // })
-      // gsap.from(descriptionRef.current, {
-      //   opacity: 0,
-      //   scrollTrigger: triggerOptions,
-      // })
       gsap.from(videoRef.current, {
         scale: 0.8,
         opacity: 0,
