@@ -1,0 +1,40 @@
+.title {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+
+  .heart {
+    color: $red-500;
+  }
+}
+
+.image {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .weddingText {
+    position: absolute;
+    top: calc(100% - 85px);
+    left: 0;
+  }
+}
+
+.name {
+  padding: 50px 40px 64px;
+  font-size: 1.8rem;
+}
+
+.groupButton {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px 0;
+  div {
+    flex: 1;
+  }
+}
