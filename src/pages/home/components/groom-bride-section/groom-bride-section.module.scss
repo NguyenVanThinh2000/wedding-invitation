@@ -1,0 +1,65 @@
+.groomBrideSectionWrapper {
+  padding-bottom: 48px;
+
+  .groomBrideInfo {
+    display: flex;
+    gap: 10px;
+    margin-top: 40px;
+
+    .groomBride {
+      position: relative;
+
+      .front,
+      .back {
+        padding: 10px;
+        border: 1px solid $gray-300;
+        position: relative;
+        transition: transform 0.8s;
+        backface-visibility: hidden;
+      }
+
+      &:hover {
+        .front {
+          transform: rotateY(180deg);
+        }
+        .back {
+          transform: rotateY(0deg);
+        }
+      }
+
+      .front {
+        text-align: center;
+
+        .tag {
+          margin: 10px 0;
+          font-size: 18px;
+        }
+
+        .dad,
+        .mom {
+          font-size: 14px;
+          span {
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .back {
+        position: absolute;
+        inset: 0;
+        transform: rotateY(180deg);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 10px;
+
+        .description {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}

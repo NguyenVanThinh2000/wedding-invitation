@@ -3,7 +3,7 @@ import { weddingPhotos } from '@/constants'
 
 import styles from './album-section.module.scss'
 
-const AlbumSection = () => {
+export const AlbumSection = () => {
   return (
     <Container className={styles.albumWrapper}>
       <SectionTitle
@@ -20,5 +20,3 @@ const AlbumSection = () => {
     </Container>
   )
 }
-
-export default AlbumSection

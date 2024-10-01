@@ -3,7 +3,7 @@ import { loveStories } from '@/constants'
 
 import styles from './love-story.module.scss'
 
-const LoveStory = () => {
+export const LoveStory = () => {
   return (
     <Container className={styles.loveStoryWrapper}>
       <SectionTitle
@@ -24,5 +24,3 @@ const LoveStory = () => {
     </Container>
   )
 }
-
-export default LoveStory

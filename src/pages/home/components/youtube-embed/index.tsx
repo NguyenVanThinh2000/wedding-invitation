@@ -11,7 +11,7 @@ interface YoutubeEmbedProps extends HTMLProps<HTMLDivElement> {
   url: string
 }
 
-const YoutubeEmbed = forwardRef<HTMLDivElement, YoutubeEmbedProps>(
+export const YoutubeEmbed = forwardRef<HTMLDivElement, YoutubeEmbedProps>(
   ({ url, className, ...props }: YoutubeEmbedProps, ref) => {
     const videoId = getYouTubeVideoId(url)
     const [isShowVideo, setIsShowVideo] = useState(false)
@@ -40,4 +40,3 @@ const YoutubeEmbed = forwardRef<HTMLDivElement, YoutubeEmbedProps>(
     )
   },
 )
-export default YoutubeEmbed

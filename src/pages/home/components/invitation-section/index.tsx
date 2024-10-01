@@ -4,7 +4,7 @@ import { weddingPhotos } from '@/constants'
 
 import styles from './invitation-section.module.scss'
 
-const InvitationSection = () => {
+export const InvitationSection = () => {
   return (
     <Container className={styles.invitationSectionWrapper}>
       <div className={styles.invitationSectionWrapper}>
@@ -33,5 +33,3 @@ const InvitationSection = () => {
     </Container>
   )
 }
-
-export default InvitationSection

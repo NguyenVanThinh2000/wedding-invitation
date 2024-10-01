@@ -5,10 +5,10 @@ import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
 
-import YoutubeEmbed from '../youtube-embed'
+import { YoutubeEmbed } from '../youtube-embed'
 import styles from './video-wedding-section.module.scss'
 
-const VideoWeddingSection = () => {
+export const VideoWeddingSection = () => {
   const containerRef = useRef(null)
   const videoRef = useRef(null)
 
@@ -43,5 +43,3 @@ const VideoWeddingSection = () => {
     </div>
   )
 }
-
-export default VideoWeddingSection

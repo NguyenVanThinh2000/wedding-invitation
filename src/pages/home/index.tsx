@@ -1,8 +1,13 @@
-import { TitleSection } from './components'
-import AlbumSection from './components/album-section'
-import InvitationSection from './components/invitation-section'
-import LoveStory from './components/love-story'
-import VideoWeddingSection from './components/video-wedding-section'
+import {
+  AlbumSection,
+  CalendarSection,
+  EventSection,
+  GroomBrideSection,
+  InvitationSection,
+  LoveStory,
+  TitleSection,
+  VideoWeddingSection,
+} from './components'
 import styles from './home.module.scss'
 
 const Home = () => {
@@ -11,8 +16,11 @@ const Home = () => {
       <TitleSection />
       <VideoWeddingSection />
       <AlbumSection />
+      <CalendarSection />
       <LoveStory />
       <InvitationSection />
+      <GroomBrideSection />
+      <EventSection />
     </div>
   )
 }

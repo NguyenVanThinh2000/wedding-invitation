@@ -1,0 +1,86 @@
+.calendarSectionWrapper {
+  background-color: $pink-100;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  .title {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 0 10px 10px;
+    font-size: 18px;
+    border-bottom: 1px solid $gray-500;
+    margin-bottom: 20px;
+  }
+
+  .date {
+    color: $pink-600;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: fit-content;
+    margin: 0 auto 30px;
+  }
+
+  .calendarWrapper {
+    padding: 0 30px 30px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+      border-top: 1px solid $gray-400;
+      border-bottom: 1px solid $gray-400;
+
+      .day {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    .body {
+      .week {
+        display: flex;
+        align-items: center;
+
+        .day {
+          @include flex-center;
+          flex: 1;
+          padding: 8px 0;
+
+          span {
+            @include flex-center;
+            height: 30px;
+            width: 30px;
+
+            &.active {
+              background-color: $pink-600;
+              color: $white;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .countDown {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+
+      .countDownItem {
+        text-align: center;
+
+        .number {
+          font-size: 32px;
+          font-weight: 700;
+          color: $pink-600;
+        }
+
+        .text {
+          font-size: 14px;
+          color: $pink-600;
+        }
+      }
+    }
+  }
+}
