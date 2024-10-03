@@ -5,6 +5,8 @@ import img2 from '@/assets/images/DSC02121.jpg'
 import img3 from '@/assets/images/DSC02136.jpg'
 import img4 from '@/assets/images/DSC02385.jpg'
 import img5 from '@/assets/images/DSC02502.jpg'
+import thinhnguyenQRCode from '@/assets/images/thinhnguyen.jpg'
+import { Tiktok } from '@/components/icons'
 import { generateUUID } from '@/utils'
 
 export const weddingPhotos = [img1, img2, img3, img4, img5]
@@ -55,7 +57,7 @@ export const groomBrideInfo = [
       {
         name: 'tiktok',
         link: 'https://www.tiktok.com/@thinhnguyen_94',
-        icon: <Instagram size={24} />,
+        icon: <Tiktok />,
       },
     ],
   },
@@ -87,3 +89,41 @@ export const groomBrideInfo = [
 ]
 
 export const weekDays = ['CN', 'Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7']
+
+export const weddingSchedule = [
+  {
+    id: generateUUID(),
+    title: 'LỄ CƯỚI NHÀ NỮ',
+    dateTime: '07:30 07/10/2024',
+    location: 'Tư gia nhà nữ - Thôn Hà Trung, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị',
+    mapUrl: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
+    image: weddingPhotos[0],
+  },
+  {
+    id: generateUUID(),
+    title: 'LỄ CƯỚI NHÀ NAM',
+    dateTime: '07:30 10/10/2024',
+    location: 'Tư gia nhà nam - Thôn Vinh Quang Hạ, Xã Gio Quang, Huyện Gio Linh, Tỉnh Quảng Trị',
+    mapUrl: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
+    image: weddingPhotos[1],
+  },
+]
+
+export const donateList = [
+  {
+    id: generateUUID(),
+    title: 'Đến cô dâu',
+    bankName: 'vietcombank',
+    accountNumber: '1024759235',
+    accountName: 'Trần Thị Thoan',
+    qrCode: thinhnguyenQRCode,
+  },
+  {
+    id: generateUUID(),
+    title: 'Đến chú rể',
+    bankName: 'vietcombank',
+    accountNumber: '1024759235',
+    accountName: 'Nguyễn Văn Thịnh',
+    qrCode: thinhnguyenQRCode,
+  },
+]

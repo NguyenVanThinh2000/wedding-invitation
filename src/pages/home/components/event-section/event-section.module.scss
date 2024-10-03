@@ -1,4 +1,48 @@
 .eventSectionWrapper {
-  background-color: $pink-100;
+  background-color: $pink-50;
   padding-bottom: 48px;
+
+  .scheduleList {
+    .scheduleItem {
+      display: flex;
+      height: 180px;
+      overflow: hidden;
+      background-color: $pink-100;
+      border-radius: 10px;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .image {
+        width: 35%;
+      }
+
+      .content {
+        flex: 1;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .middleContent {
+          font-size: 14px;
+        }
+
+        .mapButton {
+          @include flex-center;
+          width: fit-content;
+          padding: 5px 16px;
+          background-color: $pink-200;
+          border-radius: 3px;
+          color: $pink-900;
+          transition: background-color 0.25s ease;
+
+          &:hover {
+            background-color: $pink-300;
+          }
+        }
+      }
+    }
+  }
 }

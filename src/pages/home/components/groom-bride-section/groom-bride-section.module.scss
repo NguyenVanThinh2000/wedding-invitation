@@ -8,56 +8,87 @@
 
     .groomBride {
       position: relative;
+      flex: 1;
+      height: 350px;
+      perspective: 1000px;
 
-      .front,
-      .back {
-        padding: 10px;
-        border: 1px solid $gray-300;
+      &:hover .inner {
+        transform: rotateY(180deg);
+      }
+
+      .inner {
         position: relative;
+        height: 100%;
         transition: transform 0.8s;
-        backface-visibility: hidden;
-      }
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
 
-      &:hover {
-        .front {
-          transform: rotateY(180deg);
-        }
+        .front,
         .back {
-          transform: rotateY(0deg);
-        }
-      }
-
-      .front {
-        text-align: center;
-
-        .tag {
-          margin: 10px 0;
-          font-size: 18px;
+          position: absolute;
+          inset: 0;
+          padding: 10px;
+          border: 1px solid $gray-300;
+          backface-visibility: hidden;
         }
 
-        .dad,
-        .mom {
-          font-size: 14px;
-          span {
-            font-size: 15px;
-            font-weight: 600;
+        .front {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: center;
+
+          .tag {
+            font-size: 18px;
+          }
+
+          .dad,
+          .mom {
+            font-size: 12px;
+            span {
+              font-weight: 600;
+            }
+          }
+
+          .image {
+            position: relative;
+            aspect-ratio: 1/1;
+            width: 100%;
+            overflow: hidden;
+            transform: perspective(1000px);
+
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              object-fit: cover;
+            }
           }
         }
-      }
 
-      .back {
-        position: absolute;
-        inset: 0;
-        transform: rotateY(180deg);
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 30px 10px;
+        .back {
+          transform: rotateY(180deg);
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 30px 10px;
 
-        .description {
-          font-size: 14px;
-          line-height: 1.5;
+          .description {
+            font-size: 13px;
+            line-height: 1.5;
+          }
+
+          .social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            a {
+              color: $pink-300;
+            }
+          }
         }
       }
     }

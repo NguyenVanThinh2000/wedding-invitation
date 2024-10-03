@@ -1,12 +1,15 @@
 import {
   AlbumSection,
   CalendarSection,
+  DonateSection,
   EventSection,
   GroomBrideSection,
   InvitationSection,
   LoveStory,
+  ThanksSection,
   TitleSection,
   VideoWeddingSection,
+  WishesSection,
 } from './components'
 import styles from './home.module.scss'
 
@@ -21,6 +24,9 @@ const Home = () => {
       <InvitationSection />
       <GroomBrideSection />
       <EventSection />
+      <DonateSection />
+      <WishesSection />
+      <ThanksSection />
     </div>
   )
 }

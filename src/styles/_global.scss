@@ -25,6 +25,7 @@ body {
   background-color: var(--body-color);
   -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
   -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+  -webkit-text-size-adjust: 100%;
 }
 
 button,
