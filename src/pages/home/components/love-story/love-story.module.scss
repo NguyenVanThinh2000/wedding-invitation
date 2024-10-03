@@ -13,6 +13,19 @@
       .title {
         color: $pink-400;
         font-size: 18px;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          height: 15px;
+          width: 15px;
+          background-color: $white;
+          border-radius: 50%;
+          border: 3px solid $pink-350;
+          left: -36px;
+          top: -6px;
+        }
       }
 
       .content {
@@ -32,7 +45,7 @@
         top: 0;
         width: 50%;
         height: calc(100% + 3px);
-        border-color: $gray-300 !important;
+        border-color: $pink-350 !important;
         border-left: 3px solid;
         border-bottom: 3px solid;
         border-top: 3px solid;
@@ -42,6 +55,13 @@
 
       &:nth-child(even) {
         text-align: right;
+
+        .title {
+          &::before {
+            left: auto;
+            right: -36px;
+          }
+        }
 
         &::before {
           left: auto;

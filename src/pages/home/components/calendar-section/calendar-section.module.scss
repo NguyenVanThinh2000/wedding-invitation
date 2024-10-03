@@ -1,5 +1,5 @@
 .calendarSectionWrapper {
-  background-color: $pink-100;
+  background-color: $pink-50;
   padding-top: 48px;
   padding-bottom: 48px;
 
@@ -8,12 +8,13 @@
     width: fit-content;
     padding: 0 10px 10px;
     font-size: 18px;
-    border-bottom: 1px solid $gray-500;
+    border-bottom: 1px solid $gray-300;
     margin-bottom: 20px;
   }
 
   .date {
-    color: $pink-600;
+    color: $pink-400;
+    font-weight: 600;
     font-size: 18px;
     text-transform: uppercase;
     width: fit-content;
@@ -21,14 +22,16 @@
   }
 
   .calendarWrapper {
-    padding: 0 30px 30px;
+    padding: 0 50px 30px;
+    font-size: 14px;
 
     .header {
       display: flex;
       align-items: center;
       padding: 5px 0;
-      border-top: 1px solid $gray-400;
-      border-bottom: 1px solid $gray-400;
+      border-top: 1px solid $gray-300;
+      border-bottom: 1px solid $gray-300;
+      font-weight: 600;
 
       .day {
         flex: 1;
@@ -44,7 +47,7 @@
         .day {
           @include flex-center;
           flex: 1;
-          padding: 8px 0;
+          padding: 5px 0;
 
           span {
             @include flex-center;
@@ -52,7 +55,7 @@
             width: 30px;
 
             &.active {
-              background-color: $pink-600;
+              background-color: $pink-350;
               color: $white;
               border-radius: 50%;
             }
@@ -64,21 +67,21 @@
     .countDown {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
       margin-top: 20px;
 
       .countDownItem {
         text-align: center;
 
         .number {
-          font-size: 32px;
+          font-size: 40px;
           font-weight: 700;
-          color: $pink-600;
+          color: $pink-400;
         }
 
         .text {
           font-size: 14px;
-          color: $pink-600;
+          color: $pink-400;
         }
       }
     }

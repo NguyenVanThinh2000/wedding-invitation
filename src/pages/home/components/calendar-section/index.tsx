@@ -7,7 +7,7 @@ import { generateCalendar } from '@/utils'
 import styles from './calendar-section.module.scss'
 
 export const CalendarSection = () => {
-  const month = 12
+  const month = 11
   const year = 2024
   const weeks = generateCalendar(month, year)
 

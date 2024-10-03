@@ -1,8 +1,17 @@
 .button {
-  padding: 10px;
-  background-color: $pink-600;
-  text-align: center;
-  border-radius: 0.4rem;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 30px;
+  border-radius: 100px;
+  border: none;
+  background-color: $pink-300;
+  font-size: 16px;
   color: $white;
+  transition: background-color 0.25s ease;
   cursor: pointer;
+
+  &:hover {
+    background-color: $pink-350;
+  }
 }

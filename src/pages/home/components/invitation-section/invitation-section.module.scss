@@ -1,7 +1,7 @@
 .invitationSectionWrapper {
   padding-top: 48px;
   padding-bottom: 48px;
-  background-color: $pink-100;
+  background-color: $pink-50;
 
   .invitationSectionWrapper {
     padding: 16px;
@@ -35,6 +35,18 @@
       & > span {
         display: block;
         font-size: 14px;
+      }
+    }
+
+    .coupleName {
+      @include flex-center;
+      gap: 10px;
+      font-size: 24px;
+
+      img {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
       }
     }
   }

@@ -16,7 +16,7 @@ export const AlbumSection = () => {
         ))}
       </div>
 
-      <Button className={styles.button}>Xem thêm</Button>
+      <Button>Xem tất cả</Button>
     </Container>
   )
 }

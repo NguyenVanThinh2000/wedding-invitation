@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 
-import { Container, SectionTitle } from '@/components'
+import { Button, Container, SectionTitle } from '@/components'
 
 import styles from './wishes-section.module.scss'
 
@@ -33,9 +33,9 @@ export const WishesSection = () => {
         ></textarea>
       </div>
 
-      <div className={styles.buttonSubmit} onClick={handleSubmit}>
+      <Button className={styles.buttonSubmit} onClick={handleSubmit}>
         Gửi lời chúc
-      </div>
+      </Button>
     </Container>
   )
 }

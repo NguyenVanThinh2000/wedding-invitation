@@ -2,6 +2,7 @@ import subTitle from '@/assets/images/sub_title.png'
 import { Container } from '@/components'
 import { weddingPhotos } from '@/constants'
 
+import heart from '../../../../assets/images/heart-icon.png'
 import styles from './invitation-section.module.scss'
 
 export const InvitationSection = () => {
@@ -27,7 +28,11 @@ export const InvitationSection = () => {
             <span>Một lần nữa chân thành cảm ơn tất cả các bạn!</span>
           </div>
 
-          <div className={styles.coupleName}>Thoan Thoan &amp; Thịnh Nguyễn</div>
+          <div className={styles.coupleName}>
+            Thoan Thoan
+            <img alt="" src={heart} />
+            Thịnh Nguyễn
+          </div>
         </div>
       </div>
     </Container>

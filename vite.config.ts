@@ -20,7 +20,8 @@ export default defineConfig(({ mode }) => {
       },
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "./src/styles/abstracts" as *;`,
+          api: 'modern-compiler',
+          additionalData: `@use "@/styles/abstracts" as *;`,
         },
       },
     },

@@ -3,10 +3,13 @@
 
   .images {
     margin-bottom: 30px;
-  }
+    column-count: 2;
+    column-gap: 10px;
 
-  .button {
-    width: 200px;
-    margin: 0 auto;
+    img {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
   }
 }
