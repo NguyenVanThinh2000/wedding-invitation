@@ -6,10 +6,19 @@
   border-radius: 100px;
   border: none;
   background-color: $pink-300;
-  font-size: 16px;
   color: $white;
   transition: background-color 0.25s ease;
   cursor: pointer;
+
+  @include responsive(md) {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  @include responsive(sm) {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
 
   &:hover {
     background-color: $pink-350;

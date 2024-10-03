@@ -1,19 +1,43 @@
 .loveStoryWrapper {
   padding-bottom: 48px;
 
+  @include responsive(md) {
+    padding-bottom: 32px;
+  }
+
+  @include responsive(sm) {
+    padding-bottom: 24px;
+  }
+
   .stories {
     .story {
       padding: 10px 30px 30px;
       position: relative;
 
+      @include responsive(md) {
+        padding: 10px 20px 20px;
+      }
+
       .date {
         font-size: 14px;
+
+        @include responsive(md) {
+          font-size: 12px;
+        }
       }
 
       .title {
         color: $pink-400;
         font-size: 18px;
         position: relative;
+
+        @include responsive(md) {
+          font-size: 16px;
+        }
+
+        @include responsive(sm) {
+          font-size: 14px;
+        }
 
         &::before {
           position: absolute;
@@ -25,6 +49,10 @@
           border: 3px solid $pink-350;
           left: -36px;
           top: -6px;
+
+          @include responsive(md) {
+            left: -26px;
+          }
         }
       }
 
@@ -32,6 +60,14 @@
         margin-top: 15px;
         margin-bottom: 20px;
         font-size: 15px;
+
+        @include responsive(md) {
+          font-size: 14px;
+        }
+
+        @include responsive(sm) {
+          font-size: 12px;
+        }
       }
 
       .image {
@@ -60,6 +96,10 @@
           &::before {
             left: auto;
             right: -36px;
+
+            @include responsive(md) {
+              right: -26px;
+            }
           }
         }
 

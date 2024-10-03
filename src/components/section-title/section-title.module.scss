@@ -2,8 +2,34 @@
   padding: 48px 0 24px;
   text-align: center;
 
+  @include responsive(md) {
+    padding: 36px 0 20px;
+  }
+
+  @include responsive(sm) {
+    padding: 24px 0 16px;
+  }
+
   .title {
     font-family: 'Dancing Script', cursive;
     font-size: 40px;
+
+    @include responsive(md) {
+      font-size: 32px;
+    }
+
+    @include responsive(sm) {
+      font-size: 24px;
+    }
+  }
+
+  .description {
+    @include responsive(md) {
+      font-size: 14px;
+    }
+
+    @include responsive(sm) {
+      font-size: 12px;
+    }
   }
 }

@@ -7,6 +7,16 @@
     background-color: $pink-300;
     color: $white;
 
+    @include responsive(md) {
+      font-size: 14px;
+      padding: 20px 0;
+    }
+
+    @include responsive(sm) {
+      font-size: 12px;
+      padding: 16px 0;
+    }
+
     .heart {
       color: $red-500;
     }
@@ -22,8 +32,22 @@
 
     .label {
       position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 575px;
       bottom: -24px;
-      left: 0;
+      object-fit: cover;
+      max-width: unset;
+
+      @include responsive(md) {
+        width: 475px;
+        bottom: -20px;
+      }
+
+      @include responsive(sm) {
+        width: 320px;
+        bottom: -14px;
+      }
     }
   }
 
@@ -31,6 +55,16 @@
     padding: 48px 0 24px;
     font-size: 28px;
     text-align: center;
+
+    @include responsive(md) {
+      font-size: 20px;
+      padding: 36px 0 20px;
+    }
+
+    @include responsive(sm) {
+      font-size: 18px;
+      padding: 24px 0 16px;
+    }
   }
 
   .dates {
@@ -40,5 +74,13 @@
     font-weight: 600;
     font-size: 20px;
     letter-spacing: 2px;
+
+    @include responsive(md) {
+      font-size: 14px;
+    }
+
+    @include responsive(sm) {
+      font-size: 12px;
+    }
   }
 }
