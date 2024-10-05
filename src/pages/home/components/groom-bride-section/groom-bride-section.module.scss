@@ -2,24 +2,40 @@
   padding-bottom: 48px;
 
   .name {
-    font-size: 36px;
-    font-weight: 600;
-    text-align: center;
+    font-size: 32px;
     margin-bottom: 20px;
-    font-family: 'Dancing Script', cursive;
     color: $pink-400;
+
+    @include responsive(md) {
+      font-size: 24px;
+    }
   }
 
   .groomBrideInfo {
     display: flex;
     gap: 10px;
-    margin-top: 40px;
+
+    @include responsive(md) {
+      flex-direction: column;
+
+      .groomBride {
+        width: 100%;
+      }
+    }
 
     .groomBride {
       position: relative;
-      flex: 1;
       height: 350px;
+      width: calc(50% - 5px);
       perspective: 1000px;
+
+      @include responsive(md) {
+        width: 100%;
+        height: 480px;
+      }
+      @include responsive(sm) {
+        height: 400px;
+      }
 
       &:hover .inner {
         transform: rotateY(180deg);
@@ -31,6 +47,8 @@
         transition: transform 0.8s;
         transform-style: preserve-3d;
         -webkit-transform-style: preserve-3d;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
 
         .front,
         .back {
@@ -39,6 +57,7 @@
           padding: 10px;
           border: 1px solid $gray-300;
           backface-visibility: hidden;
+          -webkit-backface-visibility: hidden;
         }
 
         .front {
@@ -81,11 +100,11 @@
           text-align: center;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: space-around;
           padding: 30px 10px;
 
           .description {
-            font-size: 13px;
+            font-size: 12px;
             line-height: 1.5;
           }
 

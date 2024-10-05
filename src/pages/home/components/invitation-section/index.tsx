@@ -1,16 +1,13 @@
 import subTitle from '@/assets/images/sub_title.png'
-import { Container } from '@/components'
+import { Container, CoupleName } from '@/components'
 import { weddingPhotos } from '@/constants'
 
-import heart from '../../../../assets/images/heart-icon.png'
 import styles from './invitation-section.module.scss'
 
 export const InvitationSection = () => {
   return (
-    <Container className={styles.invitationSectionWrapper}>
+    <Container className={styles.invitationSectionWrapper} id="invitation">
       <div className={styles.invitationSectionWrapper}>
-        <img alt="" src={weddingPhotos[3]} />
-
         <div className={styles.invitationCard}>
           <img alt="" src="" />
           <div className={styles.content}>
@@ -28,11 +25,9 @@ export const InvitationSection = () => {
             <span>Một lần nữa chân thành cảm ơn tất cả các bạn!</span>
           </div>
 
-          <div className={styles.coupleName}>
-            Thoan Thoan
-            <img alt="" src={heart} />
-            Thịnh Nguyễn
-          </div>
+          <img alt="" src={weddingPhotos[3]} />
+
+          <CoupleName className={styles.coupleName} />
         </div>
       </div>
     </Container>

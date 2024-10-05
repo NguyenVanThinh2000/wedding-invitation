@@ -1,0 +1,38 @@
+.invitationCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+  z-index: 100;
+  @include flex-center;
+
+  &.close {
+    animation: moveOut 0.8s ease forwards;
+  }
+}
+
+.wrapper {
+  &.open {
+    animation: moveIn 0.8s ease forwards;
+  }
+}
+
+@keyframes moveOut {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -100vh;
+  }
+}
+
+@keyframes moveIn {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

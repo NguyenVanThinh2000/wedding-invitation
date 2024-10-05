@@ -1,24 +1,40 @@
-import { weddingPhotos } from '@/constants'
+import { Container } from '@/components'
+import { CoupleName } from '@/components'
+import { invitationInfo, weddingPhotos } from '@/constants'
+import { PropsParams } from '@/types'
 
+import heart from '../../../../assets/images/heart-icon.png'
 import weddinglabel from '../../../../assets/images/wedding-label.png'
 import styles from './title-section.module.scss'
 
-export const TitleSection = () => {
+export const TitleSection = ({ mainName }: PropsParams) => {
+  const data = invitationInfo[mainName]
   return (
-    <div className={styles.titleSectionWrapper}>
+    <Container className={styles.titleSectionWrapper}>
       <div className={styles.title}>
-        Thoan Thoan <span className={styles.heart}>❤ </span> Thịnh Nguyễn sắp kết hôn
+        <div className={styles.we}>Chúng tôi</div>
+        <div className={styles.dayMonth}>
+          <span className={styles.day}>{data.day}</span>
+          <span className={styles.month}>{data.month}</span>
+        </div>
+        <div className={styles.marry}>Sắp kết hôn</div>
       </div>
       <div className={styles.image}>
         <img alt="" className={styles.image1} src={weddingPhotos[3]} />
         <img alt="" className={styles.label} src={weddinglabel} />
       </div>
-      <div className={styles.name}>Thoan Thoan ♥ Thịnh Nguyễn</div>
 
-      <div className={styles.dates}>
-        <div className={styles.date}>Thứ 5. 04 / 04 / 2024 - Nhà Nữ</div>
-        <div className={styles.date}>Thứ 5. 04 / 04 / 2024 - Nhà Nam</div>
+      <CoupleName className={styles.name} />
+
+      <div className={styles.fullDate}>
+        {invitationInfo[mainName].weekDay}. {invitationInfo[mainName].day} /{' '}
+        {invitationInfo[mainName].month} / 2024{' '}
       </div>
-    </div>
+      <div className={styles.dayMonth2}>
+        <span className={styles.day}>{invitationInfo[mainName].day}</span>
+        <img alt="" src={heart} />
+        <span className={styles.month}>{invitationInfo[mainName].month}</span>
+      </div>
+    </Container>
   )
 }

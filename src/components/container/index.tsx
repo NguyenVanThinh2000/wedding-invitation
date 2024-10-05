@@ -7,8 +7,13 @@ import styles from './container.module.scss'
 interface ContainerProps {
   children: ReactNode
   className?: string
+  id?: string
 }
 
-export const Container = ({ children, className }: ContainerProps) => {
-  return <div className={clsx(styles.container, className)}>{children}</div>
+export const Container = ({ children, className, id }: ContainerProps) => {
+  return (
+    <div className={clsx(styles.container, className)} id={id}>
+      {children}
+    </div>
+  )
 }

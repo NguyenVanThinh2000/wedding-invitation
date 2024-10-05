@@ -82,7 +82,7 @@ export const groomBrideInfo = [
       {
         name: 'tiktok',
         link: 'https://www.tiktok.com/@thinhnguyen_94',
-        icon: <Instagram size={24} />,
+        icon: <Tiktok />,
       },
     ],
   },
@@ -127,3 +127,53 @@ export const donateList = [
     qrCode: thinhnguyenQRCode,
   },
 ]
+
+export const invitationInfo = {
+  thoan: {
+    weekDay: 'Thứ 7',
+    day: '09',
+    month: '10',
+    location: [
+      {
+        id: generateUUID(),
+        title: 'LỄ CƯỚI NHÀ NỮ',
+        dateTime: '07:30 08/11/2024',
+        location: 'Tư gia nhà nữ - Thôn Hà Trung, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị',
+        mapUrl: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
+        image: weddingPhotos[0],
+      },
+      {
+        id: generateUUID(),
+        title: 'TIỆC CƯỚI NHÀ NỮ',
+        dateTime: '11:00 08/11/2024',
+        location: 'Hội trường thôn Hà Trung, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị',
+        mapUrl: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
+        image: weddingPhotos[0],
+      },
+    ],
+  },
+  thinh: {
+    weekDay: 'Chủ Nhật',
+    day: '10',
+    month: '10',
+    location: [
+      {
+        id: generateUUID(),
+        title: 'LỄ CƯỚI NHÀ NAM',
+        dateTime: '07:30 10/10/2024',
+        location:
+          'Tư gia nhà nam - Thôn Vinh Quang Hạ, Xã Gio Quang, Huyện Gio Linh, Tỉnh Quảng Trị',
+        mapUrl: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
+        image: weddingPhotos[1],
+      },
+      {
+        id: generateUUID(),
+        title: 'TIỆC CƯỚI NHÀ NAM',
+        dateTime: '07:30 10/10/2024',
+        location: 'Hội trường thôn Vinh Quang Hạ, Xã Gio Quang, Huyện Gio Linh, Tỉnh Quảng Trị',
+        mapUrl: 'https://goo.gl/maps/1J1J1J1J1J1J1J1J1',
+        image: weddingPhotos[1],
+      },
+    ],
+  },
+}

@@ -5,7 +5,7 @@ import styles from './donate-section.module.scss'
 
 export const DonateSection = () => {
   return (
-    <Container className={styles.donateSectionWrapper}>
+    <Container className={styles.donateSectionWrapper} id="donate">
       <SectionTitle
         description="Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng tôi."
         title="Hộp mừng cưới"

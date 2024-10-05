@@ -5,7 +5,7 @@ import styles from './love-story.module.scss'
 
 export const LoveStory = () => {
   return (
-    <Container className={styles.loveStoryWrapper}>
+    <Container className={styles.loveStoryWrapper} id="story">
       <SectionTitle
         description="Tình yêu không chỉ là một danh từ - nó là một động từ; nó còn hơn cả một cảm giác - đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh."
         title="Chuyện tình yêu"

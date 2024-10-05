@@ -1,24 +1,53 @@
 .titleSectionWrapper {
   padding-bottom: 48px;
+
   .title {
-    text-align: center;
-    padding: 24px 0;
-    font-weight: 600;
-    background-color: $pink-300;
-    color: $white;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 40px 20px;
 
     @include responsive(md) {
-      font-size: 14px;
-      padding: 20px 0;
+      padding: 24px 20px;
     }
 
-    @include responsive(sm) {
-      font-size: 12px;
-      padding: 16px 0;
+    .we {
+      display: flex;
+      align-items: flex-end;
+
+      @include responsive(md) {
+        font-size: 12px;
+      }
     }
 
-    .heart {
-      color: $red-500;
+    .marry {
+      display: flex;
+      align-items: center;
+
+      @include responsive(md) {
+        font-size: 12px;
+      }
+    }
+
+    .dayMonth {
+      display: flex;
+      flex-direction: column;
+      font-size: 70px;
+
+      @include responsive(md) {
+        font-size: 48px;
+      }
+
+      span {
+        font-family: 'Bellota Text', cursive;
+        line-height: 1;
+        color: #c6c6c6;
+        text-align: center;
+
+        &.day {
+          border-bottom: 1px solid;
+        }
+      }
     }
   }
 
@@ -52,22 +81,15 @@
   }
 
   .name {
-    padding: 48px 0 24px;
-    font-size: 28px;
-    text-align: center;
+    padding: 36px 0 20px;
 
     @include responsive(md) {
-      font-size: 20px;
-      padding: 36px 0 20px;
-    }
-
-    @include responsive(sm) {
       font-size: 18px;
       padding: 24px 0 16px;
     }
   }
 
-  .dates {
+  .fullDate {
     font-size: 18px;
     text-align: center;
     color: $pink-400;
@@ -76,11 +98,37 @@
     letter-spacing: 2px;
 
     @include responsive(md) {
-      font-size: 14px;
+      font-size: 12px;
+    }
+  }
+
+  .dayMonth2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    font-family: 'Bellota Text', cursive;
+    margin-top: 10px;
+
+    span {
+      font-size: 80px;
+      font-family: 'Bellota Text', cursive;
+      line-height: 1;
+
+      @include responsive(md) {
+        font-size: 54px;
+      }
     }
 
-    @include responsive(sm) {
-      font-size: 12px;
+    img {
+      height: 40px;
+      width: 40px;
+      margin-bottom: 10px;
+      @include responsive(md) {
+        height: 28px;
+        width: 28px;
+        margin-bottom: 8px;
+      }
     }
   }
 }

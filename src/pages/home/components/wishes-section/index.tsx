@@ -17,7 +17,7 @@ export const WishesSection = () => {
   }
 
   return (
-    <Container className={styles.wishesSectionWrapper}>
+    <Container className={styles.wishesSectionWrapper} id="wishes">
       <SectionTitle
         description="Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!"
         title="Sổ Lưu Bút"

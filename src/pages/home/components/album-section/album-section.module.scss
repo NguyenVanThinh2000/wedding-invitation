@@ -3,12 +3,20 @@
 
   .images {
     margin-bottom: 30px;
-    column-count: 2;
+    columns: 2;
     column-gap: 10px;
 
-    img {
+    .image {
+      height: fit-content;
+
       &:not(:last-child) {
         margin-bottom: 10px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
       }
     }
   }

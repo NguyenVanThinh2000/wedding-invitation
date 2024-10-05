@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom'
-import { Snowfall } from 'react-snowfall'
 
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -19,17 +18,6 @@ const MainLayout = () => {
         <Header />
         <Outlet />
       </AppContainer>
-      <Snowfall
-        color="#e57d90"
-        snowflakeCount={20}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-        }}
-      />
     </div>
   )
 }

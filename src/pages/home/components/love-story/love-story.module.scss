@@ -2,10 +2,6 @@
   padding-bottom: 48px;
 
   @include responsive(md) {
-    padding-bottom: 32px;
-  }
-
-  @include responsive(sm) {
     padding-bottom: 24px;
   }
 
@@ -32,10 +28,6 @@
         position: relative;
 
         @include responsive(md) {
-          font-size: 16px;
-        }
-
-        @include responsive(sm) {
           font-size: 14px;
         }
 
@@ -62,10 +54,6 @@
         font-size: 15px;
 
         @include responsive(md) {
-          font-size: 14px;
-        }
-
-        @include responsive(sm) {
           font-size: 12px;
         }
       }

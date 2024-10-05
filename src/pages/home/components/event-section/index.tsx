@@ -1,18 +1,23 @@
 import { Container, SectionTitle } from '@/components'
-import { weddingSchedule } from '@/constants'
+import { invitationInfo } from '@/constants'
 
 import styles from './event-section.module.scss'
 
-export const EventSection = () => {
+interface Props {
+  mainName: 'thoan' | 'thinh'
+}
+export const EventSection = ({ mainName }: Props) => {
+  const locationList = invitationInfo[mainName].location
+
   return (
-    <Container className={styles.eventSectionWrapper}>
+    <Container className={styles.eventSectionWrapper} id="event">
       <SectionTitle
         description="Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!"
         title="Sự Kiện Cưới"
       />
 
       <div className={styles.scheduleList}>
-        {weddingSchedule.map((schedule) => (
+        {locationList.map((schedule) => (
           <div key={schedule.id} className={styles.scheduleItem}>
             <div className={styles.image}>
               <img alt={schedule.title} src={schedule.image} />

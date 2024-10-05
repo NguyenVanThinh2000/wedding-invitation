@@ -1,0 +1,70 @@
+.menuWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 4;
+
+  &.show {
+    .overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menuList {
+      right: 0;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($black, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+
+  .menuList {
+    position: absolute;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    background-color: $white;
+    padding: 40px 20px;
+    transition: right 0.4s ease;
+
+    @include responsive(md) {
+      width: 100vw;
+      right: -100vw;
+    }
+
+    .item {
+      display: block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      @include responsive(md) {
+        font-size: 14px;
+      }
+
+      &:hover {
+        font-weight: 700;
+        color: $pink-400;
+      }
+    }
+
+    .iconClose {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
+  }
+}

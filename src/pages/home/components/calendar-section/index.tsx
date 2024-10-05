@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-import { Container } from '@/components'
+import { Container, CoupleName } from '@/components'
 import { weekDays } from '@/constants'
 import { generateCalendar } from '@/utils'
 
@@ -12,8 +12,8 @@ export const CalendarSection = () => {
   const weeks = generateCalendar(month, year)
 
   return (
-    <Container className={styles.calendarSectionWrapper}>
-      <div className={styles.title}>Thoan Thoan ♥ Thịnh Nguyễn</div>
+    <Container className={styles.calendarSectionWrapper} id="calendar">
+      <CoupleName className={styles.name} />
 
       <div className={styles.date}>
         Tháng {month} / {year}

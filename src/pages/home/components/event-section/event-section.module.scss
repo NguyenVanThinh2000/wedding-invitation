@@ -9,6 +9,11 @@
       overflow: hidden;
       background-color: $pink-100;
       border-radius: 5px;
+      box-shadow: 0 5px 5px rgba($black, 0.1);
+
+      @include responsive(md) {
+        height: 150px;
+      }
 
       &:not(:last-child) {
         margin-bottom: 20px;
@@ -25,8 +30,17 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @include responsive(md) {
+          padding: 15px;
+        }
+
+        .title,
         .middleContent {
           font-size: 14px;
+
+          @include responsive(md) {
+            font-size: 12px;
+          }
         }
 
         .mapButton {
@@ -37,6 +51,12 @@
           border-radius: 3px;
           color: $white;
           transition: background-color 0.25s ease;
+          font-size: 13px;
+          margin-left: auto;
+
+          @include responsive(md) {
+            font-size: 12px;
+          }
 
           &:hover {
             background-color: $pink-350;

@@ -1,17 +1,17 @@
-import { Container, SectionTitle } from '@/components'
+import { Container, CoupleName, SectionTitle } from '@/components'
 import { groomBrideInfo } from '@/constants'
 
 import styles from './groom-bride-section.module.scss'
 
 export const GroomBrideSection = () => {
   return (
-    <Container className={styles.groomBrideSectionWrapper}>
+    <Container className={styles.groomBrideSectionWrapper} id="bride-groom">
       <SectionTitle
         description="Giới thiệu một chú rể đẹp trai và cô dâu xinh đẹp"
         title="- Groom & Bride -"
       />
 
-      <p className={styles.name}>Thoan Thoan ♥ Thịnh Nguyễn</p>
+      <CoupleName className={styles.name} />
 
       <div className={styles.groomBrideInfo}>
         {groomBrideInfo.map((info, index) => (
