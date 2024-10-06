@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, redirect } from 'react-router-dom'
 
 import { MainLayout } from '@/layouts'
 import { Home } from '@/pages'
@@ -9,6 +9,12 @@ export const router = createBrowserRouter([
   {
     path: path.root,
     element: <MainLayout />,
+    loader: ({ params }) => {
+      if (params?.invitationId !== 'thoan' && params?.invitationId !== 'thinh') {
+        return redirect('/thoan')
+      }
+      return null
+    },
     children: [
       {
         path: path.invitation,

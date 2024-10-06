@@ -66,7 +66,12 @@ export const Menu = ({ open, setOpenMenu }: Props) => {
 
   const handleLink = (id: string) => {
     const element = document.getElementById(id)
-    if (element) element.scrollIntoView({ behavior: 'smooth' })
+    const headerHeight = document.getElementById('header')?.clientHeight ?? 0
+    if (element)
+      window.scrollTo({
+        top: element.offsetTop - headerHeight,
+        behavior: 'smooth',
+      })
     setOpenMenu?.(false)
   }
 

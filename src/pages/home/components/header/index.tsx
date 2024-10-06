@@ -33,7 +33,7 @@ export const Header = ({ setOpenMenu }: Props) => {
     return () => window.removeEventListener('scroll', handleShowHeader)
   }, [])
   return (
-    <div className={clsx(styles.headerWrapper, { [styles.show]: isShowHeader })}>
+    <div className={clsx(styles.headerWrapper, { [styles.show]: isShowHeader })} id="header">
       <div className={styles.logo} onClick={handleScrollToTop}>
         T & T
       </div>

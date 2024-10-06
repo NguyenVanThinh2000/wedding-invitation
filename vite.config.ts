@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => {
         '@': resolve(__dirname, 'src'),
       },
     },
-    envDir: './env',
+    envDir: './env/',
     css: {
       modules: {
         localsConvention: 'camelCase',

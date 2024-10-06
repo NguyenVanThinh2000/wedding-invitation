@@ -1,20 +1,46 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 
+import { invitationApiEndPoints } from '@/api'
 import { Button, Container, SectionTitle } from '@/components'
 
+import { Modal } from '../modal'
 import styles from './wishes-section.module.scss'
 
-export const WishesSection = () => {
-  const [wishes, setWishes] = useState('')
-
+interface Props {
+  defaultWishes?: string
+  guestId?: string
+}
+export const WishesSection = ({ defaultWishes, guestId }: Props) => {
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const [wishes, setWishes] = useState<string>(defaultWishes ?? '')
+  const [guestName, setGuestName] = useState('')
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setWishes(e.target.value)
   }
-
-  const handleSubmit = () => {
-    if (!wishes) return
-    console.log(wishes)
+  const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
+    setGuestName(e.target.value)
   }
+
+  const handleSubmit = async () => {
+    if (!wishes) return
+    if (!guestId) {
+      await invitationApiEndPoints.findAndUpdateGuest({
+        name: guestName,
+        wishes,
+      })
+    } else {
+      const {
+        data: { data },
+      } = await invitationApiEndPoints.addWishes(guestId, wishes)
+      if (data) {
+        setIsOpenModal(true)
+      }
+    }
+  }
+
+  useEffect(() => {
+    setWishes(defaultWishes ?? '')
+  }, [defaultWishes])
 
   return (
     <Container className={styles.wishesSectionWrapper} id="wishes">
@@ -24,6 +50,7 @@ export const WishesSection = () => {
       />
 
       <div className={styles.form}>
+        {!guestId && <input name="guestName" type="text" onChange={handleChangeName} />}
         <textarea
           id="wishes"
           name="wishes"
@@ -36,6 +63,11 @@ export const WishesSection = () => {
       <Button className={styles.buttonSubmit} onClick={handleSubmit}>
         Gửi lời chúc
       </Button>
+      <Modal
+        content="Cảm ơn bạn đã gửi lời chúc tới bọn mình nha !!!"
+        open={isOpenModal}
+        onClose={setIsOpenModal}
+      />
     </Container>
   )
 }

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import Snowfall from 'react-snowfall'
 
 import clsx from 'clsx'
 
-import { Button } from '@/components'
+import { invitationApiEndPoints } from '@/api'
 import useScrollLock from '@/hooks/useScrollLock'
-import { TParam } from '@/types'
+import { TGuest, TParam } from '@/types'
 
 import {
   AlbumSection,
@@ -16,6 +16,7 @@ import {
   Floats,
   GroomBrideSection,
   Header,
+  InvitationCover,
   InvitationSection,
   LoveStory,
   Menu,
@@ -26,40 +27,59 @@ import {
 } from './components'
 import styles from './home.module.scss'
 
-const Home = () => {
-  const { invitationId } = useParams<TParam>()
-  const mainName = invitationId === 'thinh' ? 'thinh' : 'thoan'
+type TMainName = 'thoan' | 'thinh'
 
+const Home = () => {
+  const [searchParams] = useSearchParams()
+  const { invitationId } = useParams<TParam>()
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
+  const [guest, setGuest] = useState<TGuest | undefined>()
   useScrollLock(!isOpen)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [isOpen])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const guestId = searchParams.get('code')
+      if (guestId) {
+        const {
+          data: { data, error },
+        } = await invitationApiEndPoints.getGuest(guestId)
+        if (!error) setGuest(data)
+      }
+    }
+    fetchData()
+  }, [searchParams])
+
   return (
     <>
       <Header setOpenMenu={setIsOpenMenu} />
       <Menu open={isOpenMenu} setOpenMenu={setIsOpenMenu} />
       <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
-        <Button onClick={() => setIsOpen(true)}>Mở thiệp</Button>
+        <InvitationCover
+          guestName={guest?.nameInInvitation || 'Bạn'}
+          mainName={invitationId as TMainName}
+          onOpen={() => setIsOpen(true)}
+        />
       </div>
       <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
-        <TitleSection mainName={mainName} />
+        <TitleSection mainName={invitationId as TMainName} />
         <VideoWeddingSection />
         <AlbumSection />
         <CalendarSection />
         <LoveStory />
         <InvitationSection />
         <GroomBrideSection />
-        <EventSection mainName={mainName} />
+        <EventSection mainName={invitationId as TMainName} />
         <DonateSection />
-        <WishesSection />
+        <WishesSection defaultWishes={guest?.wishes} guestId={guest?.id} />
         <ThanksSection />
       </div>
 
-      <Floats />
+      <Floats guestId={guest?.id} />
 
       <Snowfall
         color="#e57d90"

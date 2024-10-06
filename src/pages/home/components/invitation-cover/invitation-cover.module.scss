@@ -1,0 +1,102 @@
+.coverWrapper {
+  height: 350px;
+  width: 600px;
+  border: 1px solid $pink-300;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba($pink-400, 0.4);
+  padding: 20px;
+  display: flex;
+  background-color: $pink-100;
+
+  @include responsive(lg) {
+    flex-direction: column;
+    height: calc(100% - 40px);
+    width: 400px;
+  }
+
+  @include responsive(md) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .image {
+    height: 100%;
+    overflow: hidden;
+
+    @include responsive(lg) {
+      height: 50%;
+      width: 100%;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+
+      @include responsive(lg) {
+        height: auto;
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    padding-left: 20px;
+    @include flex-center;
+    flex-direction: column;
+
+    @include responsive(lg) {
+      padding: 0;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+    }
+
+    .date {
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .coupleName {
+      font-size: 28px;
+      text-align: center;
+      margin: 20px auto;
+      color: $pink-400;
+    }
+
+    .invitation {
+      text-align: center;
+      font-size: 14px;
+
+      .name {
+        font-weight: 700;
+      }
+    }
+
+    .button {
+      margin-top: 30px;
+      font-size: 14px;
+      background-color: $pink-400;
+      animation: box-shadow-pulse 1.5s infinite;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $pink-500;
+      }
+    }
+  }
+}
+
+@keyframes box-shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba($pink-400, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba($pink-400, 0);
+  }
+}

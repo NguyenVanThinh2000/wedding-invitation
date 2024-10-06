@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+
+  &.open {
+    .modalWrapper {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .modalWrapper {
+    @include flex-center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba($black, 0.5);
+      z-index: 1;
+    }
+
+    .modalContent {
+      position: relative;
+      background-color: $white;
+      z-index: 102;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 0 10px rgba($black, 0.5);
+      text-align: center;
+
+      @include responsive(md) {
+        padding: 15px;
+        max-width: 90vw;
+      }
+
+      .iconClose {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+
+        &:hover {
+          color: $pink-400;
+        }
+      }
+
+      .content {
+        font-weight: 700;
+
+        @include responsive(md) {
+          font-size: 12px;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 16px;
+
+        .buttonClose,
+        .buttonConfirmYes,
+        .buttonConfirmNo {
+          margin: 0;
+          font-size: 14px;
+          padding: 6px 16px;
+          border-radius: 5px;
+
+          @include responsive(md) {
+            font-size: 12px;
+          }
+        }
+
+        .buttonClose,
+        .buttonConfirmNo {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
