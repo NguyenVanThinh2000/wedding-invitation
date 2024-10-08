@@ -11,10 +11,7 @@ export const EventSection = ({ mainName }: Props) => {
 
   return (
     <Container className={styles.eventSectionWrapper} id="event">
-      <SectionTitle
-        description="Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!"
-        title="Sự Kiện Cưới"
-      />
+      <SectionTitle description="" title="Sự Kiện Cưới" />
 
       <div className={styles.scheduleList}>
         {locationList.map((schedule) => (

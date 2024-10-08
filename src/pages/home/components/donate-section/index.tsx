@@ -1,9 +1,14 @@
 import { Container, SectionTitle } from '@/components'
-import { donateList } from '@/constants'
+import { invitationInfo } from '@/constants'
+import { TMainName } from '@/types'
 
 import styles from './donate-section.module.scss'
 
-export const DonateSection = () => {
+interface Props {
+  mainName: TMainName
+}
+export const DonateSection = ({ mainName }: Props) => {
+  const donate = invitationInfo[mainName].donate
   return (
     <Container className={styles.donateSectionWrapper} id="donate">
       <SectionTitle
@@ -12,19 +17,17 @@ export const DonateSection = () => {
       />
 
       <div className={styles.cardList}>
-        {donateList.map((donate) => (
-          <div key={donate.id} className={styles.card}>
-            <p className={styles.title}>{donate.title}</p>
-            <div className={styles.image}>
-              <img alt="" src={donate.qrCode} />
-            </div>
-            <div className={styles.content}>
-              <p>{donate.bankName}</p>
-              <p>{donate.accountNumber}</p>
-              <p>{donate.accountName}</p>
-            </div>
+        <div className={styles.card}>
+          <p className={styles.title}>{donate.title}</p>
+          <div className={styles.image}>
+            <img alt="" src={donate.qrCode} />
           </div>
-        ))}
+          <div className={styles.content}>
+            <p>{donate.bankName}</p>
+            <p>{donate.accountNumber}</p>
+            <p>{donate.accountName}</p>
+          </div>
+        </div>
       </div>
     </Container>
   )

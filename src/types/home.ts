@@ -27,3 +27,5 @@ export type TGuestUpdate = {
   isAttending?: boolean
   wishes?: string
 }
+
+export type TMainName = 'thoan' | 'thinh'

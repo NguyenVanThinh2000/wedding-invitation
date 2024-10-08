@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 import { invitationApiEndPoints } from '@/api'
 import useScrollLock from '@/hooks/useScrollLock'
-import { TGuest, TParam } from '@/types'
+import { TGuest, TMainName, TParam } from '@/types'
 
 import {
   AlbumSection,
@@ -18,6 +18,7 @@ import {
   Header,
   InvitationCover,
   InvitationSection,
+  Loading,
   LoveStory,
   Menu,
   ThanksSection,
@@ -27,9 +28,8 @@ import {
 } from './components'
 import styles from './home.module.scss'
 
-type TMainName = 'thoan' | 'thinh'
-
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true)
   const [searchParams] = useSearchParams()
   const { invitationId } = useParams<TParam>()
   const [isOpen, setIsOpen] = useState(false)
@@ -49,6 +49,7 @@ const Home = () => {
           data: { data, error },
         } = await invitationApiEndPoints.getGuest(guestId)
         if (!error) setGuest(data)
+        setIsLoading(false)
       }
     }
     fetchData()
@@ -56,6 +57,7 @@ const Home = () => {
 
   return (
     <>
+      <Loading isLoading={isLoading} />
       <Header setOpenMenu={setIsOpenMenu} />
       <Menu open={isOpenMenu} setOpenMenu={setIsOpenMenu} />
       <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
@@ -68,13 +70,13 @@ const Home = () => {
       <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
         <TitleSection mainName={invitationId as TMainName} />
         <VideoWeddingSection />
-        <AlbumSection />
-        <CalendarSection />
-        <LoveStory />
-        <InvitationSection />
-        <GroomBrideSection />
+        <CalendarSection mainName={invitationId as TMainName} />
         <EventSection mainName={invitationId as TMainName} />
-        <DonateSection />
+        <GroomBrideSection />
+        <LoveStory />
+        <AlbumSection />
+        <InvitationSection />
+        <DonateSection mainName={invitationId as TMainName} />
         <WishesSection defaultWishes={guest?.wishes} guestId={guest?.id} />
         <ThanksSection />
       </div>

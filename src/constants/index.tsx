@@ -152,6 +152,13 @@ export const invitationInfo = {
         image: weddingPhotos[0],
       },
     ],
+    donate: {
+      title: 'Đến cô dâu',
+      bankName: 'vietcombank',
+      accountNumber: '1015921086',
+      accountName: 'Trần Thị Thoan',
+      qrCode: thoanthoanQRCode,
+    },
   },
   thinh: {
     weekDay: 'Chủ Nhật',
@@ -177,5 +184,14 @@ export const invitationInfo = {
         image: weddingPhotos[1],
       },
     ],
+    donate: {
+      title: 'Đến chú rể',
+      bankName: 'vietcombank',
+      accountNumber: '1024759235',
+      accountName: 'Nguyễn Văn Thịnh',
+      qrCode: thinhnguyenQRCode,
+    },
   },
 }
+
+export const YEAR = 2024

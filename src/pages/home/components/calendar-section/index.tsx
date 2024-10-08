@@ -1,22 +1,47 @@
+import { useEffect, useState } from 'react'
+
 import clsx from 'clsx'
 
 import { Container, CoupleName } from '@/components'
-import { weekDays } from '@/constants'
-import { generateCalendar } from '@/utils'
+import { YEAR, invitationInfo, weekDays } from '@/constants'
+import { TMainName } from '@/types'
+import { countdown, generateCalendar } from '@/utils'
 
 import styles from './calendar-section.module.scss'
 
-export const CalendarSection = () => {
-  const month = 11
-  const year = 2024
-  const weeks = generateCalendar(month, year)
+interface Props {
+  mainName: TMainName
+}
+export const CalendarSection = ({ mainName }: Props) => {
+  const [dateRemaining, setDateRemaining] = useState({
+    days: '00',
+    hours: '00',
+    minutes: '00',
+    seconds: '00',
+  })
+  const month = invitationInfo[mainName].month
+  const weeks = generateCalendar(Number(month), YEAR)
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const { days, hours, minutes, seconds } = countdown(
+        `${invitationInfo[mainName].day}/${month}/${YEAR}`,
+      )
+      setDateRemaining({ days, hours, minutes, seconds })
+      if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
+        clearInterval(intervalId)
+      }
+    }, 1000)
+
+    return () => clearInterval(intervalId)
+  }, [])
 
   return (
     <Container className={styles.calendarSectionWrapper} id="calendar">
       <CoupleName className={styles.name} />
 
       <div className={styles.date}>
-        Tháng {month} / {year}
+        Tháng {month} / {YEAR}
       </div>
 
       <div className={styles.calendarWrapper}>
@@ -35,7 +60,7 @@ export const CalendarSection = () => {
                 <div key={index} className={styles.day}>
                   <span
                     className={clsx({
-                      [styles.active]: day === 10,
+                      [styles.active]: day === Number(invitationInfo[mainName].day),
                     })}
                   >
                     {day}
@@ -48,19 +73,19 @@ export const CalendarSection = () => {
 
         <div className={styles.countDown}>
           <div className={styles.countDownItem}>
-            <div className={styles.number}>00</div>
+            <div className={styles.number}>{dateRemaining.days}</div>
             <div className={styles.text}>Ngày</div>
           </div>
           <div className={styles.countDownItem}>
-            <div className={styles.number}>00</div>
+            <div className={styles.number}>{dateRemaining.hours}</div>
             <div className={styles.text}>Giờ</div>
           </div>
           <div className={styles.countDownItem}>
-            <div className={styles.number}>00</div>
+            <div className={styles.number}>{dateRemaining.minutes}</div>
             <div className={styles.text}>Phút</div>
           </div>
           <div className={styles.countDownItem}>
-            <div className={styles.number}>00</div>
+            <div className={styles.number}>{dateRemaining.seconds}</div>
             <div className={styles.text}>Giây</div>
           </div>
         </div>
