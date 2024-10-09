@@ -1,0 +1,90 @@
+.eventSectionWrapper {
+  background-color: $pink-50;
+  padding-bottom: 48px;
+  text-align: center;
+
+  @include responsive(md) {
+    font-size: 12px;
+  }
+
+  .p1 {
+    text-transform: uppercase;
+  }
+
+  .p2,
+  .p9 {
+    color: $pink-400;
+    margin-top: 16px;
+    margin-bottom: 5px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+
+    @include responsive(md) {
+      font-size: 20px;
+    }
+  }
+
+  .p3,
+  .p10 {
+    font-size: 12px;
+
+    @include responsive(md) {
+      font-size: 10px;
+    }
+  }
+
+  .p4 {
+    margin-top: 30px;
+    text-transform: uppercase;
+  }
+
+  .p5 {
+    margin: 10px 0;
+    color: $pink-400;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .p6 {
+    text-transform: uppercase;
+  }
+
+  .p7 {
+    color: $pink-400;
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    margin: 10px 0;
+
+    @include responsive(md) {
+      font-size: 20px;
+    }
+  }
+
+  .p8 {
+    text-transform: uppercase;
+  }
+
+  .maps {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+
+    a {
+      padding: 8px 16px;
+      background-color: $pink-350;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.25s;
+      font-size: 12px;
+
+      @include responsive(md) {
+        font-size: 10px;
+      }
+
+      &:hover {
+        background-color: $pink-400;
+      }
+    }
+  }
+}

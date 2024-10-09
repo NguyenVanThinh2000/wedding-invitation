@@ -12,7 +12,7 @@ import {
   AlbumSection,
   CalendarSection,
   DonateSection,
-  EventSection,
+  Event2Section,
   Floats,
   GroomBrideSection,
   Header,
@@ -71,7 +71,10 @@ const Home = () => {
         <TitleSection mainName={invitationId as TMainName} />
         <VideoWeddingSection />
         <CalendarSection mainName={invitationId as TMainName} />
-        <EventSection mainName={invitationId as TMainName} />
+        <Event2Section
+          guestName={guest?.nameInInvitation as string}
+          mainName={invitationId as TMainName}
+        />
         <GroomBrideSection />
         <LoveStory />
         <AlbumSection />

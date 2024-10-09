@@ -15,33 +15,33 @@ const menu = [
   },
   {
     id: 2,
-    title: 'Album Hình Cưới',
-    href: 'album',
-  },
-  {
-    id: 3,
     title: 'Lịch',
     href: 'calendar',
   },
   {
+    id: 3,
+    title: 'Sự Kiện Cưới',
+    href: 'event',
+  },
+  {
     id: 4,
-    title: 'Chuyện Tình Yêu',
-    href: 'story',
-  },
-  {
-    id: 5,
-    title: 'Lời Ngỏ',
-    href: 'invitation',
-  },
-  {
-    id: 6,
     title: 'Cô Dâu & Chú Rể',
     href: 'bride-groom',
   },
   {
+    id: 5,
+    title: 'Chuyện Tình Yêu',
+    href: 'story',
+  },
+  {
+    id: 6,
+    title: 'Album Hình Cưới',
+    href: 'album',
+  },
+  {
     id: 7,
-    title: 'Sự Kiện Cưới',
-    href: 'event',
+    title: 'Lời Ngỏ',
+    href: 'invitation',
   },
   {
     id: 8,

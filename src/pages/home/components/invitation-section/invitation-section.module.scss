@@ -30,6 +30,10 @@
     & > span {
       display: block;
       font-size: 14px;
+
+      @include responsive(md) {
+        font-size: 12px;
+      }
     }
   }
 

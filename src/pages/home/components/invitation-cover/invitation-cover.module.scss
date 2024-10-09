@@ -25,7 +25,7 @@
     overflow: hidden;
 
     @include responsive(lg) {
-      height: 50%;
+      height: fit-content;
       width: 100%;
     }
 
@@ -40,13 +40,12 @@
   }
 
   .content {
-    flex: 1;
     padding-left: 20px;
     @include flex-center;
     flex-direction: column;
 
     @include responsive(lg) {
-      padding: 0;
+      padding: 30px 0;
     }
 
     .title {
@@ -54,12 +53,24 @@
       font-weight: 700;
       font-family: 'Dancing Script', cursive;
       text-align: center;
+
+      @include responsive(md) {
+        font-size: 24px;
+      }
+
+      @include responsive(sm) {
+        font-size: 20px;
+      }
     }
 
     .date {
       font-size: 14px;
       font-weight: 500;
       text-align: center;
+
+      @include responsive(md) {
+        font-size: 12px;
+      }
     }
 
     .coupleName {
@@ -67,11 +78,22 @@
       text-align: center;
       margin: 20px auto;
       color: $pink-400;
+
+      @include responsive(md) {
+        font-size: 24px;
+      }
+
+      @include responsive(sm) {
+        font-size: 20px;
+      }
     }
 
     .invitation {
       text-align: center;
-      font-size: 14px;
+
+      @include responsive(md) {
+        font-size: 12px;
+      }
 
       .name {
         font-weight: 700;
@@ -84,6 +106,10 @@
       background-color: $pink-400;
       animation: box-shadow-pulse 1.5s infinite;
       transition: background-color 0.3s ease;
+
+      @include responsive(md) {
+        font-size: 12px;
+      }
 
       &:hover {
         background-color: $pink-500;

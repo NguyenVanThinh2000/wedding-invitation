@@ -17,13 +17,13 @@ export const EventSection = ({ mainName }: Props) => {
         {locationList.map((schedule) => (
           <div key={schedule.id} className={styles.scheduleItem}>
             <div className={styles.image}>
-              <img alt={schedule.title} src={schedule.image} />
+              {/* <img alt={schedule.title} src={schedule.image} /> */}
             </div>
             <div className={styles.content}>
-              <p className={styles.title}>{schedule.title}</p>
+              {/* <p className={styles.title}>{schedule.title}</p> */}
               <div className={styles.middleContent}>
-                <p>{schedule.dateTime}</p>
-                <p>{schedule.location}</p>
+                {/* <p>{schedule.dateTime}</p> */}
+                {/* <p>{schedule.location}</p> */}
               </div>
               <a
                 className={styles.mapButton}

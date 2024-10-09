@@ -131,25 +131,27 @@ export const donateList = [
 
 export const invitationInfo = {
   thoan: {
-    weekDay: 'Thứ 6',
+    hour1: '09',
+    minute1: '00',
+    hour2: '11',
+    minute2: '00',
+    weekDay: 'Thứ Sáu',
     day: '08',
     month: '11',
+    dayLunar: '08',
+    monthLunar: '10',
     location: [
       {
         id: generateUUID(),
-        title: 'HÔN LỄ ĐƯỢC CỬ HÀNH',
-        dateTime: '09:30 08/11/2024 - Dương lịch',
-        location: 'Tại: Tư gia nhà nữ - Thôn Hà Trung, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị',
+        name: 'Tư gia',
+        location: 'Hà Trung, Gio Châu, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B054'50.2%22N+107%C2%B004'17.9%22E/@16.9139847,107.0713413,91m/data=!3m1!1e3!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.9139444!4d107.0716389?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
-        image: weddingPhotos[0],
       },
       {
         id: generateUUID(),
-        title: 'TIỆC CƯỚI ĐƯỢC TỔ CHỨC',
-        dateTime: '11:00 08/11/2024 - Dương lịch',
-        location: 'Tại: Hội trường thôn Hà Trung, Xã Gio Châu, Huyện Gio Linh, Tỉnh Quảng Trị',
+        name: 'Hội Trường Thôn Hà Trung',
+        location: 'Gio Châu, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B054'49.5%22N+107%C2%B004'11.5%22E/@16.9137601,107.0672761,741m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.913755!4d107.069851?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
-        image: weddingPhotos[0],
       },
     ],
     donate: {
@@ -161,27 +163,27 @@ export const invitationInfo = {
     },
   },
   thinh: {
+    hour1: '09',
+    minute1: '30',
+    hour2: '11',
+    minute2: '00',
     weekDay: 'Chủ Nhật',
     day: '10',
     month: '11',
+    dayLunar: '10',
+    monthLunar: '10',
     location: [
       {
         id: generateUUID(),
-        title: 'HÔN LỄ ĐƯỢC CỬ HÀNH',
-        dateTime: '09:30 10/11/2024 - Dương lịch',
-        location:
-          'Tại: Tư gia nhà nam - Thôn Vinh Quang Hạ, Xã Gio Quang, Huyện Gio Linh, Tỉnh Quảng Trị',
+        name: 'Tư gia',
+        location: 'Vinh Quang Hạ, Gio Quang, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B051'36.9%22N+107%C2%B007'14.3%22E/@16.8602443,107.1199853,185m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.860243!4d107.120629?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
-        image: weddingPhotos[1],
       },
       {
         id: generateUUID(),
-        title: 'TIỆC CƯỚI ĐƯỢC TỔ CHỨC',
-        dateTime: '11:00 10/11/2024 - Dương lịch',
-        location:
-          'Tại: Hội trường thôn Vinh Quang Hạ, Xã Gio Quang, Huyện Gio Linh, Tỉnh Quảng Trị',
+        name: 'Hội Trường Thôn Vinh Quang Hạ',
+        location: 'Gio Quang, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B051'46.7%22N+107%C2%B007'22.1%22E/@16.8629613,107.1221673,185m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.86296!4d107.122811?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
-        image: weddingPhotos[1],
       },
     ],
     donate: {

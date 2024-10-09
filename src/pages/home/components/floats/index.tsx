@@ -36,7 +36,7 @@ export const Floats = ({ guestId }: Props) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndexAnnounce((prev) => (prev % 3) + 1)
-    }, 5000)
+    }, 7000)
     return () => clearInterval(interval)
   }, [])
   return (
