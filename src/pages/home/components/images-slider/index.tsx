@@ -30,10 +30,9 @@ const ImagesSlider = ({ isOpen, onClose }: ImagesSliderProps) => {
   const handleCopyToClipboard = async () => {
     try {
       const response = await fetch(currentSlide.src)
-      const imgType = response.headers.get('Content-Type')
       const blob = await response.blob()
 
-      const item = new ClipboardItem({ [imgType as string]: blob })
+      const item = new ClipboardItem({ ['image/png']: blob })
 
       await navigator.clipboard.write([item])
     } catch (error) {
