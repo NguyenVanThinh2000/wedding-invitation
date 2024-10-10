@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import Snowfall from 'react-snowfall'
 
 import clsx from 'clsx'
 
 import { invitationApiEndPoints } from '@/api'
+import audio from '@/assets/audios/beautifulInWhite.mp3'
 import useScrollLock from '@/hooks/useScrollLock'
 import { TGuest, TMainName, TParam } from '@/types'
 
@@ -35,11 +36,26 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [guest, setGuest] = useState<TGuest | undefined>()
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const [isAudioPlaying, setIsAudioPlaying] = useState(false)
   useScrollLock(!isOpen)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [isOpen])
+
+  const onToggleSound = () => {
+    if (isAudioPlaying) {
+      audioRef.current?.pause()
+    } else {
+      audioRef.current?.play()
+    }
+    setIsAudioPlaying(!isAudioPlaying)
+  }
+
+  const handleAudioEnd = () => {
+    audioRef.current?.play()
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +70,13 @@ const Home = () => {
     }
     fetchData()
   }, [searchParams])
+
+  useEffect(() => {
+    if (isOpen) {
+      audioRef.current?.play()
+      setIsAudioPlaying(true)
+    }
+  }, [isOpen])
 
   return (
     <>
@@ -84,7 +107,9 @@ const Home = () => {
         <ThanksSection />
       </div>
 
-      <Floats guestId={guest?.id} />
+      <Floats guestId={guest?.id} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
+
+      <audio ref={audioRef} autoPlay src={audio} onEnded={handleAudioEnd} />
 
       <Snowfall
         color="#e57d90"

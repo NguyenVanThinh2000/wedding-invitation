@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { CalendarCheck, CircleDollarSign, NotebookPen, Volume2 } from 'lucide-react'
+import { CalendarCheck, CircleDollarSign, NotebookPen, Volume2, VolumeX } from 'lucide-react'
 
 import { invitationApiEndPoints } from '@/api'
 
@@ -10,8 +10,10 @@ import styles from './floats.module.scss'
 
 interface Props {
   guestId?: string
+  onToggleSound?: () => void
+  isAudioPlaying?: boolean
 }
-export const Floats = ({ guestId }: Props) => {
+export const Floats = ({ guestId, onToggleSound, isAudioPlaying }: Props) => {
   const [indexAnnounce, setIndexAnnounce] = useState(1)
   const [isOpenModalConfirmAttend, setIsOpenModalConfirmAttend] = useState(false)
   const handleGoToSection = (id: string) => {
@@ -43,7 +45,11 @@ export const Floats = ({ guestId }: Props) => {
     <>
       <div className={styles.floatWrapper}>
         <div className={styles.left}>
-          <FloatButton animation icon={<Volume2 size={20} />} />
+          <FloatButton
+            animation
+            icon={isAudioPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
+            onClick={onToggleSound}
+          />
         </div>
         <div className={styles.right}>
           <div className={styles.buttons}>
