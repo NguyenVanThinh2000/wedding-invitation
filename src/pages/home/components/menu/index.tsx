@@ -53,7 +53,7 @@ const menu = [
   },
 ]
 interface Props {
-  open?: boolean
+  open: boolean
   setOpenMenu?: Dispatch<SetStateAction<boolean>>
 }
 export const Menu = ({ open, setOpenMenu }: Props) => {

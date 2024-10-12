@@ -6,6 +6,7 @@ import clsx from 'clsx'
 
 import { invitationApiEndPoints } from '@/api'
 import audio from '@/assets/audios/beautifulInWhite.mp3'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 import useScrollLock from '@/hooks/useScrollLock'
 import { TGuest } from '@/types'
 
@@ -30,6 +31,9 @@ import {
 import styles from './home.module.scss'
 
 const Home = () => {
+  const {
+    actions: { updateScrollLock },
+  } = useInvitationContext()
   const [isLoading, setIsLoading] = useState(true)
   const [searchParams] = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
@@ -37,11 +41,6 @@ const Home = () => {
   const [guest, setGuest] = useState<TGuest | undefined>()
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
-  useScrollLock(!isOpen || isOpenMenu)
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [isOpen])
 
   const onToggleSound = () => {
     if (isAudioPlaying) {
@@ -59,24 +58,39 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const guestId = searchParams.get('code')
-      if (guestId) {
-        const {
-          data: { data, error },
-        } = await invitationApiEndPoints.getGuest(guestId)
-        if (!error) setGuest(data)
-        setGuest(data)
-        setIsLoading(false)
-      }
+      // if (guestId) {
+      //   const {
+      //     data: { data, error },
+      //   } = await invitationApiEndPoints.getGuest(guestId)
+      //   if (!error) setGuest(data)
+      //   setGuest(data)
+      //   setIsLoading(false)
+      // }
+      setGuest({
+        name: 'Trần Thúy Trinh',
+        nameInInvitation: 'Thúy Trinh + NT',
+        isAttending: false,
+        wishes: 'Chúc mừng hạnh phúc hai bạn nha',
+        host: 'thoan',
+        role: 'bạn',
+        id: '670244e3a2ea6ecae647587f',
+      })
+      setIsLoading(false)
     }
     fetchData()
   }, [searchParams])
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     if (isOpen) {
       audioRef.current?.play()
       setIsAudioPlaying(true)
     }
   }, [isOpen])
+
+  useEffect(() => {
+    updateScrollLock(!isOpen || isOpenMenu)
+  }, [isOpen, isOpenMenu])
 
   return (
     <>
@@ -92,21 +106,24 @@ const Home = () => {
               onOpen={() => setIsOpen(true)}
             />
           </div>
-          <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
-            <TitleSection host={guest.host} />
-            <VideoWeddingSection />
-            <CalendarSection host={guest.host} />
-            <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
-            <GroomBrideSection />
-            <LoveStory />
-            <AlbumSection />
-            <InvitationSection />
-            <DonateSection host={guest.host} />
-            <WishesSection guest={guest} />
-            <ThanksSection />
-          </div>
-
-          <Floats guest={guest} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
+          {isOpen && (
+            <>
+              <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
+                <TitleSection host={guest.host} />
+                <VideoWeddingSection />
+                <CalendarSection host={guest.host} />
+                <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
+                <GroomBrideSection />
+                <LoveStory />
+                <AlbumSection />
+                <InvitationSection />
+                <DonateSection host={guest.host} />
+                <WishesSection guest={guest} />
+                <ThanksSection />
+              </div>
+              <Floats guest={guest} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
+            </>
+          )}
         </>
       )}
 

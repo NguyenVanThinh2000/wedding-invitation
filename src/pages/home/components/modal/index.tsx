@@ -1,12 +1,12 @@
-import { Dispatch, ReactNode, SetStateAction } from 'react'
+import { Dispatch, ReactNode, SetStateAction, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 import clsx from 'clsx'
 
 import { Button } from '@/components'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 
 import styles from './modal.module.scss'
-import useScrollLock from '@/hooks/useScrollLock'
 
 interface Props {
   open: boolean
@@ -15,7 +15,10 @@ interface Props {
   content: ReactNode
 }
 export const Modal = ({ open, onClose, onConfirm, content }: Props) => {
-  useScrollLock(open)
+  const {
+    actions: { updateScrollLock },
+  } = useInvitationContext()
+
   const handleClose = () => {
     onClose?.(false)
   }
@@ -23,6 +26,10 @@ export const Modal = ({ open, onClose, onConfirm, content }: Props) => {
   const handleConfirm = (value: boolean) => {
     onConfirm?.(value)
   }
+
+  useEffect(() => {
+    updateScrollLock(open)
+  }, [open])
 
   return createPortal(
     <div className={clsx(styles.modal, { [styles.open]: open })}>

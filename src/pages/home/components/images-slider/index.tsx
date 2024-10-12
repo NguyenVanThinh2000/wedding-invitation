@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import clsx from 'clsx'
@@ -7,7 +7,7 @@ import 'swiper/css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { weddingPhotos } from '@/constants'
-import useScrollLock from '@/hooks/useScrollLock'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 
 import styles from './images-slider.module.scss'
 
@@ -16,7 +16,9 @@ interface ImagesSliderProps {
   onClose: () => void
 }
 const ImagesSlider = ({ isOpen, onClose }: ImagesSliderProps) => {
-  useScrollLock(isOpen)
+  const {
+    actions: { updateScrollLock },
+  } = useInvitationContext()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const swiperRef = useRef<any>(null)
   const [currentSlide, setCurrentSlide] = useState<{
@@ -59,6 +61,10 @@ const ImagesSlider = ({ isOpen, onClose }: ImagesSliderProps) => {
       swiperRef.current.swiper.slideNext()
     }
   }
+
+  useEffect(() => {
+    updateScrollLock(isOpen)
+  }, [isOpen])
 
   return createPortal(
     <div className={clsx(styles.sliderWrapper, { [styles.open]: isOpen })}>

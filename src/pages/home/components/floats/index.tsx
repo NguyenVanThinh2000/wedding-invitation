@@ -92,6 +92,7 @@ export const Floats = ({ guest, onToggleSound, isAudioPlaying }: Props) => {
         content={questionAttendMapping[guest.role]}
         open={isOpenModalConfirmAttend}
         onConfirm={onConfirmAttend}
+        onClose={() => setIsOpenModalConfirmAttend(false)}
       />
       <Modal
         content={thanksForAttendConfirmYesMapping[guest.role]}
