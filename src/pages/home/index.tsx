@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import { invitationApiEndPoints } from '@/api'
 import audio from '@/assets/audios/beautifulInWhite.mp3'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import useScrollLock from '@/hooks/useScrollLock'
 import { TGuest } from '@/types'
 
 import {
@@ -58,24 +57,14 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       const guestId = searchParams.get('code')
-      // if (guestId) {
-      //   const {
-      //     data: { data, error },
-      //   } = await invitationApiEndPoints.getGuest(guestId)
-      //   if (!error) setGuest(data)
-      //   setGuest(data)
-      //   setIsLoading(false)
-      // }
-      setGuest({
-        name: 'Trần Thúy Trinh',
-        nameInInvitation: 'Thúy Trinh + NT',
-        isAttending: false,
-        wishes: 'Chúc mừng hạnh phúc hai bạn nha',
-        host: 'thoan',
-        role: 'bạn',
-        id: '670244e3a2ea6ecae647587f',
-      })
-      setIsLoading(false)
+      if (guestId) {
+        const {
+          data: { data, error },
+        } = await invitationApiEndPoints.getGuest(guestId)
+        if (!error) setGuest(data)
+        setGuest(data)
+        setIsLoading(false)
+      }
     }
     fetchData()
   }, [searchParams])
