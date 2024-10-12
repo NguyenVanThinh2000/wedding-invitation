@@ -9,6 +9,7 @@ import thoanthoanQRCode from '@/assets/images/QR-thoan.jpg'
 import thinhnguyenQRCode from '@/assets/images/thinhnguyen.jpg'
 import { Tiktok } from '@/components/icons'
 import { generateUUID } from '@/utils'
+import { TRole } from '@/types'
 
 export const weddingPhotos = [img1, img2, img3, img4, img5]
 
@@ -149,7 +150,7 @@ export const invitationInfo = {
       },
       {
         id: generateUUID(),
-        name: 'Hội Trường Thôn Hà Trung',
+        name: 'Trung tâm học tập cộng đồng Thôn Hà Trung',
         location: 'Gio Châu, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B054'49.5%22N+107%C2%B004'11.5%22E/@16.9137601,107.0672761,741m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.913755!4d107.069851?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
       },
@@ -181,7 +182,7 @@ export const invitationInfo = {
       },
       {
         id: generateUUID(),
-        name: 'Hội Trường Thôn Vinh Quang Hạ',
+        name: 'Trung tâm học tập cộng đồng Thôn Vinh Quang Hạ',
         location: 'Gio Quang, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B051'46.7%22N+107%C2%B007'22.1%22E/@16.8629613,107.1221673,185m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.86296!4d107.122811?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
       },
@@ -197,3 +198,43 @@ export const invitationInfo = {
 }
 
 export const YEAR = 2024
+
+export const thanksForWishesMapping: Record<TRole, string> = {
+  'bạn': 'Cảm ơn bạn đã gửi lời chúc đến vợ chồng mình nhaaa!!!',
+  'anh': 'Cảm ơn anh đã gửi lời chúc đến vợ chồng em nhé!!!',
+  'chị': 'Cảm ơn chị đã gửi lời chúc đến vợ chồng em nhé!!!',
+  'ông': 'Cảm ơn ông đã gửi lời chúc đến chúng cháu ạ!!!',
+  'bà': 'Cảm ơn bà đã gửi lời chúc đến chúng cháu ạ!!!',
+  'thầy': 'Cảm ơn thầy đã gửi lời chúc đến vợ chồng em ạ!!!',
+  'cô': 'Cảm ơn cô đã gửi lời chúc đến vợ chồng em ạ!!!',
+}
+
+export const questionAttendMapping: Record<TRole, string> = {
+  'bạn': 'Bạn sẽ tham dự bữa tiệc cùng vợ chồng mình chứ?',
+  'anh': 'Anh có tham dự bữa tiệc cùng vợ chồng em không?',
+  'chị': 'Chị có tham dự bữa tiệc cùng vợ chồng em không?',
+  'ông': 'Ông có tham dự bữa tiệc cùng chúng cháu không?',
+  'bà': 'Bà có tham dự bữa tiệc cùng chúng cháu không?',
+  'thầy': 'Thầy có tham dự bữa tiệc cùng vợ chồng em không?',
+  'cô': 'Cô có tham dự bữa tiệc cùng vợ chồng em không?',
+}
+
+export const thanksForAttendConfirmYesMapping: Record<TRole, string> = {
+  'bạn': 'Cảm ơn bạn đã xác nhận tham dự bữa tiệc cùng vợ chồng mình nhaaa!!!',
+  'anh': 'Cảm ơn anh đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!',
+  'chị': 'Cảm ơn chị đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!',
+  'ông': 'Cảm ơn ông đã xác nhận tham dự bữa tiệc cùng chúng cháu ạ!!!',
+  'bà': 'Cảm ơn bà đã xác nhận tham dự bữa tiệc cùng chúng cháu ạ!!!',
+  'thầy': 'Cảm ơn thầy đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!',
+  'cô': 'Cảm ơn cô đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!',
+}
+
+export const thanksForAttendConfirmNoMapping: Record<TRole, string> = {
+  'bạn': 'Cảm ơn bạn đã thông báo không tham dự bữa tiệc cùng vợ chồng mình nhaaa!!!',
+  'anh': 'Cảm ơn anh đã thông báo không tham dự bữa tiệc cùng vợ chồng em nhé!!!',
+  'chị': 'Cảm ơn chị đã thông báo không tham dự bữa tiệc cùng vợ chồng em nhé!!!',
+  'ông': 'Cảm ơn ông đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
+  'bà': 'Cảm ơn bà đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
+  'thầy': 'Cảm ơn thầy đã thông báo không tham dự bữa tiệc cùng vợ chồng em ạ!!!',
+  'cô': 'Cảm ơn cô đã thông báo không tham dự bữa tiệc cùng vợ chồng em ạ!!!',
+}

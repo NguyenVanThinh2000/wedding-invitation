@@ -7,8 +7,8 @@ import heart from '../../../../assets/images/heart-icon.png'
 import weddinglabel from '../../../../assets/images/wedding-label.png'
 import styles from './title-section.module.scss'
 
-export const TitleSection = ({ mainName }: PropsParams) => {
-  const data = invitationInfo[mainName]
+export const TitleSection = ({ host }: PropsParams) => {
+  const data = invitationInfo[host]
   return (
     <Container className={styles.titleSectionWrapper}>
       <div className={styles.title}>
@@ -27,13 +27,13 @@ export const TitleSection = ({ mainName }: PropsParams) => {
       <CoupleName className={styles.name} />
 
       <div className={styles.fullDate}>
-        {invitationInfo[mainName].weekDay}. {invitationInfo[mainName].day} /{' '}
-        {invitationInfo[mainName].month} / 2024{' '}
+        {invitationInfo[host].weekDay}. {invitationInfo[host].day} /{' '}
+        {invitationInfo[host].month} / 2024{' '}
       </div>
       <div className={styles.dayMonth2}>
-        <span className={styles.day}>{invitationInfo[mainName].day}</span>
+        <span className={styles.day}>{invitationInfo[host].day}</span>
         <img alt="" src={heart} />
-        <span className={styles.month}>{invitationInfo[mainName].month}</span>
+        <span className={styles.month}>{invitationInfo[host].month}</span>
       </div>
     </Container>
   )

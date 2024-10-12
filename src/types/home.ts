@@ -1,11 +1,15 @@
 export type TParam = {
-  invitationId: 'thoan' | 'thinh' | undefined
+  invitationId: THost | undefined
   guestId: string
 }
 
 export interface PropsParams {
-  mainName: 'thoan' | 'thinh'
+  host: THost
 }
+
+export type THost = 'thoan' | 'thinh'
+
+export type TRole = 'thầy' | 'cô' | 'bạn' | 'anh' | 'chị' | 'ông' | 'bà'
 
 export type TGuest = {
   id: string
@@ -13,6 +17,8 @@ export type TGuest = {
   nameInInvitation: string
   isAttending: boolean
   wishes: string
+  host: THost
+  role: TRole
 }
 
 export type TResponse<T> = {
@@ -27,5 +33,3 @@ export type TGuestUpdate = {
   isAttending?: boolean
   wishes?: string
 }
-
-export type TMainName = 'thoan' | 'thinh'

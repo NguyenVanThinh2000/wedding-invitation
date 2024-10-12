@@ -5,14 +5,15 @@ import { Button, Container, SectionTitle } from '@/components'
 
 import { Modal } from '../modal'
 import styles from './wishes-section.module.scss'
+import { thanksForWishesMapping } from '@/constants'
+import { TGuest } from '@/types'
 
 interface Props {
-  defaultWishes?: string
-  guestId?: string
+  guest: TGuest
 }
-export const WishesSection = ({ defaultWishes, guestId }: Props) => {
+export const WishesSection = ({ guest }: Props) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
-  const [wishes, setWishes] = useState<string>(defaultWishes ?? '')
+  const [wishes, setWishes] = useState<string>(guest.wishes)
   const [guestName, setGuestName] = useState('')
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setWishes(e.target.value)
@@ -23,7 +24,7 @@ export const WishesSection = ({ defaultWishes, guestId }: Props) => {
 
   const handleSubmit = async () => {
     if (!wishes) return
-    if (!guestId) {
+    if (!guest.id) {
       await invitationApiEndPoints.findAndUpdateGuest({
         name: guestName,
         wishes,
@@ -31,7 +32,7 @@ export const WishesSection = ({ defaultWishes, guestId }: Props) => {
     } else {
       const {
         data: { data },
-      } = await invitationApiEndPoints.addWishes(guestId, wishes)
+      } = await invitationApiEndPoints.addWishes(guest.id, wishes)
       if (data) {
         setIsOpenModal(true)
       }
@@ -39,8 +40,8 @@ export const WishesSection = ({ defaultWishes, guestId }: Props) => {
   }
 
   useEffect(() => {
-    setWishes(defaultWishes ?? '')
-  }, [defaultWishes])
+    setWishes(guest.wishes)
+  }, [guest])
 
   return (
     <Container className={styles.wishesSectionWrapper} id="wishes">
@@ -50,7 +51,7 @@ export const WishesSection = ({ defaultWishes, guestId }: Props) => {
       />
 
       <div className={styles.form}>
-        {!guestId && <input name="guestName" type="text" onChange={handleChangeName} />}
+        {!guest.id && <input name="guestName" type="text" onChange={handleChangeName} />}
         <textarea
           id="wishes"
           name="wishes"
@@ -64,7 +65,7 @@ export const WishesSection = ({ defaultWishes, guestId }: Props) => {
         Gửi lời chúc
       </Button>
       <Modal
-        content="Cảm ơn bạn đã gửi lời chúc tới bọn mình nha !!!"
+        content={thanksForWishesMapping[guest.role]}
         open={isOpenModal}
         onClose={setIsOpenModal}
       />

@@ -1,14 +1,14 @@
 import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
-import { TMainName } from '@/types'
+import { THost } from '@/types'
 
 import styles from './donate-section.module.scss'
 
 interface Props {
-  mainName: TMainName
+  host: THost
 }
-export const DonateSection = ({ mainName }: Props) => {
-  const donate = invitationInfo[mainName].donate
+export const DonateSection = ({ host }: Props) => {
+  const donate = invitationInfo[host].donate
   return (
     <Container className={styles.donateSectionWrapper} id="donate">
       <SectionTitle

@@ -7,15 +7,20 @@ import { invitationApiEndPoints } from '@/api'
 import { FloatButton } from '../float-button'
 import { Modal } from '../modal'
 import styles from './floats.module.scss'
+import { TGuest } from '@/types'
+import { questionAttendMapping, thanksForAttendConfirmNoMapping, thanksForAttendConfirmYesMapping } from '@/constants'
 
 interface Props {
-  guestId?: string
+  guest: TGuest
   onToggleSound?: () => void
   isAudioPlaying?: boolean
 }
-export const Floats = ({ guestId, onToggleSound, isAudioPlaying }: Props) => {
+
+export const Floats = ({ guest, onToggleSound, isAudioPlaying }: Props) => {
   const [indexAnnounce, setIndexAnnounce] = useState(1)
   const [isOpenModalConfirmAttend, setIsOpenModalConfirmAttend] = useState(false)
+  const [isOpenModalThanksYes, setIsOpenModalThanksYes] = useState(false)
+  const [isOpenModalThanksNo, setIsOpenModalThanksNo] = useState(false)
   const handleGoToSection = (id: string) => {
     const section = document.getElementById(id)
     const headerHeight = document.getElementById('header')?.clientHeight ?? 0
@@ -29,10 +34,13 @@ export const Floats = ({ guestId, onToggleSound, isAudioPlaying }: Props) => {
 
   const onConfirmAttend = (value: boolean) => {
     setIsOpenModalConfirmAttend(false)
-    if (guestId)
-      invitationApiEndPoints.updateGuest(guestId, {
+    if (guest.id)
+      invitationApiEndPoints.updateGuest(guest.id, {
         isAttending: value,
       })
+    
+    if (value) setIsOpenModalThanksYes(true)
+    else setIsOpenModalThanksNo(true)
   }
 
   useEffect(() => {
@@ -78,9 +86,19 @@ export const Floats = ({ guestId, onToggleSound, isAudioPlaying }: Props) => {
         </div>
       </div>
       <Modal
-        content="Bạn sẽ tham gia chứ ???"
+        content={questionAttendMapping[guest.role]}
         open={isOpenModalConfirmAttend}
         onConfirm={onConfirmAttend}
+      />
+      <Modal
+        content={thanksForAttendConfirmYesMapping[guest.role]}
+        open={isOpenModalThanksYes}
+        onClose={() => setIsOpenModalThanksYes(false)}
+      />
+      <Modal
+        content={thanksForAttendConfirmNoMapping[guest.role]}
+        open={isOpenModalThanksNo}
+        onClose={() => setIsOpenModalThanksNo(false)}
       />
     </>
   )

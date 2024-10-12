@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import Snowfall from 'react-snowfall'
 
 import clsx from 'clsx'
@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { invitationApiEndPoints } from '@/api'
 import audio from '@/assets/audios/beautifulInWhite.mp3'
 import useScrollLock from '@/hooks/useScrollLock'
-import { TGuest, TMainName, TParam } from '@/types'
+import { TGuest } from '@/types'
 
 import {
   AlbumSection,
@@ -32,7 +32,6 @@ import styles from './home.module.scss'
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [searchParams] = useSearchParams()
-  const { invitationId } = useParams<TParam>()
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
   const [guest, setGuest] = useState<TGuest | undefined>()
@@ -65,6 +64,15 @@ const Home = () => {
           data: { data, error },
         } = await invitationApiEndPoints.getGuest(guestId)
         if (!error) setGuest(data)
+        setGuest({
+          name: 'Trần Thúy Trinh',
+          nameInInvitation: 'Thúy Trinh + NT',
+          isAttending: false,
+          wishes: 'Chúc mừng hạnh phúc hai bạn nha',
+          host: 'thoan',
+          role: 'bạn',
+          id: '670244e3a2ea6ecae647587f',
+        })
         setIsLoading(false)
       }
     }
@@ -83,33 +91,34 @@ const Home = () => {
       <Loading isLoading={isLoading} />
       <Header setOpenMenu={setIsOpenMenu} />
       <Menu open={isOpenMenu} setOpenMenu={setIsOpenMenu} />
-      <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
-        <InvitationCover
-          guestName={guest?.nameInInvitation || 'Bạn'}
-          mainName={invitationId as TMainName}
-          onOpen={() => setIsOpen(true)}
-        />
-      </div>
-      <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
-        <TitleSection mainName={invitationId as TMainName} />
-        <VideoWeddingSection />
-        <CalendarSection mainName={invitationId as TMainName} />
-        <Event2Section
-          guestName={guest?.nameInInvitation as string}
-          mainName={invitationId as TMainName}
-        />
-        <GroomBrideSection />
-        <LoveStory />
-        <AlbumSection />
-        <InvitationSection />
-        <DonateSection mainName={invitationId as TMainName} />
-        <WishesSection defaultWishes={guest?.wishes} guestId={guest?.id} />
-        <ThanksSection />
-      </div>
+      {guest && (
+        <>
+          <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
+            <InvitationCover
+              guestName={guest.nameInInvitation}
+              host={guest.host}
+              onOpen={() => setIsOpen(true)}
+            />
+          </div>
+          <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
+            <TitleSection host={guest.host} />
+            <VideoWeddingSection />
+            <CalendarSection host={guest.host} />
+            <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
+            <GroomBrideSection />
+            <LoveStory />
+            <AlbumSection />
+            <InvitationSection />
+            <DonateSection host={guest.host} />
+            <WishesSection guest={guest} />
+            <ThanksSection />
+          </div>
 
-      <Floats guestId={guest?.id} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
+          <Floats guest={guest} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
+        </>
+      )}
 
-      <audio ref={audioRef} autoPlay src={audio} onEnded={handleAudioEnd} />
+      <audio ref={audioRef} src={audio} onEnded={handleAudioEnd} />
 
       <Snowfall
         color="#e57d90"

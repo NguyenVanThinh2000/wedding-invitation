@@ -2,13 +2,14 @@ import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
 
 import styles from './event-section.module.scss'
+import { THost } from '@/types'
 
 interface Props {
-  mainName: 'thoan' | 'thinh'
+  host: THost
   guestName: string
 }
-export const Event2Section = ({ mainName, guestName }: Props) => {
-  const locationList = invitationInfo[mainName].location
+export const Event2Section = ({ host, guestName }: Props) => {
+  const locationList = invitationInfo[host].location
 
   return (
     <Container className={styles.eventSectionWrapper} id="event">
@@ -16,12 +17,12 @@ export const Event2Section = ({ mainName, guestName }: Props) => {
 
       <p className={styles.p1}>Hôn lễ được cử hành tại TƯ GIA vào lúc</p>
       <p className={styles.p2}>
-        {invitationInfo[mainName].hour1} giờ {invitationInfo[mainName].minute1} -{' '}
-        {invitationInfo[mainName].weekDay} <br />
-        Ngày {invitationInfo[mainName].day} tháng {invitationInfo[mainName].month} năm 2024
+        {invitationInfo[host].hour1} giờ {invitationInfo[host].minute1} -{' '}
+        {invitationInfo[host].weekDay} <br />
+        Ngày {invitationInfo[host].day} tháng {invitationInfo[host].month} năm 2024
       </p>
       <p className={styles.p3}>
-        (Nhằm ngày {invitationInfo[mainName].dayLunar} tháng {invitationInfo[mainName].monthLunar}{' '}
+        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar}{' '}
         năm Giáp Thìn)
       </p>
 
@@ -37,13 +38,13 @@ export const Event2Section = ({ mainName, guestName }: Props) => {
       <p className={styles.p8}>{locationList[1].location}</p>
 
       <p className={styles.p9}>
-        {invitationInfo[mainName].hour2} giờ {invitationInfo[mainName].minute2} -{' '}
-        {invitationInfo[mainName].weekDay}
+        {invitationInfo[host].hour2} giờ {invitationInfo[host].minute2} -{' '}
+        {invitationInfo[host].weekDay}
         <br /> Ngày 08 tháng 11 năm 2024
       </p>
 
       <p className={styles.p10}>
-        (Nhằm ngày {invitationInfo[mainName].dayLunar} tháng {invitationInfo[mainName].monthLunar}{' '}
+        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar}{' '}
         năm Giáp Thìn)
       </p>
 

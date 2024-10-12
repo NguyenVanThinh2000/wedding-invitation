@@ -4,28 +4,28 @@ import clsx from 'clsx'
 
 import { Container, CoupleName } from '@/components'
 import { YEAR, invitationInfo, weekDays } from '@/constants'
-import { TMainName } from '@/types'
+import { THost } from '@/types'
 import { countdown, generateCalendar } from '@/utils'
 
 import styles from './calendar-section.module.scss'
 
 interface Props {
-  mainName: TMainName
+  host: THost
 }
-export const CalendarSection = ({ mainName }: Props) => {
+export const CalendarSection = ({ host }: Props) => {
   const [dateRemaining, setDateRemaining] = useState({
     days: '00',
     hours: '00',
     minutes: '00',
     seconds: '00',
   })
-  const month = invitationInfo[mainName].month
+  const month = invitationInfo[host].month
   const weeks = generateCalendar(Number(month), YEAR)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       const { days, hours, minutes, seconds } = countdown(
-        `${invitationInfo[mainName].day}/${month}/${YEAR}`,
+        `${invitationInfo[host].day}/${month}/${YEAR}`,
       )
       setDateRemaining({ days, hours, minutes, seconds })
       if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
@@ -60,7 +60,7 @@ export const CalendarSection = ({ mainName }: Props) => {
                 <div key={index} className={styles.day}>
                   <span
                     className={clsx({
-                      [styles.active]: day === Number(invitationInfo[mainName].day),
+                      [styles.active]: day === Number(invitationInfo[host].day),
                     })}
                   >
                     {day}

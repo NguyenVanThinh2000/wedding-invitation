@@ -2,12 +2,13 @@ import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
 
 import styles from './event-section.module.scss'
+import { THost } from '@/types'
 
 interface Props {
-  mainName: 'thoan' | 'thinh'
+  host: THost
 }
-export const EventSection = ({ mainName }: Props) => {
-  const locationList = invitationInfo[mainName].location
+export const EventSection = ({ host }: Props) => {
+  const locationList = invitationInfo[host].location
 
   return (
     <Container className={styles.eventSectionWrapper} id="event">
