@@ -9,13 +9,13 @@ import useScrollLock from '@/hooks/useScrollLock'
 import styles from './modal.module.scss'
 
 interface Props {
-  open?: boolean
+  open: boolean
   onClose?: Dispatch<SetStateAction<boolean>>
   onConfirm?: (value: boolean) => void
   content: ReactNode
 }
 export const Modal = ({ open, onClose, onConfirm, content }: Props) => {
-  useScrollLock(open ?? false)
+  useScrollLock(open)
 
   const handleClose = () => {
     onClose?.(false)
