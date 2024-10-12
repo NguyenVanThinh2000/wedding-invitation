@@ -4,9 +4,9 @@ import { createPortal } from 'react-dom'
 import clsx from 'clsx'
 
 import { Button } from '@/components'
-import useScrollLock from '@/hooks/useScrollLock'
 
 import styles from './modal.module.scss'
+import useScrollLock from '@/hooks/useScrollLock'
 
 interface Props {
   open: boolean
@@ -16,7 +16,6 @@ interface Props {
 }
 export const Modal = ({ open, onClose, onConfirm, content }: Props) => {
   useScrollLock(open)
-
   const handleClose = () => {
     onClose?.(false)
   }

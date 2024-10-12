@@ -3,12 +3,16 @@ import { useEffect, useState } from 'react'
 import { CalendarCheck, CircleDollarSign, NotebookPen, Volume2, VolumeX } from 'lucide-react'
 
 import { invitationApiEndPoints } from '@/api'
+import {
+  questionAttendMapping,
+  thanksForAttendConfirmNoMapping,
+  thanksForAttendConfirmYesMapping,
+} from '@/constants'
+import { TGuest } from '@/types'
 
 import { FloatButton } from '../float-button'
 import { Modal } from '../modal'
 import styles from './floats.module.scss'
-import { TGuest } from '@/types'
-import { questionAttendMapping, thanksForAttendConfirmNoMapping, thanksForAttendConfirmYesMapping } from '@/constants'
 
 interface Props {
   guest: TGuest
@@ -21,6 +25,7 @@ export const Floats = ({ guest, onToggleSound, isAudioPlaying }: Props) => {
   const [isOpenModalConfirmAttend, setIsOpenModalConfirmAttend] = useState(false)
   const [isOpenModalThanksYes, setIsOpenModalThanksYes] = useState(false)
   const [isOpenModalThanksNo, setIsOpenModalThanksNo] = useState(false)
+
   const handleGoToSection = (id: string) => {
     const section = document.getElementById(id)
     const headerHeight = document.getElementById('header')?.clientHeight ?? 0
@@ -34,13 +39,11 @@ export const Floats = ({ guest, onToggleSound, isAudioPlaying }: Props) => {
 
   const onConfirmAttend = (value: boolean) => {
     setIsOpenModalConfirmAttend(false)
-    if (guest.id)
-      invitationApiEndPoints.updateGuest(guest.id, {
-        isAttending: value,
-      })
-    
     if (value) setIsOpenModalThanksYes(true)
     else setIsOpenModalThanksNo(true)
+    invitationApiEndPoints.updateGuest(guest.id, {
+      isAttending: value,
+    })
   }
 
   useEffect(() => {

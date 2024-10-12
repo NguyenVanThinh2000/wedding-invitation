@@ -3,8 +3,6 @@ import { Dispatch, SetStateAction } from 'react'
 import clsx from 'clsx'
 import { X } from 'lucide-react'
 
-import useScrollLock from '@/hooks/useScrollLock'
-
 import styles from './menu.module.scss'
 
 const menu = [
@@ -59,7 +57,6 @@ interface Props {
   setOpenMenu?: Dispatch<SetStateAction<boolean>>
 }
 export const Menu = ({ open, setOpenMenu }: Props) => {
-  useScrollLock(open ?? false)
   const handleHiddenMenu = () => {
     setOpenMenu?.((prev) => !prev)
   }

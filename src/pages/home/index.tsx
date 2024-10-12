@@ -37,7 +37,7 @@ const Home = () => {
   const [guest, setGuest] = useState<TGuest | undefined>()
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
-  useScrollLock(!isOpen)
+  useScrollLock(!isOpen || isOpenMenu)
 
   useEffect(() => {
     window.scrollTo(0, 0)
