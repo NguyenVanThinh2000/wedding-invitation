@@ -7,7 +7,7 @@ export const GroomBrideSection = () => {
   return (
     <Container className={styles.groomBrideSectionWrapper} id="bride-groom">
       <SectionTitle
-        description="Giới thiệu một chú rể đẹp trai và cô dâu xinh đẹp"
+        description="Giới thiệu một cô dâu xinh đẹp và một chú rể đẹp trai"
         title="- Groom & Bride -"
       />
 

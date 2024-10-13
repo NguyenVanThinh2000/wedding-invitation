@@ -55,21 +55,6 @@ export const loveStories = [
 
 export const groomBrideInfo = [
   {
-    tag: 'to. Groom',
-    description:
-      'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. 👉',
-    image: weddingPhotos[1],
-    dad: 'Nguyễn Văn Cường',
-    mom: 'Hoàng Thị Mỹ Nhung',
-    social: [
-      {
-        name: 'facebook',
-        link: 'https://www.facebook.com/nvthinh2701/',
-        icon: <Facebook size={24} />,
-      },
-    ],
-  },
-  {
     tag: 'to. Bride',
     description:
       'Một cô gái thích sự trẻ trung, năng động. Sở hữu vẻ bề ngoài khá mạnh mẽ nhưng trái tim khá mỏng manh và thích được chiều chuộng, yêu thương.',
@@ -86,6 +71,21 @@ export const groomBrideInfo = [
         name: 'tiktok',
         link: 'https://www.tiktok.com/@avocado0601',
         icon: <Tiktok />,
+      },
+    ],
+  },
+  {
+    tag: 'to. Groom',
+    description:
+      'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. 👉',
+    image: weddingPhotos[1],
+    dad: 'Nguyễn Văn Cường',
+    mom: 'Hoàng Thị Mỹ Nhung',
+    social: [
+      {
+        name: 'facebook',
+        link: 'https://www.facebook.com/nvthinh2701/',
+        icon: <Facebook size={24} />,
       },
     ],
   },
