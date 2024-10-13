@@ -55,7 +55,7 @@ export const WishesSection = ({ guest }: Props) => {
         <textarea
           id="wishes"
           name="wishes"
-          placeholder="Nhập lời chúc của bạn *"
+          placeholder={`Hãy nhập lời chúc của ${guest.role}...`}
           value={wishes}
           onChange={handleChange}
         ></textarea>
