@@ -18,9 +18,10 @@ export const TitleSection = ({ host }: PropsParams) => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#titleSection1',
-        start: 'top 90%',
-        end: 'top 90%',
-        scrub: 1.5,
+        start: 'top bottom',
+        end: 'center bottom',
+        scrub: 1,
+        markers: true,
       },
     })
   })
