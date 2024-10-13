@@ -27,7 +27,6 @@
       position: relative;
       height: 350px;
       width: calc(50% - 5px);
-      perspective: 1000px;
 
       @include responsive(md) {
         width: 100%;
@@ -37,28 +36,36 @@
         height: 400px;
       }
 
-      &:hover .inner {
-        transform: rotateY(180deg);
+      &:hover {
+        .inner {
+          .front {
+            transform: rotateY(-180deg);
+          }
+
+          .back {
+            transform: rotateY(0deg);
+          }
+        }
       }
 
       .inner {
+        perspective: 1000px;
         position: relative;
         height: 100%;
-        transition: transform 0.8s;
-        transform-style: preserve-3d;
-        -webkit-transform-style: preserve-3d;
-        backface-visibility: hidden;
-        -webkit-backface-visibility: hidden;
 
         .front,
         .back {
+          border: 1px solid $gray-300;
+          perspective: 1000px;
           position: absolute;
           inset: 0;
           padding: 10px;
-          border: 1px solid $gray-300;
+          transition: transform 0.8s;
           backface-visibility: hidden;
           -webkit-backface-visibility: hidden;
           background-color: $white;
+          transform-style: preserve-3d;
+          -webkit-transform-style: preserve-3d;
         }
 
         .front {
@@ -84,7 +91,6 @@
             aspect-ratio: 1/1;
             width: 100%;
             overflow: hidden;
-            transform: perspective(1000px);
 
             img {
               position: absolute;

@@ -1,8 +1,8 @@
 import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
+import { THost } from '@/types'
 
 import styles from './event-section.module.scss'
-import { THost } from '@/types'
 
 interface Props {
   host: THost
@@ -13,7 +13,7 @@ export const Event2Section = ({ host, guestName }: Props) => {
 
   return (
     <Container className={styles.eventSectionWrapper} id="event">
-      <SectionTitle description="" title="Sự Kiện Cưới" />
+      <SectionTitle description="" title="Lễ Vu Quy" />
 
       <p className={styles.p1}>Hôn lễ được cử hành tại TƯ GIA vào lúc</p>
       <p className={styles.p2}>
@@ -22,8 +22,8 @@ export const Event2Section = ({ host, guestName }: Props) => {
         Ngày {invitationInfo[host].day} tháng {invitationInfo[host].month} năm 2024
       </p>
       <p className={styles.p3}>
-        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar}{' '}
-        năm Giáp Thìn)
+        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar} năm Giáp
+        Thìn)
       </p>
 
       <p className={styles.p4}>Trân trọng kính mời</p>
@@ -44,8 +44,8 @@ export const Event2Section = ({ host, guestName }: Props) => {
       </p>
 
       <p className={styles.p10}>
-        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar}{' '}
-        năm Giáp Thìn)
+        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar} năm Giáp
+        Thìn)
       </p>
 
       <div className={styles.maps}>
@@ -53,7 +53,7 @@ export const Event2Section = ({ host, guestName }: Props) => {
           Bản đồ tư gia
         </a>
         <a href={locationList[1].mapUrl} target="_blank">
-          Bản đồ hội trường
+          Bản đồ TTHTCĐ
         </a>
       </div>
     </Container>

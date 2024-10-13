@@ -1,4 +1,4 @@
-import { Facebook, Instagram } from 'lucide-react'
+import { Facebook } from 'lucide-react'
 
 import img1 from '@/assets/images/DSC02036.png'
 import img2 from '@/assets/images/DSC02121.png'
@@ -8,31 +8,47 @@ import img5 from '@/assets/images/DSC02502.png'
 import thoanthoanQRCode from '@/assets/images/QR-thoan.jpg'
 import thinhnguyenQRCode from '@/assets/images/thinhnguyen.jpg'
 import { Tiktok } from '@/components/icons'
-import { generateUUID } from '@/utils'
 import { TRole } from '@/types'
+import { generateUUID } from '@/utils'
 
 export const weddingPhotos = [img1, img2, img3, img4, img5]
 
 export const loveStories = [
   {
     id: generateUUID(),
-    title: 'Bạn có tin vào tình yêu online không?',
-    date: '2017-04-29',
-    content: `Tôi đã từng không tin vào tình yêu online. Đã từng nghĩ làm sao có thể thích một người chưa từng gặp mặt? Vậy mà giờ đây tôi lại đang như vậy, bây giờ tôi đã hiểu: thế giới ảo tình yêu thật đấy!!! Ngày ấy vu vơ đăng một dòng status trên facebook than thở, vu vơ đùa giỡn nói chuyện với một người xa lạ chưa từng quen. Mà nào hay biết, 4 năm sau người ấy lại là chồng mình.`,
+    title: 'Cuộc gặp gỡ định mệnh',
+    date: '2013',
+    content: `Các bạn có tin vào định mệnh không? Chúng mình đã gặp nhau ở một hoàn cảnh khá đặc biệt, khi tụi mình là đối thủ của nhau tại một lần thi HSG cấp huyện 😃 Ấn tượng đầu tiên của mình về chồng lúc đó là: vừa xấu zai, vừa đen, vừa ít nói, không có gì nổi bật 😃 (Hỏi bài còn không chỉ 🥲) - khá cay. Vậy mà định mệnh sắp đặt các cậu ạ. Bẵng đi một thời gian, anh ra kiếm ra facebook tớ và chúng mình cũng bắt đầu hỏi thăm nhau về tình hình học tập của nhau,... Mà nào hay biết hơn 10 năm sau người đó là chồng của mình 🥰`,
     image: weddingPhotos[0],
   },
   {
     id: generateUUID(),
-    title: 'Lời tỏ tình dễ thương^^',
+    title: 'Lời tỏ tình đáng yêu 🥰 🥰',
     date: '2017-04-29',
-    content: `Tôi đã từng không tin vào tình yêu online. Đã từng nghĩ làm sao có thể thích một người chưa từng gặp mặt? Vậy mà giờ đây tôi lại đang như vậy, bây giờ tôi đã hiểu: thế giới ảo tình yêu thật đấy!!! Ngày ấy vu vơ đăng một dòng status trên facebook than thở, vu vơ đùa giỡn nói chuyện với một người xa lạ chưa từng quen. Mà nào hay biết, 4 năm sau người ấy lại là chồng mình.`,
+    content: `Các cụ có câu: "Lửa gần rơm lâu ngày cũng bén". Ai mà có ngờ đâu, cuộc đời đưa đẩy, sau hơn một năm làm bạn, anh ta quyết định tỏ tình mình với một câu nói thẳng thắn: "Làm người yêu anh nha..!" Hơi ngại nhưng mà thui, tui cũng chờ câu nói này lâu lắm rùi ó 😜😝, gật đầu lia lịa lun...`,
     image: weddingPhotos[0],
   },
   {
     id: generateUUID(),
+    date: '2024-04-29',
+    content: `Thời gian cứ thế trôi qua, tụi mình vẫn yêu nhau như thế. phút chốc mình bất ngờ và xúc động khi trong ngày kỉ niệm 7 năm yêu nhau anh đã cầu hôn mình. không kìm được cảm xúc, mình đã khóc rất nhiều khi nghe anh nói câu: "đồng ý làm vợ anh nhé!" và thế là...`,
     title: 'Phút giây cầu hôn',
-    date: '2017-04-29',
-    content: `Tôi đã từng không tin vào tình yêu online. Đã từng nghĩ làm sao có thể thích một người chưa từng gặp mặt? Vậy mà giờ đây tôi lại đang như vậy, bây giờ tôi đã hiểu: thế giới ảo tình yêu thật đấy!!! Ngày ấy vu vơ đăng một dòng status trên facebook than thở, vu vơ đùa giỡn nói chuyện với một người xa lạ chưa từng quen. Mà nào hay biết, 4 năm sau người ấy lại là chồng mình.`,
+    image: weddingPhotos[0],
+  },
+  {
+    id: generateUUID(),
+    title: 'Lễ dạm ngõ',
+    date: '2024-07-17',
+    content: `Vì tính chất công việc, tụi mình quyết định dạm ngõ online 😝 Hai bên gia đình, người lớn bàn tính chuyện để chúng mình được đến với nhau.`,
+    image: weddingPhotos[0],
+  },
+  {
+    id: generateUUID(),
+    title: 'Chúng mình cười rồi',
+    date: '2024-11',
+    content: `Vậy là tụi mình đã kết thúc hành trình yêu nhau hơn 7 năm và bắt đầu một hành trình mới - về chung một nhà. <br />
+              Sau bao nhiêu ngày chờ đợi thì cuối cùng này vui của tụi mình cũng đến rồi. Cảm ơn vì đã lắng nghe và thấu hiểu nhau, cảm ơn vì một phần không thể thiếu trong thanh xuân của nhau. <br />
+              "Hạnh phúc đơn giản là tìm đúng người để trao yêu thương, tin tưởng và cùng nhau đi tới cuối con đường."`,
     image: weddingPhotos[0],
   },
 ]
@@ -41,49 +57,34 @@ export const groomBrideInfo = [
   {
     tag: 'to. Groom',
     description:
-      'Là bác sĩ nha khoa hiện đang công tác tại một phòng khám nha khoa ở Quận 1 thành phồ Hồ Chí Minh. Là một người hiền lành và ít nói. Luôn coi trọng tình cảm và yêu thương gia đình. Với anh: “Gia đình là điểm tựa vững chắc nhất và là bến đỗ bình yên không đâu sánh bằng đối với mỗi con người. Đó luôn là nơi tràn ngập tình yêu thương để ta trở về.”',
+      'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. 👉',
     image: weddingPhotos[1],
     dad: 'Nguyễn Văn Cường',
     mom: 'Hoàng Thị Mỹ Nhung',
     social: [
       {
         name: 'facebook',
-        link: 'https://www.facebook.com/thinh.nguyen.1994/',
+        link: 'https://www.facebook.com/nvthinh2701/',
         icon: <Facebook size={24} />,
-      },
-      {
-        name: 'instagram',
-        link: 'https://www.instagram.com/thinhnguyen_94/',
-        icon: <Instagram size={24} />,
-      },
-      {
-        name: 'tiktok',
-        link: 'https://www.tiktok.com/@thinhnguyen_94',
-        icon: <Tiktok />,
       },
     ],
   },
   {
     tag: 'to. Bride',
     description:
-      'Cô gái đến từ xứ Huế mộng mơ, hiện đang sinh sống và làm việc tại Sài Gòn. Sau khi tốt nghiệp Học viện Báo chí và Tuyên truyền, quyết tâm theo đuổi đam mê làm phóng viên du lịch. Là một người hay cười nhưng lại sống nội tâm, thích đọc sách, trồng cây và yêu thiên nhiên. Ngoài ra còn rất thích vẽ vời, nuôi mèo và nuôi ước mơ có cho mình một vườn hồng khoe sắc.',
+      'Một cô gái thích sự trẻ trung, năng động. Sở hữu vẻ bề ngoài khá mạnh mẽ nhưng trái tim khá mỏng manh và thích được chiều chuộng, yêu thương.',
     image: weddingPhotos[0],
     dad: 'Trần Hữu Đáo',
     mom: 'Trần Thị Thủy',
     social: [
       {
         name: 'facebook',
-        link: 'https://www.facebook.com/thinh.nguyen.1994/',
+        link: 'https://www.facebook.com/thoanthoan10a1',
         icon: <Facebook size={24} />,
       },
       {
-        name: 'instagram',
-        link: 'https://www.instagram.com/thinhnguyen_94/',
-        icon: <Instagram size={24} />,
-      },
-      {
         name: 'tiktok',
-        link: 'https://www.tiktok.com/@thinhnguyen_94',
+        link: 'https://www.tiktok.com/@avocado0601',
         icon: <Tiktok />,
       },
     ],
@@ -200,41 +201,51 @@ export const invitationInfo = {
 export const YEAR = 2024
 
 export const thanksForWishesMapping: Record<TRole, string> = {
-  'bạn': 'Cảm ơn bạn đã gửi lời chúc đến vợ chồng mình nhaaa!!!',
-  'anh': 'Cảm ơn anh đã gửi lời chúc đến vợ chồng em nhé!!!',
-  'chị': 'Cảm ơn chị đã gửi lời chúc đến vợ chồng em nhé!!!',
-  'ông': 'Cảm ơn ông đã gửi lời chúc đến chúng cháu ạ!!!',
-  'bà': 'Cảm ơn bà đã gửi lời chúc đến chúng cháu ạ!!!',
-  'thầy': 'Cảm ơn thầy đã gửi lời chúc đến vợ chồng em ạ!!!',
-  'cô': 'Cảm ơn cô đã gửi lời chúc đến vợ chồng em ạ!!!',
+  bạn: 'Cảm ơn bạn đã gửi lời chúc đến vợ chồng mình nhaaa!!!',
+  anh: 'Cảm ơn anh đã gửi lời chúc đến vợ chồng em nhé!!!',
+  chị: 'Cảm ơn chị đã gửi lời chúc đến vợ chồng em nhé!!!',
+  ông: 'Cảm ơn ông đã gửi lời chúc đến chúng cháu ạ!!!',
+  bà: 'Cảm ơn bà đã gửi lời chúc đến chúng cháu ạ!!!',
+  thầy: 'Cảm ơn thầy đã gửi lời chúc đến vợ chồng em ạ!!!',
+  cô: 'Cảm ơn cô đã gửi lời chúc đến vợ chồng em ạ!!!',
 }
 
 export const questionAttendMapping: Record<TRole, string> = {
-  'bạn': 'Bạn sẽ tham dự bữa tiệc cùng vợ chồng mình chứ?',
-  'anh': 'Anh có tham dự bữa tiệc cùng vợ chồng em không?',
-  'chị': 'Chị có tham dự bữa tiệc cùng vợ chồng em không?',
-  'ông': 'Ông có tham dự bữa tiệc cùng chúng cháu không?',
-  'bà': 'Bà có tham dự bữa tiệc cùng chúng cháu không?',
-  'thầy': 'Thầy có tham dự bữa tiệc cùng vợ chồng em không?',
-  'cô': 'Cô có tham dự bữa tiệc cùng vợ chồng em không?',
+  bạn: 'Bạn sẽ tham dự bữa tiệc cùng vợ chồng mình chứ?',
+  anh: 'Anh có tham dự bữa tiệc cùng vợ chồng em không?',
+  chị: 'Chị có tham dự bữa tiệc cùng vợ chồng em không?',
+  ông: 'Ông có tham dự bữa tiệc cùng chúng cháu không?',
+  bà: 'Bà có tham dự bữa tiệc cùng chúng cháu không?',
+  thầy: 'Thầy có tham dự bữa tiệc cùng vợ chồng em không?',
+  cô: 'Cô có tham dự bữa tiệc cùng vợ chồng em không?',
 }
 
 export const thanksForAttendConfirmYesMapping: Record<TRole, string> = {
-  'bạn': 'Cảm ơn bạn đã xác nhận tham dự bữa tiệc cùng vợ chồng mình nhaaa!!!',
-  'anh': 'Cảm ơn anh đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!',
-  'chị': 'Cảm ơn chị đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!',
-  'ông': 'Cảm ơn ông đã xác nhận tham dự bữa tiệc cùng chúng cháu ạ!!!',
-  'bà': 'Cảm ơn bà đã xác nhận tham dự bữa tiệc cùng chúng cháu ạ!!!',
-  'thầy': 'Cảm ơn thầy đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!',
-  'cô': 'Cảm ơn cô đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!',
+  bạn: 'Cảm ơn bạn đã xác nhận tham dự bữa tiệc cùng vợ chồng mình nhaaa!!!🫶',
+  anh: 'Cảm ơn anh đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!🫶',
+  chị: 'Cảm ơn chị đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!🫶',
+  ông: 'Cảm ơn ông đã xác nhận tham dự bữa tiệc cùng chúng cháu ạ!!!🫶',
+  bà: 'Cảm ơn bà đã xác nhận tham dự bữa tiệc cùng chúng cháu ạ!!!🫶',
+  thầy: 'Cảm ơn thầy đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!🫶',
+  cô: 'Cảm ơn cô đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!🫶',
 }
 
 export const thanksForAttendConfirmNoMapping: Record<TRole, string> = {
-  'bạn': 'Cảm ơn bạn đã thông báo không tham dự bữa tiệc cùng vợ chồng mình nhaaa!!!',
-  'anh': 'Cảm ơn anh đã thông báo không tham dự bữa tiệc cùng vợ chồng em nhé!!!',
-  'chị': 'Cảm ơn chị đã thông báo không tham dự bữa tiệc cùng vợ chồng em nhé!!!',
-  'ông': 'Cảm ơn ông đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
-  'bà': 'Cảm ơn bà đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
-  'thầy': 'Cảm ơn thầy đã thông báo không tham dự bữa tiệc cùng vợ chồng em ạ!!!',
-  'cô': 'Cảm ơn cô đã thông báo không tham dự bữa tiệc cùng vợ chồng em ạ!!!',
+  bạn: 'Uii! Thật đáng tiếc khi bạn không tham dự bữa tiệc cùng vợ chồng mình. Nhưng không sao, chúng mình hiểu mà!!!',
+  anh: 'Thật đáng tiếc khi anh không tham dự bữa tiệc chùng vợ chồng em ☹️',
+  chị: 'Thật đáng tiếc khi chị không tham dự bữa tiệc chùng vợ chồng em ☹️',
+  ông: 'Cảm ơn ông đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
+  bà: 'Cảm ơn bà đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
+  thầy: 'Thật đáng tiếc khi thầy không tham dự bữa tiệc chùng vợ chồng em ☹️',
+  cô: 'Thật đáng tiếc khi cô không tham dự bữa tiệc chùng vợ chồng em ☹️',
+}
+
+export const thanksWishesTitleMapping: Record<TRole, string> = {
+  bạn: 'mình',
+  anh: 'em',
+  chị: 'em',
+  ông: 'cháu',
+  bà: 'cháu',
+  thầy: 'em',
+  cô: 'em',
 }

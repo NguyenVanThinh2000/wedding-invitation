@@ -2,11 +2,11 @@ import { ChangeEvent, useEffect, useState } from 'react'
 
 import { invitationApiEndPoints } from '@/api'
 import { Button, Container, SectionTitle } from '@/components'
+import { thanksForWishesMapping, thanksWishesTitleMapping } from '@/constants'
+import { TGuest } from '@/types'
 
 import { Modal } from '../modal'
 import styles from './wishes-section.module.scss'
-import { thanksForWishesMapping } from '@/constants'
-import { TGuest } from '@/types'
 
 interface Props {
   guest: TGuest
@@ -46,7 +46,7 @@ export const WishesSection = ({ guest }: Props) => {
   return (
     <Container className={styles.wishesSectionWrapper} id="wishes">
       <SectionTitle
-        description="Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng tôi!"
+        description={`Cảm ơn ${guest.role} rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng ${thanksWishesTitleMapping[guest.role]}!`}
         title="Sổ Lưu Bút"
       />
 

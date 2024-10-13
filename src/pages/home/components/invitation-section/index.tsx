@@ -14,14 +14,20 @@ export const InvitationSection = () => {
             <span>Lời ngỏ</span>
             <img alt="" src={subTitle} />
           </div>
-          <span>Cảm ơn tất cả những người bạn thân yêu của tôi!</span>
+          <span>Một lần nữa muốn gửi lời cảm ơn đến bạn！</span>
           <span>
-            Tôi biết các bạn rất bận rộn, bận rộn với công việc, bận rộn với công việc gia đình…
+            Tuy bận rộn với công việc và gia đình nhưng đám cưới của tụi mình sẽ rất hạnh phúc nếu
+            như có sự hiện diện của bạn!
           </span>
           <span>
-            Nhưng tất cả đã có mặt hôm nay để chúc mừng tinh yêu và hạnh phúc của chúng tôi.
+            Nếu câu chuyện tình yêu của chúng mình là một cuốn sách thì bạn chính là người đọc cuồng
+            nhiệt nhất!
           </span>
-          <span>Một lần nữa chân thành cảm ơn tất cả các bạn!</span>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: `Rất vinh dự được đón tiếp các bạn trong ngày vui của tụi mình 😘`,
+            }}
+          ></p>
         </div>
 
         <img alt="" src={weddingPhotos[3]} />

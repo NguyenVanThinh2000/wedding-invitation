@@ -72,7 +72,7 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
     if (isOpen) {
-      audioRef.current?.play()
+      // audioRef.current?.play()
       setIsAudioPlaying(true)
     }
   }, [isOpen])

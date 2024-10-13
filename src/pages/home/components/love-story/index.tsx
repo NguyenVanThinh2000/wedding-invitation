@@ -7,16 +7,26 @@ export const LoveStory = () => {
   return (
     <Container className={styles.loveStoryWrapper} id="story">
       <SectionTitle
-        description="Tình yêu không chỉ là một danh từ - nó là một động từ; nó còn hơn cả một cảm giác - đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh."
-        title="Chuyện tình yêu"
+        description={`Chỉ mất 3 giây để nói lời yêu nhưng mất cả cuộc đời để chứng minh điều đó.`}
+        title="Câu chuyện tình yêu"
       />
 
       <div className={styles.stories}>
         {loveStories.map((story) => (
           <div key={story.id} className={styles.story}>
             <p className={styles.date}>{story.date}</p>
-            <h2 className={styles.title}>{story.title}</h2>
-            <p className={styles.content}>{story.content}</p>
+            <h2
+              dangerouslySetInnerHTML={{
+                __html: story.title,
+              }}
+              className={styles.title}
+            ></h2>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: story.content,
+              }}
+              className={styles.content}
+            ></p>
             <img alt="" className={styles.image} src={story.image} />
           </div>
         ))}

@@ -12,7 +12,7 @@ export const DonateSection = ({ host }: Props) => {
   return (
     <Container className={styles.donateSectionWrapper} id="donate">
       <SectionTitle
-        description="Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng tôi."
+        description={`Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng mình.`}
         title="Hộp mừng cưới"
       />
 
