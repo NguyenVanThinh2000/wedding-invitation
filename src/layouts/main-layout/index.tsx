@@ -12,6 +12,7 @@ import Header from '../header'
 import styles from './main-layout.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
+if (ScrollTrigger.isTouch) ScrollTrigger.normalizeScroll(true)
 
 const MainLayout = () => {
   const {
