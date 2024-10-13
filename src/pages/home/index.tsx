@@ -84,7 +84,7 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener('touchstart', (e) => {
       if (e.type === 'touchstart') {
-        updateIsTouch(true)
+        updateIsTouch('-200px')
       }
     })
   }, [])

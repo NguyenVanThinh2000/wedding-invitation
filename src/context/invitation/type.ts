@@ -14,7 +14,7 @@ export type TInvitationState = {
   isScrollLock: boolean
   isLoading: boolean
   error: string | null
-  isTouch: boolean
+  scroll_trigger: string
 }
 
 export type TInvitationProviderProps = { children: React.ReactNode }
@@ -26,5 +26,5 @@ export type TAction =
     }
   | {
       type: 'update_is_touch'
-      payload: boolean
+      payload: string
     }

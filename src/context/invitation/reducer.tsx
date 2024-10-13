@@ -39,7 +39,7 @@ export const invitationReducer = (state: TInvitationState, action: TAction): TIn
     case 'update_is_touch': {
       return {
         ...state,
-        isTouch: action.payload,
+        scroll_trigger: action.payload,
       }
     }
 

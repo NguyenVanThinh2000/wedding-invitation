@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { Container } from '@/components'
 import { CoupleName } from '@/components'
 import { invitationInfo, weddingPhotos } from '@/constants'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { PropsParams } from '@/types'
 
 import heart from '../../../../assets/images/heart-icon.png'
@@ -12,6 +13,9 @@ import styles from './title-section.module.scss'
 
 export const TitleSection = ({ host }: PropsParams) => {
   const data = invitationInfo[host]
+  const {
+    state: { scroll_trigger },
+  } = useInvitationContext()
   useGSAP(() => {
     gsap.from('#titleSection1', {
       y: 100,
@@ -19,8 +23,8 @@ export const TitleSection = ({ host }: PropsParams) => {
       scrollTrigger: {
         trigger: '#titleSection1',
         scrub: 2,
-        start: '-200px bottom',
-        end: '-200px bottom',
+        start: scroll_trigger + ' bottom',
+        end: scroll_trigger + ' bottom',
       },
     })
   })

@@ -2,20 +2,24 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 
 import { YoutubeEmbed } from '../youtube-embed'
 import styles from './video-wedding-section.module.scss'
 
 export const VideoWeddingSection = () => {
+  const {
+    state: { scroll_trigger },
+  } = useInvitationContext()
   useGSAP(() => {
     gsap.from('#video1', {
       x: 100,
       opacity: 0,
       scrollTrigger: {
         trigger: '#video1',
-        start: 'top 80%',
-        end: 'top 80%',
-        scrub: 3,
+        start: scroll_trigger + ' bottom',
+        end: scroll_trigger + ' bottom',
+        scrub: 2,
       },
     })
     gsap.from('#video2', {
@@ -23,9 +27,9 @@ export const VideoWeddingSection = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#video2',
-        start: 'top 80%',
-        end: 'top 80%',
-        scrub: 3,
+        start: scroll_trigger + ' bottom',
+        end: scroll_trigger + ' bottom',
+        scrub: 2,
       },
     })
   })
