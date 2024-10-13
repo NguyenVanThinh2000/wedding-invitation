@@ -31,7 +31,7 @@ import styles from './home.module.scss'
 
 const Home = () => {
   const {
-    actions: { updateScrollLock },
+    actions: { updateScrollLock, updateIsTouch },
   } = useInvitationContext()
   const [isLoading, setIsLoading] = useState(true)
   const [searchParams] = useSearchParams()
@@ -81,6 +81,13 @@ const Home = () => {
     updateScrollLock(!isOpen || isOpenMenu)
   }, [isOpen, isOpenMenu])
 
+  useEffect(() => {
+    window.addEventListener('touchstart', (e) => {
+      if (e.type === 'touchstart') {
+        updateIsTouch(true)
+      }
+    })
+  }, [])
   return (
     <>
       <Loading isLoading={isLoading} />

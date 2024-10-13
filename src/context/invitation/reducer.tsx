@@ -2,7 +2,12 @@ import { createContext, useMemo, useReducer } from 'react'
 
 import { buildActions } from './actions'
 import { initialInvitationState } from './const'
-import { TAction, TInvitationContextProps, TInvitationProviderProps, TInvitationState } from './type'
+import {
+  TAction,
+  TInvitationContextProps,
+  TInvitationProviderProps,
+  TInvitationState,
+} from './type'
 
 export const InvitationContext = createContext<TInvitationContextProps>(undefined)
 
@@ -26,10 +31,16 @@ export const InvitationProvider = ({ children }: TInvitationProviderProps) => {
 export const invitationReducer = (state: TInvitationState, action: TAction): TInvitationState => {
   switch (action.type) {
     case 'update_scroll_lock': {
-        return {
-            ...state,
-            isScrollLock: action.payload,
-        }
+      return {
+        ...state,
+        isScrollLock: action.payload,
+      }
+    }
+    case 'update_is_touch': {
+      return {
+        ...state,
+        isTouch: action.payload,
+      }
     }
 
     default: {

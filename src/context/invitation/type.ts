@@ -1,4 +1,4 @@
-import { buildActions } from "./actions"
+import { buildActions } from './actions'
 
 export type TInvitationContextProps =
   | {
@@ -14,11 +14,17 @@ export type TInvitationState = {
   isScrollLock: boolean
   isLoading: boolean
   error: string | null
+  isTouch: boolean
 }
 
 export type TInvitationProviderProps = { children: React.ReactNode }
 
-export type TAction = {
-  type: 'update_scroll_lock'
-  payload: boolean
-}
+export type TAction =
+  | {
+      type: 'update_scroll_lock'
+      payload: boolean
+    }
+  | {
+      type: 'update_is_touch'
+      payload: boolean
+    }
