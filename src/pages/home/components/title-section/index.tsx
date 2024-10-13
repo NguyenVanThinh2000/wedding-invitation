@@ -1,3 +1,6 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+
 import { Container } from '@/components'
 import { CoupleName } from '@/components'
 import { invitationInfo, weddingPhotos } from '@/constants'
@@ -9,6 +12,18 @@ import styles from './title-section.module.scss'
 
 export const TitleSection = ({ host }: PropsParams) => {
   const data = invitationInfo[host]
+  useGSAP(() => {
+    gsap.from('#titleSection1', {
+      y: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#titleSection1',
+        start: 'top 90%',
+        end: 'top 90%',
+        scrub: 1.5,
+      },
+    })
+  })
   return (
     <Container className={styles.titleSectionWrapper}>
       <div className={styles.title}>
@@ -24,16 +39,18 @@ export const TitleSection = ({ host }: PropsParams) => {
         <img alt="" className={styles.label} src={weddinglabel} />
       </div>
 
-      <CoupleName className={styles.name} />
+      <div id="titleSection1">
+        <CoupleName className={styles.name} />
 
-      <div className={styles.fullDate}>
-        {invitationInfo[host].weekDay}. {invitationInfo[host].day} /{' '}
-        {invitationInfo[host].month} / 2024{' '}
-      </div>
-      <div className={styles.dayMonth2}>
-        <span className={styles.day}>{invitationInfo[host].day}</span>
-        <img alt="" src={heart} />
-        <span className={styles.month}>{invitationInfo[host].month}</span>
+        <div className={styles.fullDate}>
+          {invitationInfo[host].weekDay}. {invitationInfo[host].day} / {invitationInfo[host].month}{' '}
+          / 2024{' '}
+        </div>
+        <div className={styles.dayMonth2}>
+          <span className={styles.day}>{invitationInfo[host].day}</span>
+          <img alt="" src={heart} />
+          <span className={styles.month}>{invitationInfo[host].month}</span>
+        </div>
       </div>
     </Container>
   )
