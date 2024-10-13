@@ -12,7 +12,6 @@ import Header from '../header'
 import styles from './main-layout.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
-ScrollTrigger.config({ ignoreMobileResize: false })
 
 const MainLayout = () => {
   const {

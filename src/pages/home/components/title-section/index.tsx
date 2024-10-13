@@ -15,12 +15,12 @@ export const TitleSection = ({ host }: PropsParams) => {
   useGSAP(() => {
     gsap.from('#titleSection1', {
       y: 100,
-      opacity: 1,
+      opacity: 0,
       scrollTrigger: {
         trigger: '#titleSection1',
         scrub: 2,
-        start: 'top bottom',
-        end: 'top 90%',
+        start: '-100px bottom',
+        end: 'top bottom',
       },
     })
   })
