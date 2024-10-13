@@ -4,5 +4,5 @@ export const initialInvitationState: TInvitationState = {
   isLoading: false,
   error: null,
   isScrollLock: false,
-  scroll_trigger: '',
+  scroll_trigger: 'top 90%',
 }

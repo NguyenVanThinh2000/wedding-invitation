@@ -3,6 +3,7 @@ import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { THost } from '@/types'
 
 import styles from './event-section.module.scss'
@@ -12,6 +13,9 @@ interface Props {
   guestName: string
 }
 export const Event2Section = ({ host, guestName }: Props) => {
+  const {
+    state: { scroll_trigger },
+  } = useInvitationContext()
   const locationList = invitationInfo[host].location
 
   useGSAP(() => {
@@ -20,9 +24,21 @@ export const Event2Section = ({ host, guestName }: Props) => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#event',
-        start: 'top 90%',
-        end: 'top 90%',
-        scrub: 3,
+        start: scroll_trigger,
+        end: scroll_trigger,
+        scrub: 2,
+      },
+    })
+  })
+  useGSAP(() => {
+    gsap.from('#event-bottons', {
+      y: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#event-bottons',
+        start: scroll_trigger,
+        end: scroll_trigger,
+        scrub: 2,
       },
     })
   })
@@ -64,7 +80,7 @@ export const Event2Section = ({ host, guestName }: Props) => {
           Giáp Thìn)
         </p>
 
-        <div className={styles.maps}>
+        <div className={styles.maps} id="event-bottons">
           <a href={locationList[0].mapUrl} target="_blank">
             Bản đồ tư gia
           </a>

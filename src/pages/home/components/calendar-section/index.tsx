@@ -6,6 +6,7 @@ import gsap from 'gsap'
 
 import { Container, CoupleName } from '@/components'
 import { YEAR, invitationInfo, weekDays } from '@/constants'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { THost } from '@/types'
 import { countdown, generateCalendar } from '@/utils'
 
@@ -15,6 +16,9 @@ interface Props {
   host: THost
 }
 export const CalendarSection = ({ host }: Props) => {
+  const {
+    state: { scroll_trigger },
+  } = useInvitationContext()
   const [dateRemaining, setDateRemaining] = useState({
     days: '00',
     hours: '00',
@@ -30,8 +34,8 @@ export const CalendarSection = ({ host }: Props) => {
       opacity: 0,
       scrollTrigger: {
         trigger: '#calendar',
-        start: 'top 90%',
-        end: 'top 90%',
+        start: scroll_trigger,
+        end: scroll_trigger,
         scrub: 2,
       },
     })

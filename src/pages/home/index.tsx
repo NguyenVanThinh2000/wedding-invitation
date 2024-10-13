@@ -82,12 +82,15 @@ const Home = () => {
   }, [isOpen, isOpenMenu])
 
   useEffect(() => {
-    window.addEventListener('touchstart', (e) => {
+    const handleTouchStart = (e: TouchEvent) => {
       if (e.type === 'touchstart') {
-        updateIsTouch('-200px')
+        updateIsTouch('-200px 95%')
       }
-    })
+    }
+    window.addEventListener('touchstart', handleTouchStart)
+    return () => window.removeEventListener('touchstart', handleTouchStart)
   }, [])
+
   return (
     <>
       <Loading isLoading={isLoading} />

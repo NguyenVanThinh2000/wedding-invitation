@@ -23,8 +23,8 @@ export const TitleSection = ({ host }: PropsParams) => {
       scrollTrigger: {
         trigger: '#titleSection1',
         scrub: 2,
-        start: scroll_trigger + ' bottom',
-        end: scroll_trigger + ' bottom',
+        start: scroll_trigger,
+        end: scroll_trigger,
       },
     })
   })
