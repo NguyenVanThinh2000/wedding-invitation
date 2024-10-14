@@ -63,7 +63,9 @@ export const LoveStory = () => {
               }}
               className={styles.content}
             ></p>
-            <img alt="" className={styles.image} src={story.image} />
+            <div className={styles.image}>
+              <img alt="" src={story.image} />
+            </div>
           </div>
         ))}
       </div>
