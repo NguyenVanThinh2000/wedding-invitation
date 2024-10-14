@@ -14,8 +14,9 @@ import styles from './images-slider.module.scss'
 interface ImagesSliderProps {
   isOpen: boolean
   onClose: () => void
+  firstShowIndex?: number
 }
-const ImagesSlider = ({ isOpen, onClose }: ImagesSliderProps) => {
+const ImagesSlider = ({ isOpen, onClose, firstShowIndex }: ImagesSliderProps) => {
   const {
     actions: { updateScrollLock },
   } = useInvitationContext()
@@ -66,6 +67,15 @@ const ImagesSlider = ({ isOpen, onClose }: ImagesSliderProps) => {
     updateScrollLock(isOpen)
   }, [isOpen])
 
+  useEffect(() => {
+    if (firstShowIndex !== undefined && swiperRef.current) {
+      setCurrentSlide({
+        src: weddingPhotos[firstShowIndex],
+        index: firstShowIndex,
+      })
+      swiperRef.current.swiper.slideTo(firstShowIndex)
+    }
+  }, [firstShowIndex])
   return createPortal(
     <div className={clsx(styles.sliderWrapper, { [styles.open]: isOpen })}>
       <div className={styles.header}>

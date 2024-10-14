@@ -21,6 +21,7 @@ export const Event2Section = ({ host, guestName }: Props) => {
   useGSAP(() => {
     gsap.from('#event', {
       x: -100,
+      y: 100,
       opacity: 0,
       scrollTrigger: {
         trigger: '#event',
@@ -32,7 +33,7 @@ export const Event2Section = ({ host, guestName }: Props) => {
   })
   useGSAP(() => {
     gsap.from('#event-bottons', {
-      y: 100,
+      x: 100,
       opacity: 0,
       scrollTrigger: {
         trigger: '#event-bottons',
@@ -44,7 +45,7 @@ export const Event2Section = ({ host, guestName }: Props) => {
   })
   return (
     <div id="event">
-      <Container className={styles.eventSectionWrapper} id="event">
+      <Container className={styles.eventSectionWrapper}>
         <SectionTitle description="" title="Lễ Vu Quy" />
 
         <p className={styles.p1}>Hôn lễ được cử hành tại TƯ GIA vào lúc</p>

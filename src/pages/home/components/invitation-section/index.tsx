@@ -1,15 +1,56 @@
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+
 import subTitle from '@/assets/images/sub_title.png'
 import { Container, CoupleName } from '@/components'
 import { weddingPhotos } from '@/constants'
+import { useInvitationContext } from '@/hooks/context/userInvitation'
 
 import styles from './invitation-section.module.scss'
 
 export const InvitationSection = () => {
+  const {
+    state: { scroll_trigger },
+  } = useInvitationContext()
+
+  useGSAP(() => {
+    gsap.from('#invitation1', {
+      y: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#invitation1',
+        start: scroll_trigger,
+        end: scroll_trigger,
+        scrub: 2,
+      },
+    })
+    gsap.from('#invitation2', {
+      x: 100,
+      y: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#invitation2',
+        start: scroll_trigger,
+        end: scroll_trigger,
+        scrub: 2,
+      },
+    })
+    gsap.from('#invitation3', {
+      x: -100,
+      y: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#invitation3',
+        start: scroll_trigger,
+        end: scroll_trigger,
+        scrub: 2,
+      },
+    })
+  })
   return (
-    <Container className={styles.invitationSectionWrapper} id="invitation">
+    <Container className={styles.invitationSectionWrapper}>
       <div className={styles.invitationCard}>
-        <img alt="" src="" />
-        <div className={styles.content}>
+        <div className={styles.content} id="invitation1">
           <div className={styles.title}>
             <span>Lời ngỏ</span>
             <img alt="" src={subTitle} />
@@ -30,9 +71,11 @@ export const InvitationSection = () => {
           ></p>
         </div>
 
-        <img alt="" src={weddingPhotos[3]} />
+        <img alt="" id="invitation2" src={weddingPhotos[3]} />
 
-        <CoupleName className={styles.coupleName} />
+        <div id="invitation3">
+          <CoupleName className={styles.coupleName} />
+        </div>
       </div>
     </Container>
   )
