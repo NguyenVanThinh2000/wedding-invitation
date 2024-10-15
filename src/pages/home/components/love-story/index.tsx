@@ -1,5 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { Container, SectionTitle } from '@/components'
 import { loveStories } from '@/constants'
@@ -64,7 +65,13 @@ export const LoveStory = () => {
               className={styles.content}
             ></p>
             <div className={styles.image}>
-              <img alt="" src={story.image} />
+              <img
+                alt=""
+                src={story.image}
+                onLoad={() => {
+                  ScrollTrigger.refresh()
+                }}
+              />
             </div>
           </div>
         ))}
