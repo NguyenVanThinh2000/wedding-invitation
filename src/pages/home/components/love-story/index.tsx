@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
@@ -13,39 +11,32 @@ export const LoveStory = () => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
-  const [onLoad, setOnLoad] = useState(false)
 
-  useGSAP(
-    () => {
-      gsap.from('#story1', {
-        y: 100,
+  useGSAP(() => {
+    gsap.from('#story1', {
+      y: 100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: '#story1',
+        start: scroll_trigger,
+        end: scroll_trigger,
+        scrub: 2,
+      },
+    })
+
+    loveStories.forEach((_story, index) => {
+      gsap.from(`#story2_${index}`, {
+        x: index % 2 === 0 ? -100 : 100,
         opacity: 0,
         scrollTrigger: {
-          trigger: '#story1',
+          trigger: `#story2_${index}`,
           start: scroll_trigger,
           end: scroll_trigger,
           scrub: 2,
         },
       })
-
-      loveStories.forEach((_story, index) => {
-        gsap.from(`#story2_${index}`, {
-          x: index % 2 === 0 ? -100 : 100,
-          opacity: 0,
-          scrollTrigger: {
-            trigger: `#story2_${index}`,
-            start: scroll_trigger,
-            end: scroll_trigger,
-            scrub: 2,
-            markers: true,
-          },
-        })
-      })
-    },
-    {
-      dependencies: [onLoad],
-    },
-  )
+    })
+  })
 
   return (
     <Container className={styles.loveStoryWrapper}>
@@ -73,15 +64,7 @@ export const LoveStory = () => {
               className={styles.content}
             ></p>
             <div className={styles.image}>
-              <img
-                alt=""
-                src={story.image}
-                onLoad={() => {
-                  if (!onLoad) {
-                    setOnLoad(true)
-                  }
-                }}
-              />
+              <img alt="" src={story.image} />
             </div>
           </div>
         ))}
