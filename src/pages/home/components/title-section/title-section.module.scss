@@ -53,11 +53,12 @@
 
   .image {
     position: relative;
-    aspect-ratio: 3/2;
+    aspect-ratio: 543 / 814.5;
 
-    img {
+    .image1 {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
     }
 
     .label {

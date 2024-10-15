@@ -11,7 +11,6 @@ export const VideoWeddingSection = () => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
-  console.log('scroll_trigger', scroll_trigger)
   useGSAP(() => {
     gsap.from('#video1', {
       x: 100,

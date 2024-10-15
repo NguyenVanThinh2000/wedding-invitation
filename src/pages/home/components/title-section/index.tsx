@@ -1,3 +1,5 @@
+import { useRef } from 'react'
+
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
@@ -13,6 +15,7 @@ import styles from './title-section.module.scss'
 
 export const TitleSection = ({ host }: PropsParams) => {
   const data = invitationInfo[host]
+  const ref1 = useRef<HTMLDivElement>(null)
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -43,7 +46,7 @@ export const TitleSection = ({ host }: PropsParams) => {
         <img alt="" className={styles.label} src={weddinglabel} />
       </div>
 
-      <div id="titleSection1">
+      <div ref={ref1} id="titleSection1">
         <CoupleName className={styles.name} />
 
         <div className={styles.fullDate}>
