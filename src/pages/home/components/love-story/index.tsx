@@ -34,6 +34,7 @@ export const LoveStory = () => {
           start: scroll_trigger,
           end: scroll_trigger,
           scrub: 2,
+          markers: true,
         },
       })
     })
