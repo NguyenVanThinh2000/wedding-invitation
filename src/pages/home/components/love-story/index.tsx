@@ -70,7 +70,7 @@ export const LoveStory = () => {
                 alt=""
                 src={story.image}
                 onLoad={() => {
-                  ScrollTrigger.refresh(true)
+                  ScrollTrigger.refresh()
                 }}
               />
             </div>
