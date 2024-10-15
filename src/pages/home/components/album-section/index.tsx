@@ -48,7 +48,7 @@ export const AlbumSection = () => {
   })
   return (
     <>
-      <Container className={styles.albumWrapper}>
+      <Container className={styles.albumWrapper} id="album">
         <div id="album1">
           <SectionTitle
             description="Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí."
@@ -56,7 +56,7 @@ export const AlbumSection = () => {
           />
         </div>
         <div className={styles.images}>
-          {weddingPhotos.map((imgSrc, index) => (
+          {weddingPhotos.slice(0, 6).map((imgSrc, index) => (
             <div key={imgSrc} className={styles.image} id={`album2_${index}`}>
               <img alt="" src={imgSrc} onClick={handleClickImage.bind(null, index)} />
             </div>

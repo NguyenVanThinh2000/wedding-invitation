@@ -44,7 +44,7 @@ export const GroomBrideSection = () => {
     })
   })
   return (
-    <Container className={styles.groomBrideSectionWrapper}>
+    <Container className={styles.groomBrideSectionWrapper} id="bride-groom">
       <div id="brideGroom1">
         <SectionTitle
           description="Giới thiệu một cô dâu xinh đẹp và một chú rể đẹp trai"

@@ -3,12 +3,16 @@ import gsap from 'gsap'
 
 import subTitle from '@/assets/images/sub_title.png'
 import { Container, CoupleName } from '@/components'
-import { weddingPhotos } from '@/constants'
+import { thanksWishesTitleMapping, weddingPhotos } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
+import { TGuest } from '@/types'
 
 import styles from './invitation-section.module.scss'
 
-export const InvitationSection = () => {
+interface IProps {
+  guest: TGuest
+}
+export const InvitationSection = ({ guest }: IProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -48,30 +52,33 @@ export const InvitationSection = () => {
     })
   })
   return (
-    <Container className={styles.invitationSectionWrapper}>
+    <Container className={styles.invitationSectionWrapper} id="invitation">
       <div className={styles.invitationCard}>
         <div className={styles.content} id="invitation1">
           <div className={styles.title}>
             <span>Lời ngỏ</span>
             <img alt="" src={subTitle} />
           </div>
-          <span>Một lần nữa muốn gửi lời cảm ơn đến bạn！</span>
+          <span>Một lần nữa muốn gửi lời cảm ơn đến {guest.role}！</span>
           <span>
-            Tuy bận rộn với công việc và gia đình nhưng đám cưới của tụi mình sẽ rất hạnh phúc nếu
-            như có sự hiện diện của bạn!
+            Tuy bận rộn với công việc và gia đình nhưng đám cưới của chúng{' '}
+            {thanksWishesTitleMapping[guest.role]} sẽ rất hạnh phúc nếu như có sự hiện diện của{' '}
+            {guest.role}!
           </span>
-          <span>
-            Nếu câu chuyện tình yêu của chúng mình là một cuốn sách thì bạn chính là người đọc cuồng
-            nhiệt nhất!
-          </span>
+          {guest.role === 'bạn' && (
+            <span>
+              Nếu câu chuyện tình yêu của chúng mình là một cuốn sách thì bạn chính là người đọc
+              cuồng nhiệt nhất!
+            </span>
+          )}
           <p
             dangerouslySetInnerHTML={{
-              __html: `Rất vinh dự được đón tiếp các bạn trong ngày vui của tụi mình 😘`,
+              __html: `Rất vinh dự được đón tiếp ${guest.role} trong ngày vui của chúng ${thanksWishesTitleMapping[guest.role]} 😘`,
             }}
           ></p>
         </div>
 
-        <img alt="" id="invitation2" src={weddingPhotos[3]} />
+        <img alt="" id="invitation2" src={weddingPhotos[12]} />
 
         <div id="invitation3">
           <CoupleName className={styles.coupleName} />

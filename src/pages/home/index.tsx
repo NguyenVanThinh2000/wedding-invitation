@@ -115,7 +115,7 @@ const Home = () => {
                 <GroomBrideSection />
                 <LoveStory />
                 <AlbumSection />
-                <InvitationSection />
+                <InvitationSection guest={guest} />
                 <DonateSection host={guest.host} />
                 <WishesSection guest={guest} />
                 <ThanksSection />

@@ -39,7 +39,7 @@ export const TitleSection = ({ host }: PropsParams) => {
         <div className={styles.marry}>Sắp kết hôn</div>
       </div>
       <div className={styles.image}>
-        <img alt="" className={styles.image1} src={weddingPhotos[3]} />
+        <img alt="" className={styles.image1} src={weddingPhotos[9]} />
         <img alt="" className={styles.label} src={weddinglabel} />
       </div>
 

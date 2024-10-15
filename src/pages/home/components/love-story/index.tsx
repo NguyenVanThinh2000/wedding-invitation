@@ -39,7 +39,7 @@ export const LoveStory = () => {
   })
 
   return (
-    <Container className={styles.loveStoryWrapper}>
+    <Container className={styles.loveStoryWrapper} id="story">
       <div id="story1">
         <SectionTitle
           description={`Chỉ mất 3 giây để nói lời yêu nhưng mất cả cuộc đời để chứng minh điều đó.`}

@@ -1,17 +1,42 @@
 import { Facebook } from 'lucide-react'
 
-import img1 from '@/assets/images/DSC02036.png'
-import img2 from '@/assets/images/DSC02121.png'
-import img3 from '@/assets/images/DSC02136.png'
-import img4 from '@/assets/images/DSC02385.png'
-import img5 from '@/assets/images/DSC02502.png'
 import thoanthoanQRCode from '@/assets/images/QR-thoan.jpg'
 import thinhnguyenQRCode from '@/assets/images/thinhnguyen.jpg'
 import { Tiktok } from '@/components/icons'
 import { TRole } from '@/types'
 import { generateUUID } from '@/utils'
 
-export const weddingPhotos = [img1, img2, img3, img4, img5]
+const img1 = '/wedding-images/THOANTHINH1.jpg'
+const img2 = '/wedding-images/THOANTHINH2.jpg'
+const img3 = '/wedding-images/THOANTHINH3.jpg'
+const img4 = '/wedding-images/THOANTHINH4.jpg'
+const img5 = '/wedding-images/THOANTHINH5.jpg'
+const img6 = '/wedding-images/THOANTHINH6.jpg'
+const img7 = '/wedding-images/THOANTHINH7.jpg'
+const img8 = '/wedding-images/THOANTHINH8.jpg'
+const img9 = '/wedding-images/THOANTHINH9.jpg'
+const img10 = '/wedding-images/THOANTHINH10.jpg'
+const img11 = '/wedding-images/THOANTHINH11.jpg'
+const img12 = '/wedding-images/THOANTHINH12.jpg'
+const img13 = '/wedding-images/THOANTHINH13.jpg'
+const img14 = '/wedding-images/THOANTHINH14.jpg'
+
+export const weddingPhotos = [
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+]
 
 export const loveStories = [
   {
@@ -44,7 +69,7 @@ export const loveStories = [
   },
   {
     id: generateUUID(),
-    title: 'Chúng mình cười rồi',
+    title: 'Chúng mình cưới rồi',
     date: '2024-11',
     content: `Vậy là tụi mình đã kết thúc hành trình yêu nhau hơn 7 năm và bắt đầu một hành trình mới - về chung một nhà. <br />
               Sau bao nhiêu ngày chờ đợi thì cuối cùng này vui của tụi mình cũng đến rồi. Cảm ơn vì đã lắng nghe và thấu hiểu nhau, cảm ơn vì một phần không thể thiếu trong thanh xuân của nhau. <br />
@@ -58,7 +83,7 @@ export const groomBrideInfo = [
     tag: 'to. Bride',
     description:
       'Một cô gái thích sự trẻ trung, năng động. Sở hữu vẻ bề ngoài khá mạnh mẽ nhưng trái tim khá mỏng manh và thích được chiều chuộng, yêu thương.',
-    image: weddingPhotos[0],
+    image: weddingPhotos[3],
     dad: 'Trần Hữu Đáo',
     mom: 'Trần Thị Thủy',
     social: [
@@ -78,7 +103,7 @@ export const groomBrideInfo = [
     tag: 'to. Groom',
     description:
       'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. 👉',
-    image: weddingPhotos[1],
+    image: weddingPhotos[11],
     dad: 'Nguyễn Văn Cường',
     mom: 'Hoàng Thị Mỹ Nhung',
     social: [

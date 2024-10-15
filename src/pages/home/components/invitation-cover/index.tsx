@@ -1,8 +1,8 @@
 import { Button, CoupleName } from '@/components'
 import { invitationInfo, weddingPhotos } from '@/constants'
+import { THost } from '@/types'
 
 import styles from './invitation-cover.module.scss'
-import { THost } from '@/types'
 
 interface Props {
   onOpen: () => void
@@ -13,7 +13,7 @@ export const InvitationCover = ({ onOpen, host, guestName }: Props) => {
   return (
     <div className={styles.coverWrapper}>
       <div className={styles.image}>
-        <img alt="" className={styles.image} src={weddingPhotos[4]} />
+        <img alt="" className={styles.image} src={weddingPhotos[1]} />
       </div>
 
       <div className={styles.content}>
