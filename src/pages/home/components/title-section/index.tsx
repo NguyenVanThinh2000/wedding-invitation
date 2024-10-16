@@ -39,7 +39,7 @@ export const TitleSection = ({ host }: PropsParams) => {
     img.onload = () => {
       setIsImageLoaded(true)
     }
-  })
+  }, [])
   return (
     <Container className={styles.titleSectionWrapper}>
       <div className={styles.title}>
