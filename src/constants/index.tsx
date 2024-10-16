@@ -21,6 +21,12 @@ const img12 = '/wedding-images/THOANTHINH12.jpg'
 const img13 = '/wedding-images/THOANTHINH13.jpg'
 const img14 = '/wedding-images/THOANTHINH14.jpg'
 
+const meetImg = '/wedding-images/meet.jpg'
+const confessImg = '/wedding-images/confess.jpg'
+const proposeImg = '/wedding-images/propose.jpg'
+const engagementImg = '/wedding-images/engagement.jpg'
+const weddingImg = '/wedding-images/wedding.jpg'
+
 export const weddingPhotos = [
   img1,
   img2,
@@ -44,28 +50,28 @@ export const loveStories = [
     title: 'Cuộc gặp gỡ định mệnh',
     date: '2013',
     content: `Các bạn có tin vào định mệnh không? Chúng mình đã gặp nhau ở một hoàn cảnh khá đặc biệt, khi tụi mình là đối thủ của nhau tại một lần thi HSG cấp huyện 😃 Ấn tượng đầu tiên của mình về chồng lúc đó là: vừa xấu zai, vừa đen, vừa ít nói, không có gì nổi bật 😃 (Hỏi bài còn không chỉ 🥲) - khá cay. Vậy mà định mệnh sắp đặt các cậu ạ. Bẵng đi một thời gian, anh ra kiếm ra facebook tớ và chúng mình cũng bắt đầu hỏi thăm nhau về tình hình học tập của nhau,... Mà nào hay biết hơn 10 năm sau người đó là chồng của mình 🥰`,
-    image: weddingPhotos[0],
+    image: meetImg,
   },
   {
     id: generateUUID(),
     title: 'Lời tỏ tình đáng yêu 🥰 🥰',
     date: '2017-04-29',
     content: `Các cụ có câu: "Lửa gần rơm lâu ngày cũng bén". Ai mà có ngờ đâu, cuộc đời đưa đẩy, sau hơn một năm làm bạn, anh ta quyết định tỏ tình mình với một câu nói thẳng thắn: "Làm người yêu anh nha..!" Hơi ngại nhưng mà thui, tui cũng chờ câu nói này lâu lắm rùi ó 😜😝, gật đầu lia lịa lun...`,
-    image: weddingPhotos[0],
+    image: confessImg,
   },
   {
     id: generateUUID(),
     date: '2024-04-29',
     content: `Thời gian cứ thế trôi qua, tụi mình vẫn yêu nhau như thế. phút chốc mình bất ngờ và xúc động khi trong ngày kỉ niệm 7 năm yêu nhau anh đã cầu hôn mình. không kìm được cảm xúc, mình đã khóc rất nhiều khi nghe anh nói câu: "đồng ý làm vợ anh nhé!" và thế là...`,
     title: 'Phút giây cầu hôn',
-    image: weddingPhotos[0],
+    image: proposeImg,
   },
   {
     id: generateUUID(),
     title: 'Lễ dạm ngõ',
     date: '2024-07-17',
     content: `Vì tính chất công việc, tụi mình quyết định dạm ngõ online 😝 Hai bên gia đình, người lớn bàn tính chuyện để chúng mình được đến với nhau.`,
-    image: weddingPhotos[0],
+    image: engagementImg,
   },
   {
     id: generateUUID(),
@@ -74,7 +80,7 @@ export const loveStories = [
     content: `Vậy là tụi mình đã kết thúc hành trình yêu nhau hơn 7 năm và bắt đầu một hành trình mới - về chung một nhà. <br />
               Sau bao nhiêu ngày chờ đợi thì cuối cùng này vui của tụi mình cũng đến rồi. Cảm ơn vì đã lắng nghe và thấu hiểu nhau, cảm ơn vì một phần không thể thiếu trong thanh xuân của nhau. <br />
               "Hạnh phúc đơn giản là tìm đúng người để trao yêu thương, tin tưởng và cùng nhau đi tới cuối con đường."`,
-    image: weddingPhotos[0],
+    image: weddingImg,
   },
 ]
 

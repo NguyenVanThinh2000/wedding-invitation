@@ -37,7 +37,15 @@ const Home = () => {
   const [searchParams] = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [guest, setGuest] = useState<TGuest | undefined>()
+  const [guest, setGuest] = useState<TGuest>({
+    name: '',
+    nameInInvitation: '',
+    isAttending: false,
+    wishes: '',
+    host: 'thoan',
+    role: 'bạn',
+    id: '',
+  })
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
 
@@ -96,35 +104,27 @@ const Home = () => {
       <Loading isLoading={isLoading} />
       <Header setOpenMenu={setIsOpenMenu} />
       <Menu open={isOpenMenu} setOpenMenu={setIsOpenMenu} />
-      {guest && (
-        <>
-          <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
-            <InvitationCover
-              guestName={guest.nameInInvitation}
-              host={guest.host}
-              onOpen={() => setIsOpen(true)}
-            />
-          </div>
-          {isOpen && (
-            <>
-              <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
-                <TitleSection host={guest.host} />
-                <VideoWeddingSection />
-                <CalendarSection host={guest.host} />
-                <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
-                <GroomBrideSection />
-                <LoveStory />
-                <AlbumSection />
-                <InvitationSection guest={guest} />
-                <DonateSection host={guest.host} />
-                <WishesSection guest={guest} />
-                <ThanksSection />
-              </div>
-              <Floats guest={guest} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
-            </>
-          )}
-        </>
-      )}
+      <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
+        <InvitationCover
+          guestName={guest.nameInInvitation}
+          host={guest.host}
+          onOpen={() => setIsOpen(true)}
+        />
+      </div>
+      <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
+        <TitleSection host={guest.host} />
+        <VideoWeddingSection />
+        <CalendarSection host={guest.host} />
+        <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
+        <GroomBrideSection />
+        <LoveStory />
+        <AlbumSection />
+        <InvitationSection guest={guest} />
+        <DonateSection host={guest.host} />
+        <WishesSection guest={guest} />
+        <ThanksSection />
+      </div>
+      <Floats guest={guest} isAudioPlaying={isAudioPlaying} onToggleSound={onToggleSound} />
 
       <audio ref={audioRef} src={audio} onEnded={handleAudioEnd} />
 

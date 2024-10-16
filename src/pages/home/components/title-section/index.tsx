@@ -1,11 +1,9 @@
-import { useRef, useState } from 'react'
-
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container } from '@/components'
 import { CoupleName } from '@/components'
-import { invitationInfo, weddingPhotos } from '@/constants'
+import { YEAR, invitationInfo, weddingPhotos } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { PropsParams } from '@/types'
 
@@ -14,26 +12,26 @@ import weddinglabel from '../../../../assets/images/wedding-label.png'
 import styles from './title-section.module.scss'
 
 export const TitleSection = ({ host }: PropsParams) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false)
   const data = invitationInfo[host]
-  const ref1 = useRef<HTMLDivElement>(null)
+
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
+
   useGSAP(() => {
-    if (!isImageLoaded) return
-    gsap.from('#titleSection1', {
+    gsap.from('.title1', {
       y: 100,
       opacity: 0,
       scrollTrigger: {
-        trigger: '#titleSection1',
+        trigger: '.title1',
         scrub: 2,
         start: scroll_trigger,
         end: scroll_trigger,
         markers: true,
       },
     })
-  }, [isImageLoaded])
+  }, [])
+
   return (
     <Container className={styles.titleSectionWrapper}>
       <div className={styles.title}>
@@ -44,24 +42,18 @@ export const TitleSection = ({ host }: PropsParams) => {
         </div>
         <div className={styles.marry}>Sắp kết hôn</div>
       </div>
+
       <div className={styles.image}>
-        <img
-          alt=""
-          className={styles.image1}
-          src={weddingPhotos[9]}
-          onLoad={() => {
-            setIsImageLoaded(true)
-          }}
-        />
+        <img alt="" className={styles.image1} src={weddingPhotos[9]} />
         <img alt="" className={styles.label} src={weddinglabel} />
       </div>
 
-      <div ref={ref1} id="titleSection1">
+      <div className="title1">
         <CoupleName className={styles.name} />
 
         <div className={styles.fullDate}>
           {invitationInfo[host].weekDay}. {invitationInfo[host].day} / {invitationInfo[host].month}{' '}
-          / 2024{' '}
+          / {YEAR}
         </div>
         <div className={styles.dayMonth2}>
           <span className={styles.day}>{invitationInfo[host].day}</span>
@@ -72,3 +64,5 @@ export const TitleSection = ({ host }: PropsParams) => {
     </Container>
   )
 }
+
+export default TitleSection
