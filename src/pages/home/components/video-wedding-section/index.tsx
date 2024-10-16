@@ -7,7 +7,10 @@ import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { YoutubeEmbed } from '../youtube-embed'
 import styles from './video-wedding-section.module.scss'
 
-export const VideoWeddingSection = () => {
+interface VideoWeddingSectionProps {
+  setSoundPlay: (value: boolean) => void
+}
+export const VideoWeddingSection = ({ setSoundPlay }: VideoWeddingSectionProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -42,7 +45,10 @@ export const VideoWeddingSection = () => {
         />
       </div>
       <div id="video2">
-        <YoutubeEmbed url="https://www.youtube.com/watch?v=HxNWvmqKLeA" />
+        <YoutubeEmbed
+          setSoundPlay={setSoundPlay}
+          url="https://www.youtube.com/watch?v=TvUnb-QgXIw"
+        />
       </div>
     </Container>
   )

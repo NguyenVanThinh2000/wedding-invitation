@@ -77,6 +77,15 @@ const Home = () => {
     fetchData()
   }, [searchParams])
 
+  const setSoundPlay = (value: boolean) => {
+    if (value) {
+      audioRef.current?.play()
+    } else {
+      audioRef.current?.pause()
+    }
+    setIsAudioPlaying(value)
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0)
     if (isOpen) {
@@ -113,7 +122,7 @@ const Home = () => {
       </div>
       <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
         <TitleSection host={guest.host} />
-        <VideoWeddingSection />
+        <VideoWeddingSection setSoundPlay={setSoundPlay} />
         <CalendarSection host={guest.host} />
         <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
         <GroomBrideSection />
