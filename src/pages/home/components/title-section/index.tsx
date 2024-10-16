@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -34,13 +34,6 @@ export const TitleSection = ({ host }: PropsParams) => {
       },
     })
   }, [isImageLoaded])
-  useEffect(() => {
-    const img = new Image()
-    img.src = weddingPhotos[9]
-    img.onload = () => {
-      setIsImageLoaded(true)
-    }
-  }, [])
   return (
     <Container className={styles.titleSectionWrapper}>
       <div className={styles.title}>
@@ -52,7 +45,14 @@ export const TitleSection = ({ host }: PropsParams) => {
         <div className={styles.marry}>Sắp kết hôn</div>
       </div>
       <div className={styles.image}>
-        <img alt="" className={styles.image1} src={weddingPhotos[9]} />
+        <img
+          alt=""
+          className={styles.image1}
+          src={weddingPhotos[9]}
+          onLoad={() => {
+            setIsImageLoaded(true)
+          }}
+        />
         <img alt="" className={styles.label} src={weddinglabel} />
       </div>
 
