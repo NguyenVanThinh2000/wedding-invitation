@@ -49,17 +49,17 @@
     }
 
     .title {
-      font-size: 28px;
+      font-size: 40px;
       font-weight: 700;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Updock', cursive;
       text-align: center;
 
       @include responsive(md) {
-        font-size: 24px;
+        font-size: 32px;
       }
 
       @include responsive(sm) {
-        font-size: 20px;
+        font-size: 28px;
       }
     }
 
@@ -96,7 +96,7 @@
       }
 
       .name {
-        font-weight: 700;
+        font-weight: 600;
       }
     }
 

@@ -4,10 +4,14 @@ import gsap from 'gsap'
 import { Container, SectionTitle } from '@/components'
 import { loveStories } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
+import { TGuest } from '@/types'
 
 import styles from './love-story.module.scss'
 
-export const LoveStory = () => {
+interface IProps {
+  guest: TGuest
+}
+export const LoveStory = ({ guest }: IProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -42,7 +46,7 @@ export const LoveStory = () => {
     <Container className={styles.loveStoryWrapper} id="story">
       <div id="story1">
         <SectionTitle
-          description={`Chỉ mất 3 giây để nói lời yêu nhưng mất cả cuộc đời để chứng minh điều đó.`}
+          description={`Chỉ mất 3 giây để nói lời yêu nhưng mất cả cuộc đời để chứng minh điều đó`}
           title="Câu chuyện tình yêu"
         />
       </div>
@@ -59,7 +63,7 @@ export const LoveStory = () => {
             ></h2>
             <p
               dangerouslySetInnerHTML={{
-                __html: story.content,
+                __html: story.content[guest.host],
               }}
               className={styles.content}
             ></p>

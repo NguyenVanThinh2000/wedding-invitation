@@ -2,17 +2,17 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
-import { invitationInfo } from '@/constants'
+import { invitationInfo, thanksWishesTitleMapping } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import { THost } from '@/types'
+import { TGuest } from '@/types'
 
 import styles from './donate-section.module.scss'
 
 interface Props {
-  host: THost
+  guest: TGuest
 }
-export const DonateSection = ({ host }: Props) => {
-  const donate = invitationInfo[host].donate
+export const DonateSection = ({ guest }: Props) => {
+  const donate = invitationInfo[guest.host].donate
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -43,7 +43,7 @@ export const DonateSection = ({ host }: Props) => {
     <Container className={styles.donateSectionWrapper} id="donate">
       <div id="donate1">
         <SectionTitle
-          description={`Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như đám cưới của chúng mình.`}
+          description={`Thật vui vì được gặp và đón tiếp ${guest.role} trong một dịp đặc biệt như đám cưới của chúng ${thanksWishesTitleMapping[guest.role]}`}
           title="Hộp mừng cưới"
         />
       </div>

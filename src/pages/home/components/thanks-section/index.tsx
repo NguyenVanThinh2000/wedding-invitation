@@ -6,7 +6,7 @@ export const ThanksSection = () => {
   return (
     <Container className={styles.thanksSectionWrapper}>
       <p className={styles.title}>Thank you!</p>
-      <p className={styles.name}>-- Thoan Thoan & Thịnh Nguyễn --</p>
+      <p className={styles.name}>-- Thoan Thoan & Nguyễn Thịnh --</p>
     </Container>
   )
 }

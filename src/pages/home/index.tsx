@@ -117,10 +117,10 @@ const Home = () => {
         <CalendarSection host={guest.host} />
         <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
         <GroomBrideSection />
-        <LoveStory />
+        <LoveStory guest={guest} />
         <AlbumSection />
         <InvitationSection guest={guest} />
-        <DonateSection host={guest.host} />
+        <DonateSection guest={guest} />
         <WishesSection guest={guest} />
         <ThanksSection />
       </div>

@@ -6,5 +6,9 @@ interface Props {
   className?: string
 }
 export const CoupleName = ({ className }: Props) => {
-  return <div className={clsx(styles.coupleName, className)}>Thoan Thoan ♥ Thịnh Nguyễn</div>
+  return (
+    <div className={clsx(styles.coupleName, className)}>
+      Thoan Thoan <span>♥</span> Nguyễn Thịnh
+    </div>
+  )
 }

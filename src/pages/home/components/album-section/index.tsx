@@ -51,7 +51,7 @@ export const AlbumSection = () => {
       <Container className={styles.albumWrapper} id="album">
         <div id="album1">
           <SectionTitle
-            description="Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu ai đó sâu sắc sẽ cho bạn dũng khí."
+            description="Một đám cưới là kết quả của một mối tình đẹp đẽ, lãng mạn và bền bỉ"
             title="Album Hình Cưới"
           />
         </div>
