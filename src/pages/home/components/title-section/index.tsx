@@ -27,7 +27,6 @@ export const TitleSection = ({ host }: PropsParams) => {
         scrub: 2,
         start: scroll_trigger,
         end: scroll_trigger,
-        markers: true,
       },
     })
   }, [])
