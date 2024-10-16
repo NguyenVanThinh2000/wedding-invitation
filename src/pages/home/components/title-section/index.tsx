@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -14,12 +14,14 @@ import weddinglabel from '../../../../assets/images/wedding-label.png'
 import styles from './title-section.module.scss'
 
 export const TitleSection = ({ host }: PropsParams) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false)
   const data = invitationInfo[host]
   const ref1 = useRef<HTMLDivElement>(null)
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
   useGSAP(() => {
+    if (!isImageLoaded) return
     gsap.from('#titleSection1', {
       y: 100,
       opacity: 0,
@@ -30,6 +32,13 @@ export const TitleSection = ({ host }: PropsParams) => {
         end: scroll_trigger,
       },
     })
+  }, [isImageLoaded])
+  useEffect(() => {
+    const img = new Image()
+    img.src = weddingPhotos[9]
+    img.onload = () => {
+      setIsImageLoaded(true)
+    }
   })
   return (
     <Container className={styles.titleSectionWrapper}>
