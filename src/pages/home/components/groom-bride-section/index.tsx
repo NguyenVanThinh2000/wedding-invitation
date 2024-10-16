@@ -73,7 +73,12 @@ export const GroomBrideSection = () => {
                 </div>
               </div>
               <div className={styles.back}>
-                <p className={styles.description}>{info.description}</p>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: info.description,
+                  }}
+                  className={styles.description}
+                ></p>
                 <div className={styles.social}>
                   {info.social.map((social, index) => (
                     <a key={index} href={social.link} rel="noreferrer" target="_blank">

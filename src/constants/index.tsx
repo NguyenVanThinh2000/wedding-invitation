@@ -80,7 +80,7 @@ export const loveStories = [
     title: 'Lễ dạm ngõ',
     date: '2024-07-22',
     content: {
-      thoan: `Vì tính chất công việc, tụi mình quyết định dạm ngõ online 😝 Hai bên gia đình, người lớn bàn tính chuyện để chúng mình tiến tới hôn nhân. Mình cảm thấy rất hạnh phúc và tự hào khi được làm vợ của anh. Cảm ơn gia đình anh đã chấp nhận mình.`,
+      thoan: `Vì tính chất công việc, tụi mình quyết định dạm ngõ online 😝 Hai bên gia đình, người lớn bàn tính chuyện để chúng mình tiến tới hôn nhân.`,
       thinh: `Vì tính chất công việc, tụi mình quyết định dạm ngõ online 😝 Hai bên gia đình, người lớn bàn tính chuyện để chúng mình tiến tới hôn nhân.`,
     },
     image: engagementImg,
@@ -125,7 +125,7 @@ export const groomBrideInfo = [
   {
     tag: 'to. Groom',
     description:
-      'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. 👈',
+      'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. <br /> 👈',
     image: weddingPhotos[11],
     dad: 'Nguyễn Văn Cường',
     mom: 'Hoàng Thị Mỹ Nhung',
@@ -264,8 +264,8 @@ export const questionAttendMapping: Record<TRole, string> = {
   chị: 'Chị sẽ tham dự bữa tiệc cùng vợ chồng em chứ?',
   ông: 'Ông có tham dự bữa tiệc cùng chúng cháu không',
   bà: 'Bà có tham dự bữa tiệc cùng chúng cháu không?',
-  thầy: 'Thầy sẽ tham dự bữa tiệc cùng vợ chồng em chứ a?',
-  cô: 'Cô sẽ tham dự bữa tiệc cùng vợ chồng em chứ a?',
+  thầy: 'Thầy sẽ tham dự bữa tiệc cùng vợ chồng em chứ ạ?',
+  cô: 'Cô sẽ tham dự bữa tiệc cùng vợ chồng em chứ ạ?',
 }
 
 export const thanksForAttendConfirmYesMapping: Record<TRole, string> = {
@@ -284,7 +284,7 @@ export const thanksForAttendConfirmNoMapping: Record<TRole, string> = {
   chị: 'Thật tiếc khi chị không tham dự bữa tiệc chùng vợ chồng em. Nhưng không sao, chúng em hiểu mà!!!',
   ông: 'Cảm ơn ông đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
   bà: 'Cảm ơn bà đã thông báo không tham dự bữa tiệc cùng chúng cháu ạ!!!',
-  thầy: 'Thật tiếc khi thầy không tham dự bữa tiệc chùng vợ chồng e. Nhưng không sao, chúng em hiểu mà!!!',
+  thầy: 'Thật tiếc khi thầy không tham dự bữa tiệc chùng vợ chồng em. Nhưng không sao, chúng em hiểu mà!!!',
   cô: 'Thật tiếc khi cô không tham dự bữa tiệc chùng vợ chồng em. Nhưng không sao, chúng em hiểu mà!!!',
 }
 

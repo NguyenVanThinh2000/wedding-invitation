@@ -46,7 +46,7 @@ export const LoveStory = ({ guest }: IProps) => {
     <Container className={styles.loveStoryWrapper} id="story">
       <div id="story1">
         <SectionTitle
-          description={`Chỉ mất 3 giây để nói lời yêu nhưng mất cả cuộc đời để chứng minh điều đó`}
+          description={`Chỉ mất 3 giây để nói lời yêu nhưng phải mất cả cuộc đời để chứng minh điều đó`}
           title="Câu chuyện tình yêu"
         />
       </div>
