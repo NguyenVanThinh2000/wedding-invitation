@@ -78,7 +78,7 @@ export const InvitationSection = ({ guest }: IProps) => {
           ></p>
         </div>
 
-        <img alt="" id="invitation2" src={weddingPhotos[15]} />
+        <img alt="" id="invitation2" src={weddingPhotos[14]} />
 
         <div id="invitation3">
           <CoupleName className={styles.coupleName} />
