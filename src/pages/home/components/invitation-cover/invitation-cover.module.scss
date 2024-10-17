@@ -25,7 +25,7 @@
     overflow: hidden;
 
     @include responsive(lg) {
-      height: fit-content;
+      flex: 1;
       width: 100%;
     }
 
