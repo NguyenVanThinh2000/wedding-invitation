@@ -46,7 +46,7 @@ export const WishesSection = ({ guest }: Props) => {
   return (
     <Container className={styles.wishesSectionWrapper} id="wishes">
       <SectionTitle
-        description={`Cảm ơn ${guest.role} rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của chúng ${thanksWishesTitleMapping[guest.role]}!`}
+        description={`Cảm ơn ${guest.role} rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của ${thanksWishesTitleMapping[guest.role]}!`}
         title="Sổ Lưu Bút"
       />
 

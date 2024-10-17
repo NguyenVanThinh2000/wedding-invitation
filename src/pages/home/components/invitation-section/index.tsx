@@ -61,7 +61,7 @@ export const InvitationSection = ({ guest }: IProps) => {
           </div>
           <span>Một lần nữa muốn gửi lời cảm ơn đến {guest.role}！</span>
           <span>
-            Tuy bận rộn với công việc và gia đình nhưng đám cưới của chúng{' '}
+            Tuy bận rộn với công việc và gia đình nhưng đám cưới của{' '}
             {thanksWishesTitleMapping[guest.role]} sẽ rất hạnh phúc nếu như có sự hiện diện của{' '}
             {guest.role}!
           </span>
@@ -73,12 +73,12 @@ export const InvitationSection = ({ guest }: IProps) => {
           )}
           <p
             dangerouslySetInnerHTML={{
-              __html: `Rất vinh dự được đón tiếp ${guest.role} trong ngày vui của chúng ${thanksWishesTitleMapping[guest.role]} 😘`,
+              __html: `Rất vinh dự được đón tiếp ${guest.role} trong ngày vui của ${thanksWishesTitleMapping[guest.role]} 😘`,
             }}
           ></p>
         </div>
 
-        <img alt="" id="invitation2" src={weddingPhotos[12]} />
+        <img alt="" id="invitation2" src={weddingPhotos[15]} />
 
         <div id="invitation3">
           <CoupleName className={styles.coupleName} />

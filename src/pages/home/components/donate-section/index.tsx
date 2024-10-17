@@ -43,7 +43,7 @@ export const DonateSection = ({ guest }: Props) => {
     <Container className={styles.donateSectionWrapper} id="donate">
       <div id="donate1">
         <SectionTitle
-          description={`Thật vui vì được gặp và đón tiếp ${guest.role} trong một dịp đặc biệt như đám cưới của chúng ${thanksWishesTitleMapping[guest.role]}`}
+          description={`Thật vui vì được gặp và đón tiếp ${guest.role} trong một dịp đặc biệt như đám cưới của ${thanksWishesTitleMapping[guest.role]}`}
           title="Hộp mừng cưới"
         />
       </div>
