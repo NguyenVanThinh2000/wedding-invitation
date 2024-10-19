@@ -37,18 +37,18 @@ export const Event2Section = ({ host, guestName }: Props) => {
       },
     })
   })
-  useGSAP(() => {
-    gsap.from('#event-bottons', {
-      x: 100,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: '#event-bottons',
-        start: scroll_trigger,
-        end: scroll_trigger,
-        scrub: 2,
-      },
-    })
-  })
+  // useGSAP(() => {
+  //   gsap.from('#event-bottons', {
+  //     x: 100,
+  //     opacity: 0,
+  //     scrollTrigger: {
+  //       trigger: '#event-bottons',
+  //       start: scroll_trigger,
+  //       end: scroll_trigger,
+  //       scrub: 2,
+  //     },
+  //   })
+  // })
   return (
     <Container className={styles.eventSectionWrapper} id="event">
       <SectionTitle description="" title={eventTitle[host]} />
