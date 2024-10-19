@@ -53,7 +53,7 @@ export const CalendarSection = ({ host }: Props) => {
     }, 1000)
 
     return () => clearInterval(intervalId)
-  }, [])
+  }, [host, month])
 
   return (
     <div id="calendar">

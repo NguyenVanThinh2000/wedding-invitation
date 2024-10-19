@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import Snowfall from 'react-snowfall'
 
 import clsx from 'clsx'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { invitationApiEndPoints } from '@/api'
 import audio from '@/assets/audios/beautifulInWhite.mp3'
@@ -91,6 +92,18 @@ const Home = () => {
     if (isOpen) {
       audioRef.current?.play()
       setIsAudioPlaying(true)
+    }
+  }, [isOpen])
+
+  useLayoutEffect(() => {
+    if (isOpen) {
+      setTimeout(() => {
+        ScrollTrigger.refresh()
+      }, 500)
+    }
+
+    return () => {
+      ScrollTrigger.refresh()
     }
   }, [isOpen])
 
