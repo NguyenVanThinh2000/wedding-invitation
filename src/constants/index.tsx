@@ -18,7 +18,6 @@ const img9 = '/wedding-images/THOANTHINH9.jpg'
 const img10 = '/wedding-images/THOANTHINH10.jpg'
 const img11 = '/wedding-images/THOANTHINH11.jpg'
 const img12 = '/wedding-images/THOANTHINH12.jpg'
-const img13 = '/wedding-images/THOANTHINH13.jpg'
 const img14 = '/wedding-images/THOANTHINH14.jpg'
 const img15 = '/wedding-images/THOANTHINH15.jpg'
 // const img16 = '/wedding-images/THOANTHINH16.jpg'
@@ -53,7 +52,6 @@ export const weddingPhotos = [
   img10,
   img11,
   img12,
-  img13,
   img14,
   img15,
   img24,
@@ -150,7 +148,7 @@ export const groomBrideInfo = [
     tag: 'to. Groom',
     description:
       'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. <br /> 👈',
-    image: weddingPhotos[14],
+    image: weddingPhotos[13],
     dad: 'Nguyễn Văn Cường',
     mom: 'Hoàng Thị Mỹ Nhung',
     social: [
