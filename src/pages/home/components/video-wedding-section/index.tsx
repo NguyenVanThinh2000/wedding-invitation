@@ -12,7 +12,7 @@ interface VideoWeddingSectionProps {
   setSoundPlay: (value: boolean) => void
   host: THost
 }
-export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionProps) => {
+export const VideoWeddingSection = ({ setSoundPlay }: VideoWeddingSectionProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -49,11 +49,7 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
       <div id="video2">
         <YoutubeEmbed
           setSoundPlay={setSoundPlay}
-          url={
-            host === 'thinh'
-              ? 'https://www.youtube.com/watch?v=JCnGcCtY7mA'
-              : 'https://www.youtube.com/watch?v=N2qx5YjSMBA'
-          }
+          url={'https://www.youtube.com/watch?v=JCnGcCtY7mA'}
         />
       </div>
     </Container>
