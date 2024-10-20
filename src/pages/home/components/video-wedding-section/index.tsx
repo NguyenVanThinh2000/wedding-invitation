@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -16,6 +16,8 @@ interface VideoWeddingSectionProps {
   host: THost
 }
 export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionProps) => {
+  const [hostName, setHostName] = useState(host)
+
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -41,9 +43,10 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
       },
     })
   })
-  const video = useMemo(() => {
-    return <YoutubeEmbed setSoundPlay={setSoundPlay} url={invitationInfo[host].videoUrl} />
+  useEffect(() => {
+    setHostName(host)
   }, [host])
+
   return (
     <Container className={styles.wrapper} id="video">
       <div id="video1">
@@ -52,7 +55,9 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
           title="Hành trình 7 năm <br /> yêu nhau đầy cảm xúc"
         />
       </div>
-      <div id="video2">{video}</div>
+      <div id="video2">
+        <YoutubeEmbed setSoundPlay={setSoundPlay} url={invitationInfo[hostName].videoUrl} />
+      </div>
     </Container>
   )
 }
