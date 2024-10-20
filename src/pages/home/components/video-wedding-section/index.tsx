@@ -49,10 +49,9 @@ export const VideoWeddingSection = ({ setSoundPlay, guest }: VideoWeddingSection
         />
       </div>
       <div id="video2">
-        <YoutubeEmbed
-          setSoundPlay={setSoundPlay}
-          url={guest ? invitationInfo[guest.host].videoUrl : ''}
-        />
+        {guest && (
+          <YoutubeEmbed setSoundPlay={setSoundPlay} url={invitationInfo[guest.host].videoUrl} />
+        )}
       </div>
     </Container>
   )
