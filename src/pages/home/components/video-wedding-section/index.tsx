@@ -39,7 +39,6 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
       },
     })
   })
-  const videoUrl = invitationInfo[host].videoUrl
   return (
     <Container className={styles.wrapper} id="video">
       <div id="video1">
@@ -49,7 +48,14 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
         />
       </div>
       <div id="video2">
-        <YoutubeEmbed setSoundPlay={setSoundPlay} url={videoUrl} />
+        <YoutubeEmbed
+          setSoundPlay={setSoundPlay}
+          url={
+            host === 'thinh'
+              ? 'https://www.youtube.com/watch?v=JCnGcCtY7mA'
+              : 'https://www.youtube.com/watch?v=N2qx5YjSMBA'
+          }
+        />
       </div>
     </Container>
   )
