@@ -1,21 +1,19 @@
-import { useMemo } from 'react'
-
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import { TGuest } from '@/types'
+import { THost } from '@/types'
 
 import { YoutubeEmbed } from '../youtube-embed'
 import styles from './video-wedding-section.module.scss'
 
 interface VideoWeddingSectionProps {
   setSoundPlay: (value: boolean) => void
-  guest: TGuest
+  host: THost
 }
-export const VideoWeddingSection = ({ setSoundPlay, guest }: VideoWeddingSectionProps) => {
+export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -41,7 +39,7 @@ export const VideoWeddingSection = ({ setSoundPlay, guest }: VideoWeddingSection
       },
     })
   })
-  const videoUrl = useMemo(() => invitationInfo[guest.host].videoUrl, [guest.host])
+  const videoUrl = invitationInfo[host].videoUrl
   return (
     <Container className={styles.wrapper} id="video">
       <div id="video1">
