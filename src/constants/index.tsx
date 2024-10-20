@@ -21,12 +21,24 @@ const img12 = '/wedding-images/THOANTHINH12.jpg'
 const img13 = '/wedding-images/THOANTHINH13.jpg'
 const img14 = '/wedding-images/THOANTHINH14.jpg'
 const img15 = '/wedding-images/THOANTHINH15.jpg'
+// const img16 = '/wedding-images/THOANTHINH16.jpg'
+// const img17 = '/wedding-images/THOANTHINH17.jpg'
+const img18 = '/wedding-images/THOANTHINH18.jpg'
+const img19 = '/wedding-images/THOANTHINH19.jpg'
+const img20 = '/wedding-images/THOANTHINH20.jpg'
+const img21 = '/wedding-images/THOANTHINH21.jpg'
+const img22 = '/wedding-images/THOANTHINH22.jpg'
+const img23 = '/wedding-images/THOANTHINH23.jpg'
+const img24 = '/wedding-images/THOANTHINH24.jpg'
+const img25 = '/wedding-images/THOANTHINH25.jpg'
+const img26 = '/wedding-images/THOANTHINH26.jpg'
+const img27 = '/wedding-images/THOANTHINH27.jpg'
 
 const meetImg = '/wedding-images/meet.jpg'
 const confessImg = '/wedding-images/confess.jpg'
 const proposeImg = '/wedding-images/propose.jpg'
 const engagementImg = '/wedding-images/engagement.jpg'
-const weddingImg = '/wedding-images/wedding.jpg'
+const weddingImg = img24
 
 export const weddingPhotos = [
   img1,
@@ -44,6 +56,16 @@ export const weddingPhotos = [
   img13,
   img14,
   img15,
+  img24,
+  img25,
+  img26,
+  img27,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+  img23,
 ]
 
 export const loveStories = [
@@ -183,6 +205,7 @@ export const donateList = [
 
 export const invitationInfo = {
   thoan: {
+    videoUrl: 'https://www.youtube.com/watch?v=N2qx5YjSMBA',
     hour1: '09',
     minute1: '00',
     hour2: '11',
@@ -215,6 +238,7 @@ export const invitationInfo = {
     },
   },
   thinh: {
+    videoUrl: 'https://www.youtube.com/watch?v=JCnGcCtY7mA',
     hour1: '09',
     minute1: '30',
     hour2: '11',

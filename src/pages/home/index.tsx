@@ -135,7 +135,7 @@ const Home = () => {
       </div>
       <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
         <TitleSection host={guest.host} />
-        <VideoWeddingSection setSoundPlay={setSoundPlay} />
+        <VideoWeddingSection guest={guest} setSoundPlay={setSoundPlay} />
         <CalendarSection host={guest.host} />
         <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
         <GroomBrideSection />
