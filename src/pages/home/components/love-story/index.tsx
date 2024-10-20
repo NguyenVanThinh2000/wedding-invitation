@@ -9,7 +9,7 @@ import { TGuest } from '@/types'
 import styles from './love-story.module.scss'
 
 interface IProps {
-  guest: TGuest
+  guest?: TGuest
 }
 export const LoveStory = ({ guest }: IProps) => {
   const {
@@ -63,7 +63,7 @@ export const LoveStory = ({ guest }: IProps) => {
             ></h2>
             <p
               dangerouslySetInnerHTML={{
-                __html: story.content[guest.host],
+                __html: guest ? story.content[guest.host] : '',
               }}
               className={styles.content}
             ></p>

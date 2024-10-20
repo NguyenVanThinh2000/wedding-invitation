@@ -7,15 +7,15 @@ import gsap from 'gsap'
 import { Container, CoupleName } from '@/components'
 import { YEAR, invitationInfo, weekDays } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import { THost } from '@/types'
+import { TGuest } from '@/types'
 import { countdown, generateCalendar } from '@/utils'
 
 import styles from './calendar-section.module.scss'
 
 interface Props {
-  host: THost
+  guest?: TGuest
 }
-export const CalendarSection = ({ host }: Props) => {
+export const CalendarSection = ({ guest }: Props) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -25,7 +25,7 @@ export const CalendarSection = ({ host }: Props) => {
     minutes: '00',
     seconds: '00',
   })
-  const month = invitationInfo[host].month
+  const month = guest && invitationInfo[guest.host].month
   const weeks = generateCalendar(Number(month), YEAR)
 
   useGSAP(() => {
@@ -44,7 +44,7 @@ export const CalendarSection = ({ host }: Props) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       const { days, hours, minutes, seconds } = countdown(
-        `${invitationInfo[host].day}/${month}/${YEAR}`,
+        `${guest && invitationInfo[guest.host].day}/${month}/${YEAR}`,
       )
       setDateRemaining({ days, hours, minutes, seconds })
       if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
@@ -53,7 +53,7 @@ export const CalendarSection = ({ host }: Props) => {
     }, 1000)
 
     return () => clearInterval(intervalId)
-  }, [host, month])
+  }, [guest, month])
 
   return (
     <div id="calendar">
@@ -80,7 +80,7 @@ export const CalendarSection = ({ host }: Props) => {
                   <div key={index} className={styles.day}>
                     <span
                       className={clsx({
-                        [styles.active]: day === Number(invitationInfo[host].day),
+                        [styles.active]: day === Number(guest && invitationInfo[guest.host].day),
                       })}
                     >
                       {day}

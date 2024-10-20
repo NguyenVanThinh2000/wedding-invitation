@@ -5,14 +5,14 @@ import { Container } from '@/components'
 import { CoupleName } from '@/components'
 import { YEAR, invitationInfo, weddingPhotos } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import { PropsParams } from '@/types'
+import { TGuest } from '@/types'
 
 import heart from '../../../../assets/images/heart-icon.png'
 import weddinglabel from '../../../../assets/images/wedding-label.png'
 import styles from './title-section.module.scss'
 
-export const TitleSection = ({ host }: PropsParams) => {
-  const data = invitationInfo[host]
+export const TitleSection = ({ guest }: { guest?: TGuest }) => {
+  const data = guest && invitationInfo[guest.host]
 
   const {
     state: { scroll_trigger },
@@ -36,8 +36,8 @@ export const TitleSection = ({ host }: PropsParams) => {
       <div className={styles.title}>
         <div className={styles.we}>Chúng tôi</div>
         <div className={styles.dayMonth}>
-          <span className={styles.day}>{data.day}</span>
-          <span className={styles.month}>{data.month}</span>
+          <span className={styles.day}>{data?.day}</span>
+          <span className={styles.month}>{data?.month}</span>
         </div>
         <div className={styles.marry}>Sắp kết hôn</div>
       </div>
@@ -51,13 +51,17 @@ export const TitleSection = ({ host }: PropsParams) => {
         <CoupleName className={styles.name} />
 
         <div className={styles.fullDate}>
-          {invitationInfo[host].weekDay}. {invitationInfo[host].day} / {invitationInfo[host].month}{' '}
-          / {YEAR}
+          {guest && (
+            <>
+              {invitationInfo[guest.host].weekDay}. {invitationInfo[guest.host].day} /{' '}
+              {invitationInfo[guest.host].month} / {YEAR}
+            </>
+          )}
         </div>
         <div className={styles.dayMonth2}>
-          <span className={styles.day}>{invitationInfo[host].day}</span>
+          <span className={styles.day}>{guest && invitationInfo[guest.host].day}</span>
           <img alt="" src={heart} />
-          <span className={styles.month}>{invitationInfo[host].month}</span>
+          <span className={styles.month}>{guest && invitationInfo[guest.host].month}</span>
         </div>
       </div>
     </Container>

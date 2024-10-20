@@ -9,10 +9,10 @@ import { TGuest } from '@/types'
 import styles from './donate-section.module.scss'
 
 interface Props {
-  guest: TGuest
+  guest?: TGuest
 }
 export const DonateSection = ({ guest }: Props) => {
-  const donate = invitationInfo[guest.host].donate
+  const donate = guest && invitationInfo[guest.host].donate
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -43,21 +43,21 @@ export const DonateSection = ({ guest }: Props) => {
     <Container className={styles.donateSectionWrapper} id="donate">
       <div id="donate1">
         <SectionTitle
-          description={`Thật vui vì được gặp và đón tiếp ${guest.role} trong một dịp đặc biệt như đám cưới của ${thanksWishesTitleMapping[guest.role]}`}
+          description={`Thật vui vì được gặp và đón tiếp ${guest?.role} trong một dịp đặc biệt như đám cưới của ${guest && thanksWishesTitleMapping[guest.role]}`}
           title="Hộp mừng cưới"
         />
       </div>
 
       <div className={styles.cardList} id="donateCard">
         <div className={styles.card}>
-          <p className={styles.title}>{donate.title}</p>
+          <p className={styles.title}>{donate?.title}</p>
           <div className={styles.image}>
-            <img alt="" src={donate.qrCode} />
+            <img alt="" src={donate?.qrCode} />
           </div>
           <div className={styles.content}>
-            <p>{donate.bankName}</p>
-            <p>{donate.accountNumber}</p>
-            <p>{donate.accountName}</p>
+            <p>{donate?.bankName}</p>
+            <p>{donate?.accountNumber}</p>
+            <p>{donate?.accountName}</p>
           </div>
         </div>
       </div>

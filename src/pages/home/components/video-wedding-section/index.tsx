@@ -1,23 +1,19 @@
-import { useEffect, useState } from 'react'
-
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import { THost } from '@/types'
+import { TGuest } from '@/types'
 
 import { YoutubeEmbed } from '../youtube-embed'
 import styles from './video-wedding-section.module.scss'
 
 interface VideoWeddingSectionProps {
   setSoundPlay: (value: boolean) => void
-  host: THost
+  guest?: TGuest
 }
-export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionProps) => {
-  const [hostName, setHostName] = useState(host)
-
+export const VideoWeddingSection = ({ setSoundPlay, guest }: VideoWeddingSectionProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -43,9 +39,6 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
       },
     })
   })
-  useEffect(() => {
-    setHostName(host)
-  }, [host])
 
   return (
     <Container className={styles.wrapper} id="video">
@@ -56,7 +49,10 @@ export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionP
         />
       </div>
       <div id="video2">
-        <YoutubeEmbed setSoundPlay={setSoundPlay} url={invitationInfo[hostName].videoUrl} />
+        <YoutubeEmbed
+          setSoundPlay={setSoundPlay}
+          url={guest ? invitationInfo[guest.host].videoUrl : ''}
+        />
       </div>
     </Container>
   )

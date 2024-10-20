@@ -9,11 +9,11 @@ import { Modal } from '../modal'
 import styles from './wishes-section.module.scss'
 
 interface Props {
-  guest: TGuest
+  guest?: TGuest
 }
 export const WishesSection = ({ guest }: Props) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
-  const [wishes, setWishes] = useState<string>(guest.wishes)
+  const [wishes, setWishes] = useState<string>(guest?.wishes ?? '')
   const [guestName, setGuestName] = useState('')
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setWishes(e.target.value)
@@ -24,7 +24,7 @@ export const WishesSection = ({ guest }: Props) => {
 
   const handleSubmit = async () => {
     if (!wishes) return
-    if (!guest.id) {
+    if (!guest?.id) {
       await invitationApiEndPoints.findAndUpdateGuest({
         name: guestName,
         wishes,
@@ -40,22 +40,22 @@ export const WishesSection = ({ guest }: Props) => {
   }
 
   useEffect(() => {
-    setWishes(guest.wishes)
+    setWishes(guest?.wishes ?? '')
   }, [guest])
 
   return (
     <Container className={styles.wishesSectionWrapper} id="wishes">
       <SectionTitle
-        description={`Cảm ơn ${guest.role} rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của ${thanksWishesTitleMapping[guest.role]}!`}
+        description={`Cảm ơn ${guest?.role} rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến đám cưới của ${guest && thanksWishesTitleMapping[guest.role]}!`}
         title="Sổ Lưu Bút"
       />
 
       <div className={styles.form}>
-        {!guest.id && <input name="guestName" type="text" onChange={handleChangeName} />}
+        {!guest?.id && <input name="guestName" type="text" onChange={handleChangeName} />}
         <textarea
           id="wishes"
           name="wishes"
-          placeholder={`Hãy nhập lời chúc của ${guest.role}...`}
+          placeholder={`Hãy nhập lời chúc của ${guest?.role}...`}
           value={wishes}
           onChange={handleChange}
         ></textarea>
@@ -65,7 +65,7 @@ export const WishesSection = ({ guest }: Props) => {
         Gửi lời chúc
       </Button>
       <Modal
-        content={thanksForWishesMapping[guest.role]}
+        content={guest ? thanksForWishesMapping[guest.role] : ''}
         open={isOpenModal}
         onClose={setIsOpenModal}
       />

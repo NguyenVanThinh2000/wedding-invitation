@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { Container, SectionTitle } from '@/components'
 import { invitationInfo } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
-import { THost } from '@/types'
+import { TGuest, THost } from '@/types'
 
 import styles from './event-section.module.scss'
 
@@ -14,15 +14,14 @@ const eventTitle: Record<THost, string> = {
 }
 
 interface Props {
-  host: THost
-  guestName: string
+  guest?: TGuest
 }
 
-export const Event2Section = ({ host, guestName }: Props) => {
+export const Event2Section = ({ guest }: Props) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
-  const locationList = invitationInfo[host].location
+  const locationList = guest && invitationInfo[guest.host].location
 
   useGSAP(() => {
     gsap.from('#event', {
@@ -51,21 +50,29 @@ export const Event2Section = ({ host, guestName }: Props) => {
   // })
   return (
     <Container className={styles.eventSectionWrapper} id="event">
-      <SectionTitle description="" title={eventTitle[host]} />
+      <SectionTitle description="" title={guest ? eventTitle[guest.host] : ''} />
 
       <p className={styles.p1}>Hôn lễ được cử hành tại TƯ GIA vào lúc</p>
       <p className={styles.p2}>
-        {invitationInfo[host].hour1} giờ {invitationInfo[host].minute1} -{' '}
-        {invitationInfo[host].weekDay} <br />
-        Ngày {invitationInfo[host].day} tháng {invitationInfo[host].month} năm 2024
+        {guest && (
+          <>
+            {invitationInfo[guest.host].hour1} giờ {invitationInfo[guest.host].minute1} -{' '}
+            {invitationInfo[guest.host].weekDay} <br />
+            Ngày {invitationInfo[guest.host].day} tháng {invitationInfo[guest.host].month} năm 2024
+          </>
+        )}
       </p>
       <p className={styles.p3}>
-        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar} năm Giáp
-        Thìn)
+        {guest && (
+          <>
+            (Nhằm ngày {invitationInfo[guest.host].dayLunar} tháng{' '}
+            {invitationInfo[guest.host].monthLunar} năm Giáp Thìn)
+          </>
+        )}
       </p>
 
       <p className={styles.p4}>Trân trọng kính mời</p>
-      <p className={styles.p5}>{guestName}</p>
+      <p className={styles.p5}>{guest?.nameInInvitation}</p>
 
       <p className={styles.p6}>
         Đến dự bữa tiệc chung vui <br /> cùng gia đình chúng tôi tại
@@ -73,29 +80,37 @@ export const Event2Section = ({ host, guestName }: Props) => {
 
       <p
         dangerouslySetInnerHTML={{
-          __html: locationList[1].name,
+          __html: locationList ? locationList?.[1].name : '',
         }}
         className={styles.p7}
       ></p>
 
-      <p className={styles.p8}>{locationList[1].location}</p>
+      <p className={styles.p8}>{locationList?.[1].location}</p>
 
       <p className={styles.p9}>
-        {invitationInfo[host].hour2} giờ {invitationInfo[host].minute2} -{' '}
-        {invitationInfo[host].weekDay}
-        <br /> Ngày 08 tháng 11 năm 2024
+        {guest && (
+          <>
+            {invitationInfo[guest.host].hour2} giờ {invitationInfo[guest.host].minute2} -{' '}
+            {invitationInfo[guest.host].weekDay}
+            <br /> Ngày 08 tháng 11 năm 2024
+          </>
+        )}
       </p>
 
       <p className={styles.p10}>
-        (Nhằm ngày {invitationInfo[host].dayLunar} tháng {invitationInfo[host].monthLunar} năm Giáp
-        Thìn)
+        {guest && (
+          <>
+            (Nhằm ngày {invitationInfo[guest.host].dayLunar} tháng{' '}
+            {invitationInfo[guest.host].monthLunar} năm Giáp Thìn)
+          </>
+        )}
       </p>
 
       <div className={styles.maps} id="event-bottons">
-        <a href={locationList[0].mapUrl} target="_blank">
+        <a href={locationList?.[0].mapUrl} target="_blank">
           Bản đồ tư gia
         </a>
-        <a href={locationList[1].mapUrl} target="_blank">
+        <a href={locationList?.[1].mapUrl} target="_blank">
           Bản đồ TTHTCĐ
         </a>
       </div>

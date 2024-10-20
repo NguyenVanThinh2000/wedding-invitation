@@ -15,7 +15,7 @@ import { Modal } from '../modal'
 import styles from './floats.module.scss'
 
 interface Props {
-  guest: TGuest
+  guest?: TGuest
   onToggleSound?: () => void
   isAudioPlaying?: boolean
 }
@@ -41,7 +41,7 @@ export const Floats = ({ guest, onToggleSound, isAudioPlaying }: Props) => {
     setIsOpenModalConfirmAttend(false)
     if (value) setIsOpenModalThanksYes(true)
     else setIsOpenModalThanksNo(true)
-    invitationApiEndPoints.updateGuest(guest.id, {
+    invitationApiEndPoints.updateGuest(guest?.id ?? '', {
       isAttending: value,
     })
   }
@@ -89,18 +89,18 @@ export const Floats = ({ guest, onToggleSound, isAudioPlaying }: Props) => {
         </div>
       </div>
       <Modal
-        content={questionAttendMapping[guest.role]}
+        content={questionAttendMapping[guest?.role ?? 'bạn']}
         open={isOpenModalConfirmAttend}
-        onConfirm={onConfirmAttend}
         onClose={() => setIsOpenModalConfirmAttend(false)}
+        onConfirm={onConfirmAttend}
       />
       <Modal
-        content={thanksForAttendConfirmYesMapping[guest.role]}
+        content={thanksForAttendConfirmYesMapping[guest?.role ?? 'bạn']}
         open={isOpenModalThanksYes}
         onClose={() => setIsOpenModalThanksYes(false)}
       />
       <Modal
-        content={thanksForAttendConfirmNoMapping[guest.role]}
+        content={thanksForAttendConfirmNoMapping[guest?.role ?? 'bạn']}
         open={isOpenModalThanksNo}
         onClose={() => setIsOpenModalThanksNo(false)}
       />

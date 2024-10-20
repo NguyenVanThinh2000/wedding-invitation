@@ -38,15 +38,7 @@ const Home = () => {
   const [searchParams] = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
   const [isOpenMenu, setIsOpenMenu] = useState(false)
-  const [guest, setGuest] = useState<TGuest>({
-    name: '',
-    nameInInvitation: '',
-    isAttending: false,
-    wishes: '',
-    host: 'thinh',
-    role: 'bạn',
-    id: '',
-  })
+  const [guest, setGuest] = useState<TGuest>()
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isAudioPlaying, setIsAudioPlaying] = useState(false)
 
@@ -127,17 +119,13 @@ const Home = () => {
       <Header setOpenMenu={setIsOpenMenu} />
       <Menu open={isOpenMenu} setOpenMenu={setIsOpenMenu} />
       <div className={clsx(styles.invitationCover, { [styles.close]: isOpen })}>
-        <InvitationCover
-          guestName={guest.nameInInvitation}
-          host={guest.host}
-          onOpen={() => setIsOpen(true)}
-        />
+        <InvitationCover guest={guest} onOpen={() => setIsOpen(true)} />
       </div>
       <div className={clsx(styles.wrapper, { [styles.open]: isOpen })}>
-        <TitleSection host={guest.host} />
-        {isOpen && <VideoWeddingSection host={guest.host} setSoundPlay={setSoundPlay} />}
-        <CalendarSection host={guest.host} />
-        <Event2Section guestName={guest.nameInInvitation as string} host={guest.host} />
+        <TitleSection guest={guest} />
+        <VideoWeddingSection guest={guest} setSoundPlay={setSoundPlay} />
+        <CalendarSection guest={guest} />
+        <Event2Section guest={guest} />
         <GroomBrideSection />
         <LoveStory guest={guest} />
         <AlbumSection />

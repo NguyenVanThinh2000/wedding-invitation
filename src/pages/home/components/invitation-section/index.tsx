@@ -10,7 +10,7 @@ import { TGuest } from '@/types'
 import styles from './invitation-section.module.scss'
 
 interface IProps {
-  guest: TGuest
+  guest?: TGuest
 }
 export const InvitationSection = ({ guest }: IProps) => {
   const {
@@ -59,13 +59,17 @@ export const InvitationSection = ({ guest }: IProps) => {
             <span>Lời ngỏ</span>
             <img alt="" src={subTitle} />
           </div>
-          <span>Một lần nữa muốn gửi lời cảm ơn đến {guest.role}！</span>
+          <span>Một lần nữa muốn gửi lời cảm ơn đến {guest?.role}！</span>
           <span>
-            Tuy bận rộn với công việc và gia đình nhưng đám cưới của{' '}
-            {thanksWishesTitleMapping[guest.role]} sẽ rất hạnh phúc nếu như có sự hiện diện của{' '}
-            {guest.role}!
+            {guest && (
+              <>
+                Tuy bận rộn với công việc và gia đình nhưng đám cưới của{' '}
+                {thanksWishesTitleMapping[guest.role]} sẽ rất hạnh phúc nếu như có sự hiện diện của{' '}
+                {guest.role}!
+              </>
+            )}
           </span>
-          {guest.role === 'bạn' && (
+          {guest?.role === 'bạn' && (
             <span>
               Nếu câu chuyện tình yêu của chúng mình là một cuốn sách thì bạn chính là người đọc
               cuồng nhiệt nhất!
@@ -73,7 +77,7 @@ export const InvitationSection = ({ guest }: IProps) => {
           )}
           <p
             dangerouslySetInnerHTML={{
-              __html: `Rất vinh dự được đón tiếp ${guest.role} trong ngày vui của ${thanksWishesTitleMapping[guest.role]} 😘`,
+              __html: `Rất vinh dự được đón tiếp ${guest?.role} trong ngày vui của ${guest && thanksWishesTitleMapping[guest.role]} 😘`,
             }}
           ></p>
         </div>
