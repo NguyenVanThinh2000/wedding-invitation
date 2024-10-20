@@ -2,7 +2,6 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
-import { invitationInfo } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { THost } from '@/types'
 
