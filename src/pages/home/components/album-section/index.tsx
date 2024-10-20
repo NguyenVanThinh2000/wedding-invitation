@@ -4,12 +4,38 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Button, Container, SectionTitle } from '@/components'
-import { weddingPhotos } from '@/constants'
+import { img1, img7, img19, img20, img26, img27 } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
 
 import ImagesSlider from '../images-slider'
 import styles from './album-section.module.scss'
 
+const images = [
+  {
+    src: img1,
+    index: 0,
+  },
+  {
+    src: img7,
+    index: 6,
+  },
+  {
+    src: img26,
+    index: 17,
+  },
+  {
+    src: img27,
+    index: 18,
+  },
+  {
+    src: img19,
+    index: 20,
+  },
+  {
+    src: img20,
+    index: 21,
+  },
+]
 export const AlbumSection = () => {
   const {
     state: { scroll_trigger },
@@ -33,7 +59,7 @@ export const AlbumSection = () => {
         scrub: 2,
       },
     })
-    weddingPhotos.forEach((_photo, index) => {
+    images.forEach((_photo, index) => {
       gsap.from(`#album2_${index}`, {
         x: index % 3 === 0 ? -100 : 100,
         opacity: 0,
@@ -56,9 +82,9 @@ export const AlbumSection = () => {
           />
         </div>
         <div className={styles.images}>
-          {weddingPhotos.slice(0, 6).map((imgSrc, index) => (
-            <div key={imgSrc} className={styles.image} id={`album2_${index}`}>
-              <img alt="" src={imgSrc} onClick={handleClickImage.bind(null, index)} />
+          {images.map((image, index) => (
+            <div key={image.index} className={styles.image} id={`album2_${index}`}>
+              <img alt="" src={image.src} onClick={handleClickImage.bind(null, image.index)} />
             </div>
           ))}
         </div>

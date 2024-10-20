@@ -6,13 +6,13 @@ import { Tiktok } from '@/components/icons'
 import { TRole } from '@/types'
 import { generateUUID } from '@/utils'
 
-const img1 = '/wedding-images/THOANTHINH1.jpg'
+export const img1 = '/wedding-images/THOANTHINH1.jpg'
 const img2 = '/wedding-images/THOANTHINH2.jpg'
 const img3 = '/wedding-images/THOANTHINH3.jpg'
 const img4 = '/wedding-images/THOANTHINH4.jpg'
 const img5 = '/wedding-images/THOANTHINH5.jpg'
 const img6 = '/wedding-images/THOANTHINH6.jpg'
-const img7 = '/wedding-images/THOANTHINH7.jpg'
+export const img7 = '/wedding-images/THOANTHINH7.jpg'
 const img8 = '/wedding-images/THOANTHINH8.jpg'
 const img9 = '/wedding-images/THOANTHINH9.jpg'
 const img10 = '/wedding-images/THOANTHINH10.jpg'
@@ -24,15 +24,15 @@ const img15 = '/wedding-images/THOANTHINH15.jpg'
 // const img16 = '/wedding-images/THOANTHINH16.jpg'
 // const img17 = '/wedding-images/THOANTHINH17.jpg'
 const img18 = '/wedding-images/THOANTHINH18.jpg'
-const img19 = '/wedding-images/THOANTHINH19.jpg'
-const img20 = '/wedding-images/THOANTHINH20.jpg'
+export const img19 = '/wedding-images/THOANTHINH19.jpg'
+export const img20 = '/wedding-images/THOANTHINH20.jpg'
 const img21 = '/wedding-images/THOANTHINH21.jpg'
 const img22 = '/wedding-images/THOANTHINH22.jpg'
 const img23 = '/wedding-images/THOANTHINH23.jpg'
 const img24 = '/wedding-images/THOANTHINH24.jpg'
 const img25 = '/wedding-images/THOANTHINH25.jpg'
-const img26 = '/wedding-images/THOANTHINH26.jpg'
-const img27 = '/wedding-images/THOANTHINH27.jpg'
+export const img26 = '/wedding-images/THOANTHINH26.jpg'
+export const img27 = '/wedding-images/THOANTHINH27.jpg'
 
 const meetImg = '/wedding-images/meet.jpg'
 const confessImg = '/wedding-images/confess.jpg'
@@ -150,7 +150,7 @@ export const groomBrideInfo = [
     tag: 'to. Groom',
     description:
       'Là một người trầm tính, hướng nội, sống tình cảm và rất yêu trẻ con. Đặc biệt là em bé của anh ấy. <br /> 👈',
-    image: weddingPhotos[11],
+    image: weddingPhotos[14],
     dad: 'Nguyễn Văn Cường',
     mom: 'Hoàng Thị Mỹ Nhung',
     social: [
@@ -224,7 +224,7 @@ export const invitationInfo = {
       },
       {
         id: generateUUID(),
-        name: 'Trung tâm học tập cộng đồng Thôn Hà Trung',
+        name: 'Trung tâm học tập cộng đồng <br /> Thôn Hà Trung',
         location: 'Gio Châu, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B054'49.5%22N+107%C2%B004'11.5%22E/@16.9137601,107.0672761,741m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.913755!4d107.069851?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
       },
@@ -257,7 +257,7 @@ export const invitationInfo = {
       },
       {
         id: generateUUID(),
-        name: 'Trung tâm học tập cộng đồng Thôn Vinh Quang Hạ',
+        name: 'Trung tâm học tập cộng đồng <br /> Thôn Vinh Quang Hạ',
         location: 'Gio Quang, Gio Linh, Quảng Trị',
         mapUrl: `https://www.google.com/maps/place/16%C2%B051'46.7%22N+107%C2%B007'22.1%22E/@16.8629613,107.1221673,185m/data=!3m2!1e3!4b1!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.86296!4d107.122811?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
       },

@@ -71,7 +71,12 @@ export const Event2Section = ({ host, guestName }: Props) => {
         Đến dự bữa tiệc chung vui <br /> cùng gia đình chúng tôi tại
       </p>
 
-      <p className={styles.p7}>{locationList[1].name}</p>
+      <p
+        dangerouslySetInnerHTML={{
+          __html: locationList[1].name,
+        }}
+        className={styles.p7}
+      ></p>
 
       <p className={styles.p8}>{locationList[1].location}</p>
 
