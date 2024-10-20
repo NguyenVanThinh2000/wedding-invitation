@@ -81,7 +81,7 @@ export const loveStories = [
   },
   {
     id: generateUUID(),
-    title: 'Lời tỏ tình  yêu 🥰 🥰',
+    title: 'Lời tỏ tình đáng yêu 🥰 🥰',
     date: '2017-04-29',
     content: {
       thoan: `Các cụ có câu: "Lửa gần rơm lâu ngày cũng bén". Ai mà có ngờ đâu, cuộc đời đưa đẩy, sau hơn một năm làm bạn, anh  quyết định tỏ tình mình với một câu nói thẳng thắn: "Làm người yêu anh nha..!" Hơi ngại nhưng mà thui, mình cũng chờ câu nói này lâu lắm rùi ó 😜😝, gật đầu lia lịa lun...`,
