@@ -41,7 +41,7 @@ export const VideoWeddingSection = ({ setSoundPlay, guest }: VideoWeddingSection
       },
     })
   })
-  const videoUrl = useMemo(() => invitationInfo[guest.host].videoUrl, [guest])
+  const videoUrl = useMemo(() => invitationInfo[guest.host].videoUrl, [guest.host])
   return (
     <Container className={styles.wrapper} id="video">
       <div id="video1">
