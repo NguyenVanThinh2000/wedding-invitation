@@ -8,7 +8,7 @@ import styles from './menu.module.scss'
 const menu = [
   {
     id: 1,
-    title: 'Video Cưới',
+    title: 'Hành Trình Yêu Nhau',
     href: 'video',
   },
   {
