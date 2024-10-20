@@ -1,7 +1,10 @@
+import { useMemo } from 'react'
+
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
 import { Container, SectionTitle } from '@/components'
+import { invitationInfo } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { THost } from '@/types'
 
@@ -12,7 +15,7 @@ interface VideoWeddingSectionProps {
   setSoundPlay: (value: boolean) => void
   host: THost
 }
-export const VideoWeddingSection = ({ setSoundPlay }: VideoWeddingSectionProps) => {
+export const VideoWeddingSection = ({ setSoundPlay, host }: VideoWeddingSectionProps) => {
   const {
     state: { scroll_trigger },
   } = useInvitationContext()
@@ -38,6 +41,9 @@ export const VideoWeddingSection = ({ setSoundPlay }: VideoWeddingSectionProps) 
       },
     })
   })
+  const video = useMemo(() => {
+    return <YoutubeEmbed setSoundPlay={setSoundPlay} url={invitationInfo[host].videoUrl} />
+  }, [host])
   return (
     <Container className={styles.wrapper} id="video">
       <div id="video1">
@@ -46,12 +52,7 @@ export const VideoWeddingSection = ({ setSoundPlay }: VideoWeddingSectionProps) 
           title="Hành trình 7 năm <br /> yêu nhau đầy cảm xúc"
         />
       </div>
-      <div id="video2">
-        <YoutubeEmbed
-          setSoundPlay={setSoundPlay}
-          url={'https://www.youtube.com/watch?v=JCnGcCtY7mA'}
-        />
-      </div>
+      <div id="video2">{video}</div>
     </Container>
   )
 }
