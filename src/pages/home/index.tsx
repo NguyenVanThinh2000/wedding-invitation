@@ -43,7 +43,7 @@ const Home = () => {
     nameInInvitation: '',
     isAttending: false,
     wishes: '',
-    host: 'thoan',
+    host: 'thinh',
     role: 'bạn',
     id: '',
   })
