@@ -65,10 +65,16 @@ export const GroomBrideSection = () => {
                 <p className={styles.tag}>{info.tag}</p>
                 <div>
                   <p className={styles.dad}>
-                    Con ông: <span>{info.dad}</span>
+                    <span>Con ông: </span>
+                    <span>{info.dad}</span>
                   </p>
                   <p className={styles.mom}>
-                    Con bà: <span>{info.mom}</span>
+                    <span>Con bà: </span>
+                    <span>{info.mom}</span>
+                  </p>
+                  <p className={styles.location}>
+                    <span>Đ/C: </span>
+                    <span>{info.location}</span>
                   </p>
                 </div>
               </div>

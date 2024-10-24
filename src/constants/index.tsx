@@ -34,6 +34,10 @@ export const img26 = '/wedding-images/THOANTHINH26.jpg'
 export const img27 = '/wedding-images/THOANTHINH27.jpg'
 const img28 = '/wedding-images/THOANTHINH28.jpg'
 const img29 = '/wedding-images/THOANTHINH29.jpg'
+const img30 = '/wedding-images/THOANTHINH30.jpg'
+const img31 = '/wedding-images/THOANTHINH31.jpg'
+const img32 = '/wedding-images/THOANTHINH32.jpg'
+const img33 = '/wedding-images/THOANTHINH33.jpg'
 
 const meetImg = '/wedding-images/meet.jpg'
 const confessImg = '/wedding-images/confess.jpg'
@@ -62,6 +66,10 @@ export const weddingPhotos = [
   img27,
   img28,
   img29,
+  img30,
+  img31,
+  img32,
+  img33,
   img18,
   img19,
   img20,
@@ -135,6 +143,7 @@ export const groomBrideInfo = [
     image: weddingPhotos[3],
     dad: 'Trần Hữu Đáo',
     mom: 'Trần Thị Thủy',
+    location: 'Hà Trung, Gio Châu, Gio Linh, Quảng Trị',
     social: [
       {
         name: 'facebook',
@@ -155,6 +164,7 @@ export const groomBrideInfo = [
     image: weddingPhotos[13],
     dad: 'Nguyễn Văn Cường',
     mom: 'Hoàng Thị Mỹ Nhung',
+    location: 'Vinh Quang Hạ, Gio Quang, Gio Linh, Quảng Trị',
     social: [
       {
         name: 'facebook',

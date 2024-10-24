@@ -25,7 +25,7 @@
 
     .groomBride {
       position: relative;
-      height: 350px;
+      height: 380px;
       width: calc(50% - 5px);
 
       @include responsive(sm) {
@@ -76,12 +76,21 @@
           }
 
           .dad,
-          .mom {
-            text-wrap: nowrap;
+          .mom,
+          .location {
             font-size: 12px;
-            span {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 5px;
+            span:nth-child(2) {
               font-weight: 600;
             }
+          }
+
+          .location {
+            margin-top: 8px;
+            display: inline-block;
           }
 
           .image {

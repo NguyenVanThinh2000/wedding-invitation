@@ -29,11 +29,11 @@ const images = [
   },
   {
     src: img19,
-    index: 21,
+    index: 25,
   },
   {
     src: img20,
-    index: 22,
+    index: 26,
   },
 ]
 export const AlbumSection = () => {
