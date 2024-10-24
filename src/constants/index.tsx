@@ -35,7 +35,6 @@ export const img27 = '/wedding-images/THOANTHINH27.jpg'
 const img28 = '/wedding-images/THOANTHINH28.jpg'
 const img29 = '/wedding-images/THOANTHINH29.jpg'
 const img30 = '/wedding-images/THOANTHINH30.jpg'
-const img31 = '/wedding-images/THOANTHINH31.jpg'
 const img32 = '/wedding-images/THOANTHINH32.jpg'
 const img33 = '/wedding-images/THOANTHINH33.jpg'
 
@@ -67,7 +66,6 @@ export const weddingPhotos = [
   img28,
   img29,
   img30,
-  img31,
   img32,
   img33,
   img18,
