@@ -92,7 +92,7 @@ export const Event2Section = ({ guest }: Props) => {
           <>
             {invitationInfo[guest.host].hour2} giờ {invitationInfo[guest.host].minute2} -{' '}
             {invitationInfo[guest.host].weekDay}
-            <br /> Ngày 08 tháng 11 năm 2024
+            <br /> Ngày {invitationInfo[guest.host].day} tháng 11 năm 2024
           </>
         )}
       </p>
