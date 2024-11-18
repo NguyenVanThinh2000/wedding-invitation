@@ -79,10 +79,11 @@ export const CalendarSection = ({ guest }: Props) => {
                   <div key={index} className={styles.day}>
                     <span
                       className={clsx({
-                        [styles.active]: day === Number(data?.day),
+                        [styles.active]:
+                          day.day === Number(data?.day) && day.month === Number(data?.month),
                       })}
                     >
-                      {day}
+                      {day.day}
                     </span>
                   </div>
                 ))}

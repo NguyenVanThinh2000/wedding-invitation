@@ -5,15 +5,24 @@ export const generateCalendar = (month: number, year: number) => {
   const calendar = []
 
   for (let i = 0; i < firstDay; i++) {
-    calendar.push(0)
+    calendar.push({
+      day: '',
+      month,
+    })
   }
 
   for (let i = 1; i <= daysInMonth; i++) {
-    calendar.push(i)
+    calendar.push({
+      day: i,
+      month,
+    })
   }
 
   for (let i = 0; i < 6 - lastDay; i++) {
-    calendar.push(0)
+    calendar.push({
+      day: '',
+      month: month + 1 > 12 ? 1 : month + 1,
+    })
   }
 
   const weeks = []
