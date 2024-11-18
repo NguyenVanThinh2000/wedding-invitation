@@ -282,6 +282,75 @@ export const invitationInfo = {
   },
 }
 
+export const invitationInfoSG = {
+  thoan: {
+    videoUrl: 'https://www.youtube.com/watch?v=JCnGcCtY7mA',
+    hour1: '09',
+    minute1: '00',
+    hour2: '11',
+    minute2: '00',
+    weekDay: 'Chủ Nhật',
+    day: '01',
+    month: '12',
+    dayLunar: '01',
+    monthLunar: '11',
+    location: [
+      {
+        id: generateUUID(),
+        name: 'Tư gia',
+        location: 'Hà Trung, Gio Châu, Gio Linh, Quảng Trị',
+        mapUrl: `https://www.google.com/maps/place/16%C2%B054'50.2%22N+107%C2%B004'17.9%22E/@16.9139847,107.0713413,91m/data=!3m1!1e3!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.9139444!4d107.0716389?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
+      },
+      {
+        id: generateUUID(),
+        name: 'Trung tâm hội nghị tiệc cưới Tân Phúc Place',
+        location: '2/18 Bình Phước A, Bình Chuẩn, Thuận An, Bình Dương',
+        mapUrl: `https://maps.app.goo.gl/N4fhw7UM1oGKqtJZ9`,
+      },
+    ],
+    donate: {
+      title: 'Đến cô dâu',
+      bankName: 'vietcombank',
+      accountNumber: '1015921086',
+      accountName: 'Trần Thị Thoan',
+      qrCode: thoanthoanQRCode,
+    },
+  },
+  thinh: {
+    videoUrl: 'https://www.youtube.com/watch?v=N2qx5YjSMBA',
+    hour1: '09',
+    minute1: '00',
+    hour2: '11',
+    minute2: '00',
+    weekDay: 'Chủ Nhật',
+    day: '01',
+    month: '12',
+    dayLunar: '01',
+    monthLunar: '11',
+    location: [
+      {
+        id: generateUUID(),
+        name: 'Tư gia',
+        location: 'Hà Trung, Gio Châu, Gio Linh, Quảng Trị',
+        mapUrl: `https://www.google.com/maps/place/16%C2%B054'50.2%22N+107%C2%B004'17.9%22E/@16.9139847,107.0713413,91m/data=!3m1!1e3!4m13!1m8!3m7!1s0x3140e84660165e71:0x614e8f1c82b640!2zR2lvIENow6J1LCBHaW8gTGluaCBEaXN0cmljdCwgUXXhuqNuZyBUcuG7iywgVmlldG5hbQ!3b1!8m2!3d16.9073382!4d107.0716609!16s%2Fg%2F1hb_h6s0f!3m3!8m2!3d16.9139444!4d107.0716389?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D`,
+      },
+      {
+        id: generateUUID(),
+        name: 'Trung tâm hội nghị tiệc cưới <br/> Tân Phúc Place',
+        location: '2/18 Bình Phước A, Bình Chuẩn, Thuận An, Bình Dương',
+        mapUrl: `https://maps.app.goo.gl/N4fhw7UM1oGKqtJZ9`,
+      },
+    ],
+    donate: {
+      title: 'Đến chú rể',
+      bankName: 'vietcombank',
+      accountNumber: '1024759235',
+      accountName: 'Nguyễn Văn Thịnh',
+      qrCode: thinhnguyenQRCode,
+    },
+  },
+}
+
 export const YEAR = 2024
 
 export const thanksForWishesMapping: Record<TRole, string> = {

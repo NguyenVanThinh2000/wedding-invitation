@@ -3,16 +3,17 @@ import gsap from 'gsap'
 
 import { Container } from '@/components'
 import { CoupleName } from '@/components'
-import { YEAR, invitationInfo, weddingPhotos } from '@/constants'
+import { YEAR, weddingPhotos } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { TGuest } from '@/types'
+import { getInformation } from '@/utils'
 
 import heart from '../../../../assets/images/heart-icon.png'
 import weddinglabel from '../../../../assets/images/wedding-label.png'
 import styles from './title-section.module.scss'
 
 export const TitleSection = ({ guest }: { guest?: TGuest }) => {
-  const data = guest && invitationInfo[guest.host]
+  const data = guest && getInformation(guest.location)[guest.host]
 
   const {
     state: { scroll_trigger },
@@ -51,17 +52,16 @@ export const TitleSection = ({ guest }: { guest?: TGuest }) => {
         <CoupleName className={styles.name} />
 
         <div className={styles.fullDate}>
-          {guest && (
+          {data && (
             <>
-              {invitationInfo[guest.host].weekDay}. {invitationInfo[guest.host].day} /{' '}
-              {invitationInfo[guest.host].month} / {YEAR}
+              {data.weekDay}. {data.day} / {data.month} / {YEAR}
             </>
           )}
         </div>
         <div className={styles.dayMonth2}>
-          <span className={styles.day}>{guest && invitationInfo[guest.host].day}</span>
+          <span className={styles.day}>{data && data.day}</span>
           <img alt="" src={heart} />
-          <span className={styles.month}>{guest && invitationInfo[guest.host].month}</span>
+          <span className={styles.month}>{data && data.month}</span>
         </div>
       </div>
     </Container>

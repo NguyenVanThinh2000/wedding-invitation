@@ -19,6 +19,9 @@ export type TGuest = {
   wishes: string
   host: THost
   role: TRole
+  location?: 'saigon'
+  gift: string | null
+  isSent: boolean
 }
 
 export type TResponse<T> = {

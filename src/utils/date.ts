@@ -12,6 +12,14 @@ export function countdown(futureDateStr: string) {
   const futureDate = parseDate(futureDateStr)
   const now = new Date()
   const timeDiff = futureDate.getTime() - now.getTime()
+  if (timeDiff <= 0) {
+    return {
+      days: '00',
+      hours: '00',
+      minutes: '00',
+      seconds: '00',
+    }
+  }
   const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24))
   const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60))

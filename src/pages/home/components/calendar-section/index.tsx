@@ -5,10 +5,10 @@ import clsx from 'clsx'
 import gsap from 'gsap'
 
 import { Container, CoupleName } from '@/components'
-import { YEAR, invitationInfo, weekDays } from '@/constants'
+import { YEAR, weekDays } from '@/constants'
 import { useInvitationContext } from '@/hooks/context/userInvitation'
 import { TGuest } from '@/types'
-import { countdown, generateCalendar } from '@/utils'
+import { countdown, generateCalendar, getInformation } from '@/utils'
 
 import styles from './calendar-section.module.scss'
 
@@ -25,7 +25,8 @@ export const CalendarSection = ({ guest }: Props) => {
     minutes: '00',
     seconds: '00',
   })
-  const month = guest && invitationInfo[guest.host].month
+  const data = guest && getInformation(guest.location)[guest.host]
+  const month = data?.month
   const weeks = generateCalendar(Number(month), YEAR)
 
   useGSAP(() => {
@@ -43,9 +44,7 @@ export const CalendarSection = ({ guest }: Props) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const { days, hours, minutes, seconds } = countdown(
-        `${guest && invitationInfo[guest.host].day}/${month}/${YEAR}`,
-      )
+      const { days, hours, minutes, seconds } = countdown(`${data?.day}/${month}/${YEAR}`)
       setDateRemaining({ days, hours, minutes, seconds })
       if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
         clearInterval(intervalId)
@@ -80,7 +79,7 @@ export const CalendarSection = ({ guest }: Props) => {
                   <div key={index} className={styles.day}>
                     <span
                       className={clsx({
-                        [styles.active]: day === Number(guest && invitationInfo[guest.host].day),
+                        [styles.active]: day === Number(data?.day),
                       })}
                     >
                       {day}
