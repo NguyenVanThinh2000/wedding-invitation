@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { useSearchParams } from 'react-router-dom'
 import Snowfall from 'react-snowfall'
 
@@ -115,6 +116,12 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <meta content={'Kính mời: ' + guest?.nameInInvitation} name="description" />
+        <meta content={'Kính mời: ' + guest?.nameInInvitation} property="og:description" />
+        <meta content={'Kính mời: ' + guest?.nameInInvitation} property="twitter:description" />
+      </Helmet>
+
       <Loading isLoading={isLoading} />
       <Header setOpenMenu={setIsOpenMenu} />
       <Menu open={isOpenMenu} setOpenMenu={setIsOpenMenu} />
