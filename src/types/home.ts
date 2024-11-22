@@ -9,7 +9,7 @@ export interface PropsParams {
 
 export type THost = 'thoan' | 'thinh'
 
-export type TRole = 'thầy' | 'cô' | 'bạn' | 'anh' | 'chị' | 'ông' | 'bà' | 'em' | 'cháu'
+export type TRole = 'thầy' | 'cô' | 'bạn' | 'anh' | 'chị' | 'ông' | 'bà' | 'em' | 'cháu' | 'anh/chị'
 
 export type TGuest = {
   id: string

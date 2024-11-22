@@ -363,6 +363,7 @@ export const thanksForWishesMapping: Record<TRole, string> = {
   cô: 'Cảm ơn cô đã gửi lời chúc đến vợ chồng em ạ!!!',
   em: 'Cảm ơn em đã gửi lời chúc đến vợ chồng anh chị nhé!!!',
   cháu: 'Cảm ơn cháu đã gửi lời chúc nhé!!!',
+  'anh/chị': 'Cảm ơn anh/chị đã gửi lời chúc đến vợ chồng em nhé!!!',
 }
 
 export const questionAttendMapping: Record<TRole, string> = {
@@ -375,6 +376,7 @@ export const questionAttendMapping: Record<TRole, string> = {
   cô: 'Cô sẽ tham dự bữa tiệc cùng vợ chồng em chứ ạ?',
   em: 'Em sẽ tham dự bữa tiệc cùng vợ chồng anh chị chứ?',
   cháu: 'Cháu có đến tham dự bữa tiệc không?',
+  'anh/chị': 'Anh/chị sẽ tham dự bữa tiệc cùng vợ chồng em chứ?',
 }
 
 export const thanksForAttendConfirmYesMapping: Record<TRole, string> = {
@@ -387,6 +389,7 @@ export const thanksForAttendConfirmYesMapping: Record<TRole, string> = {
   cô: 'Cảm ơn cô đã xác nhận tham dự bữa tiệc cùng vợ chồng em ạ!!!',
   em: 'Cảm ơn em đã xác nhận tham dự bữa tiệc cùng vợ chồng anh chị nhé!!!',
   cháu: 'Okeei. Nhớ đến nhé!!!',
+  'anh/chị': 'Cảm ơn anh/chị đã xác nhận tham dự bữa tiệc cùng vợ chồng em nhé!!!',
 }
 
 export const thanksForAttendConfirmNoMapping: Record<TRole, string> = {
@@ -399,6 +402,8 @@ export const thanksForAttendConfirmNoMapping: Record<TRole, string> = {
   cô: 'Thật tiếc khi cô không tham dự bữa tiệc chùng vợ chồng em. Nhưng không sao, chúng em hiểu mà!!!',
   em: 'Thật tiếc khi em không tham dự bữa tiệc cùng vợ chồng anh chị. Nhưng không sao, anh chị hiểu mà!!!',
   cháu: 'Okeei. Cảm ơn cháu đã thông báo!!!',
+  'anh/chị':
+    'Thật tiếc khi anh/chị không tham dự bữa tiệc chùng vợ chồng em. Nhưng không sao, chúng em hiểu mà!!!',
 }
 
 export const thanksWishesTitleMapping: Record<TRole, string> = {
@@ -411,4 +416,5 @@ export const thanksWishesTitleMapping: Record<TRole, string> = {
   cô: 'chúng em',
   em: 'anh chị',
   cháu: 'dì dượng',
+  'anh/chị': 'chúng em',
 }
