@@ -303,7 +303,7 @@ export const invitationInfoSG = {
       },
       {
         id: generateUUID(),
-        name: 'Trung tâm hội nghị tiệc cưới Tân Phúc Place',
+        name: 'Trung tâm hội nghị tiệc cưới Tân Phúc Palace',
         location: '2/18 Bình Phước A, Bình Chuẩn, Thuận An, Bình Dương',
         mapUrl: `https://maps.app.goo.gl/N4fhw7UM1oGKqtJZ9`,
       },
@@ -336,7 +336,7 @@ export const invitationInfoSG = {
       },
       {
         id: generateUUID(),
-        name: 'Trung tâm hội nghị tiệc cưới <br/> Tân Phúc Place',
+        name: 'Trung tâm hội nghị tiệc cưới <br/> Tân Phúc Palace',
         location: '2/18 Bình Phước A, Bình Chuẩn, Thuận An, Bình Dương',
         mapUrl: `https://maps.app.goo.gl/N4fhw7UM1oGKqtJZ9`,
       },
