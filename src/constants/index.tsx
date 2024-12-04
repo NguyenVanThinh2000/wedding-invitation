@@ -1,6 +1,6 @@
 import { Facebook } from 'lucide-react'
 
-import thoanthoanQRCode from '@/assets/images/QR-thoan.jpg'
+import thoanthoanQRCode from '@/assets/images/QR-thoand.jpg'
 import thinhnguyenQRCode from '@/assets/images/thinhnguyen.jpg'
 import { Tiktok } from '@/components/icons'
 import { TRole } from '@/types'
@@ -242,7 +242,7 @@ export const invitationInfo = {
     donate: {
       title: 'Đến cô dâu',
       bankName: 'vietcombank',
-      accountNumber: '1015921086',
+      accountNumber: '0',
       accountName: 'Trần Thị Thoan',
       qrCode: thoanthoanQRCode,
     },
