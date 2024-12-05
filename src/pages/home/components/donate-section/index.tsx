@@ -52,11 +52,10 @@ export const DonateSection = ({ guest }: Props) => {
         <div className={styles.card}>
           <p className={styles.title}>{donate?.title}</p>
           <div className={styles.image}>
-            // <img alt="" src={donate?.qrCode} />
+          
           </div>
           <div className={styles.content}>
             <p>{donate?.bankName}</p>
-            // <p>{donate?.accountNumber}</p>
             <p>{donate?.accountName}</p>
           </div>
         </div>
