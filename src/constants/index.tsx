@@ -1,6 +1,6 @@
 import { Facebook } from 'lucide-react'
 
-import thoanthoanQRCode from '@/assets/images/QR-thoand.jpg'
+import thoanthoanQRCode from '@/assets/images/QR-thoan.jpg'
 import thinhnguyenQRCode from '@/assets/images/thinhnguyen.jpg'
 import { Tiktok } from '@/components/icons'
 import { TRole } from '@/types'
